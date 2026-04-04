@@ -1,32 +1,14 @@
 {
   "hooks": {
-    "PostToolUse": [
-      {
-        "name": "auto-format",
-        "command": "npx prettier --write .",
-        "description": "Auto-format code after every tool use"
-      },
-      {
-        "name": "auto-commit",
-        "command": "git add -A && git commit -m \"Auto by Claude [$(date '+%Y-%m-%d %H:%M:%S')]\"",
-        "description": "Auto-commit changes after every tool use"
-      }
-    ]
+    "pre_tool_use": "echo '🔧 Tool: {{tool}}' && prettier --write '{{file_path}}' 2>/dev/null || true",
+    "post_edit": "git add '{{file_path}}' 2>/dev/null || true"
   },
   "permissions": {
-    "allow": [
-      "Read",
-      "Write",
-      "Edit",
-      "Bash",
-      "Glob",
-      "Grep"
-    ]
-  },
-  "model": "claude-opus-4-6",
-  "project": {
-    "name": "Агентсво",
-    "type": "digital-agency",
-    "methodology": "Nick Saraev 2026"
+    "bash": "allow-all",
+    "edit": "allow-all",
+    "write": "allow-all",
+    "read": "allow-all",
+    "glob": "allow-all",
+    "grep": "allow-all"
   }
 }
