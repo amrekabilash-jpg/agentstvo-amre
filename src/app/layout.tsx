@@ -96,10 +96,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // TODO: замени на реальный код из Google Search Console → Настройки → Подтверждение права собственности → HTML-тег
-  // verification: {
-  //   google: "ВАШ_КОД_ЗДЕСЬ",
-  // },
+  verification: {
+    google: "kc609MUQEzW58aZSkVajT0jo_ZkejcBzcHccngU",
+  },
   category: "technology",
 };
 
