@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useT } from "@/lib/lang-context";
 
 const socialLinks = [
@@ -27,12 +28,7 @@ export function Footer(): React.ReactElement {
           {/* Brand + Description */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-[#5B5FEF] flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M8 2L12 14H4L8 2Z" fill="none" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
-                  <line x1="5.5" y1="10" x2="10.5" y2="10" stroke="white" strokeWidth="1.8" />
-                </svg>
-              </div>
+              <Image src="/images/logo.svg" alt="Агентство" width={36} height={36} />
               <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
             </div>
             <p className="text-slate-500 text-[15px] leading-relaxed max-w-xs mb-4">

@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
+
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LangToggle } from "@/components/ui/LangToggle";
 import { useT } from "@/lib/lang-context";
@@ -16,9 +18,10 @@ export function Header(): React.ReactElement {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
 
         {/* LOGO - Left */}
-        <div className="flex-shrink-0 text-2xl font-bold text-gray-900 dark:text-white">
-          <Link href="/"><span className="text-indigo-600 dark:text-indigo-400">А</span></Link>
-        </div>
+        <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
+          <Image src="/images/logo.svg" alt="Агентство" width={36} height={36} priority />
+          <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
+        </Link>
 
         {/* NAVIGATION - Strict Center */}
         <nav className="hidden md:flex flex-1 justify-center items-center gap-10">
