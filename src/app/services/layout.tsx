@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: "https://agentsvo.com/services",
   },
   openGraph: {
-    title: "Услуги — SEO, Креатив, AI | Агентсво",
+    title: "Услуги — SEO, Креатив, AI | Агентство",
     description: "Комплексные digital-решения для роста бизнеса. SEO, креатив и AI-автоматизация.",
     url: "https://agentsvo.com/services",
     type: "website",

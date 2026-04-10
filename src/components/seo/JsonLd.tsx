@@ -17,7 +17,7 @@ export function JsonLd({ data }: JsonLdProps): React.ReactElement {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Агентсво",
+  name: "Агентство",
   url: "https://geoaeo.pro",
   logo: "https://geoaeo.pro/images/logo.png",
   description:
@@ -46,7 +46,7 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Агентсво — Цифровое агентство",
+  name: "Агентство — Цифровое агентство",
   image: "https://geoaeo.pro/images/logo.png",
   url: "https://geoaeo.pro",
   telephone: "+77017282236",
@@ -91,7 +91,7 @@ export const localBusinessSchema = {
 export const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Агентсво",
+  name: "Агентство",
   url: "https://geoaeo.pro",
   inLanguage: "ru",
   potentialAction: {
@@ -139,7 +139,7 @@ export const servicesSchema = {
   "@type": "Service",
   provider: {
     "@type": "Organization",
-    name: "Агентсво",
+    name: "Агентство",
     url: "https://geoaeo.pro",
   },
   serviceType: "Digital Marketing Agency",

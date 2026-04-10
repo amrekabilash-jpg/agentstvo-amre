@@ -17,7 +17,7 @@ export function Header(): React.ReactElement {
 
         {/* LOGO - Left */}
         <div className="flex-shrink-0 text-2xl font-bold text-gray-900 dark:text-white">
-          <Link href="/"><span className="text-indigo-600 dark:text-indigo-400">А</span>гентсво</Link>
+          <Link href="/"><span className="text-indigo-600 dark:text-indigo-400">А</span></Link>
         </div>
 
         {/* NAVIGATION - Strict Center */}

@@ -34,7 +34,7 @@ export function Footer(): React.ReactElement {
                   <line x1="5.5" y1="10" x2="10.5" y2="10" stroke="white" strokeWidth="1.8" />
                 </svg>
               </div>
-              <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентсво</span>
+              <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
             </div>
             <p className="text-slate-500 text-[15px] leading-relaxed max-w-xs mb-4">
               {t.footer.description}
@@ -107,7 +107,7 @@ export function Footer(): React.ReactElement {
       <div className="border-t border-slate-200 dark:border-white/10">
         <div className="container-atlantis py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} Агентсво. {t.footer.rights}
+            &copy; {new Date().getFullYear()} Агентство. {t.footer.rights}
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="text-xs text-slate-400 hover:text-slate-600 transition-colors duration-200">

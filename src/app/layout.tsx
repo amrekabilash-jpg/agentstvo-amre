@@ -28,8 +28,8 @@ const BASE_URL = "https://geoaeo.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Агентсво — Цифровое агентство в Алматы | SEO, Креатив, AI",
-    template: "%s | Агентсво — Цифровое агентство",
+    default: "Агентство — Цифровое агентство в Алматы | SEO, Креатив, AI",
+    template: "%s | Агентство — Цифровое агентство",
   },
   description:
     "Цифровое агентство в Алматы. SEO-оптимизация, GEO, креативные услуги и AI-автоматизация для бизнеса. Возвращаем вам 6 часов каждый день. Первая консультация бесплатно.",
@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     "продвижение бизнеса",
     "digital агентство",
     "автоматизация процессов",
-    "Агентсво",
+    "Агентство",
   ],
-  authors: [{ name: "Агентсво", url: BASE_URL }],
-  creator: "Агентсво",
-  publisher: "Агентсво",
+  authors: [{ name: "Агентство", url: BASE_URL }],
+  creator: "Агентство",
+  publisher: "Агентство",
   formatDetection: {
     email: true,
     address: true,
@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Агентсво — Цифровое агентство в Алматы | SEO, Креатив, AI",
+    title: "Агентство — Цифровое агентство в Алматы | SEO, Креатив, AI",
     description:
       "SEO-оптимизация, GEO, креативные услуги и AI-автоматизация. Помогаем бизнесу расти быстрее и умнее.",
     url: BASE_URL,
-    siteName: "Агентсво",
+    siteName: "Агентство",
     type: "website",
     locale: "ru_RU",
     images: [
@@ -74,13 +74,13 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Агентсво — Цифровое агентство нового поколения",
+        alt: "Агентство — Цифровое агентство нового поколения",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Агентсво — Цифровое агентство в Алматы",
+    title: "Агентство — Цифровое агентство в Алматы",
     description:
       "SEO, GEO, креатив и AI-автоматизация для вашего бизнеса. Первая консультация бесплатно.",
     images: [`${BASE_URL}/images/og-image.png`],

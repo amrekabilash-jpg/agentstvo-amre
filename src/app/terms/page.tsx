@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Условия использования",
-  description: "Условия использования сайта и услуг цифрового агентства Агентсво.",
+  description: "Условия использования сайта и услуг цифрового агентства Агентство.",
   alternates: { canonical: "https://agentsvo.com/terms" },
 };
 
@@ -17,7 +17,7 @@ export default function TermsPage(): React.ReactElement {
           <div className="space-y-8 text-body leading-relaxed">
             <section>
               <h2 className="text-h3 mb-3">1. Общие положения</h2>
-              <p>Настоящие Условия регулируют использование сайта agentsvo.com и услуг, предоставляемых ТОО «Агентсво» (далее — «Компания»). Используя сайт, вы соглашаетесь с данными условиями.</p>
+              <p>Настоящие Условия регулируют использование сайта agentsvo.com и услуг, предоставляемых ТОО «Агентство» (далее — «Компания»). Используя сайт, вы соглашаетесь с данными условиями.</p>
             </section>
 
             <section>
