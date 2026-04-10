@@ -226,29 +226,32 @@ export default function ServicesPage(): React.ReactElement {
 
                       {/* Feature checklist */}
                       <div className="space-y-0">
-                        {service.features.map((feature, i) => (
-                          <motion.div
-                            key={feature}
-                            initial={{ opacity: 0, x: -8 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.3 + i * 0.04, duration: 0.3, ease }}
-                            className="flex items-center gap-3 py-2.5 border-b border-slate-100 last:border-b-0"
-                          >
-                            <div
-                              className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${i % 2 === 0 ? colors.checkBg : "bg-pink-100"}`}
+                        {service.features.map((feature, i) => {
+                          const title = typeof feature === "string" ? feature : feature.title;
+                          const desc = typeof feature === "string" ? undefined : feature.description;
+                          return (
+                            <motion.div
+                              key={title}
+                              initial={{ opacity: 0, x: -8 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.3 + i * 0.04, duration: 0.3, ease }}
+                              className={`flex items-start gap-3 border-b border-slate-100 last:border-b-0 ${desc ? "py-3" : "py-2.5"}`}
                             >
-                              <Check
-                                size={12}
-                                className={
-                                  i % 2 === 0 ? colors.checkIcon : "text-pink-600"
-                                }
-                              />
-                            </div>
-                            <span className="text-[15px] font-medium text-slate-700">
-                              {feature}
-                            </span>
-                          </motion.div>
-                        ))}
+                              <div
+                                className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${i % 2 === 0 ? colors.checkBg : "bg-pink-100"}`}
+                              >
+                                <Check
+                                  size={12}
+                                  className={i % 2 === 0 ? colors.checkIcon : "text-pink-600"}
+                                />
+                              </div>
+                              <div>
+                                <span className="text-[15px] font-semibold text-slate-800">{title}</span>
+                                {desc && <p className="text-[13px] text-slate-500 mt-0.5 leading-relaxed">{desc}</p>}
+                              </div>
+                            </motion.div>
+                          );
+                        })}
                       </div>
                     </motion.div>
 
