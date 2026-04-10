@@ -5,7 +5,6 @@ import { useT } from "@/lib/lang-context";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "GitHub", href: "https://github.com" },
   { label: "Twitter", href: "https://twitter.com" },
 ];
 
