@@ -5,7 +5,7 @@ import { useT } from "@/lib/lang-context";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Twitter", href: "https://twitter.com" },
+  { label: "X", href: "https://x.com" },
 ];
 
 export function Footer(): React.ReactElement {
