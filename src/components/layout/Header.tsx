@@ -19,7 +19,7 @@ export function Header(): React.ReactElement {
 
         {/* LOGO - Left */}
         <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
-          <Image src="/images/logo.svg" alt="Агентство" width={36} height={36} priority />
+          <Image src="/images/logo.svg" alt="Агентство" width={52} height={52} priority />
           <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
         </Link>
 
