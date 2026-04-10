@@ -293,7 +293,8 @@ export default function ContactsPage(): React.ReactElement {
                   </button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" data-netlify="true" name="contact-form">
+                  <input type="hidden" name="form-name" value="contact-form" />
                   {/* Honeypot — invisible to humans, bots fill it */}
                   <div className="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
                     <label htmlFor="website">Оставьте пустым</label>

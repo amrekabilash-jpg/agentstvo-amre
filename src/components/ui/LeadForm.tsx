@@ -104,7 +104,8 @@ export function LeadForm({
 
   if (variant === "compact") {
     return (
-      <form onSubmit={handleSubmit} className="w-full max-w-[clamp(280px,90vw,500px)] mx-auto" aria-label="Форма заявки">
+      <form onSubmit={handleSubmit} className="w-full max-w-[clamp(280px,90vw,500px)] mx-auto" aria-label="Форма заявки" data-netlify="true" name="lead-form">
+        <input type="hidden" name="form-name" value="lead-form" />
         {honeypotField}
         {errorBlock}
         <div className="flex flex-col sm:flex-row gap-3">
@@ -135,7 +136,8 @@ export function LeadForm({
 
       {errorBlock}
 
-      <form onSubmit={handleSubmit} className="space-y-3" aria-label="Форма заявки">
+      <form onSubmit={handleSubmit} className="space-y-3" aria-label="Форма заявки" data-netlify="true" name="lead-form">
+        <input type="hidden" name="form-name" value="lead-form" />
         {honeypotField}
         <div>
           <label htmlFor={`name-${source}`} className="sr-only">Имя</label>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><title>Netlify Forms</title></head>
+<head><meta charset="utf-8" /></head>
 <body>
-  <!-- Lead form (CTA sections) -->
-  <form name="lead-form" data-netlify="true" data-netlify-honeypot="company" hidden>
+  <!-- lead-form: used on homepage and service pages -->
+  <form name="lead-form" data-netlify="true" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
     <input type="tel" name="phone" />
-    <input type="hidden" name="source" />
+    <input type="text" name="source" />
     <input type="text" name="company" />
   </form>
 
-  <!-- Contact page form -->
-  <form name="contact-form" data-netlify="true" data-netlify-honeypot="website" hidden>
+  <!-- contact-form: used on /contacts page -->
+  <form name="contact-form" data-netlify="true" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
     <textarea name="message"></textarea>
