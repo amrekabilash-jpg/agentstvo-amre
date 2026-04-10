@@ -1,13 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { HTMLMotionProps, MotionConfig, motion } from "motion/react"
+import { HTMLMotionProps, motion } from "motion/react"
 import { cn } from "@/lib/utils"
 
-interface TextStaggerHoverProps {
-  text: string
-  index: number
-}
+
 interface HoverSliderImageProps {
   index: number
   imageUrl: string
@@ -57,57 +54,26 @@ export const HoverSlider = React.forwardRef<
 HoverSlider.displayName = "HoverSlider"
 
 export const TextStaggerHover = React.forwardRef<
-  HTMLElement,
-  React.HTMLAttributes<HTMLElement> & TextStaggerHoverProps
->(({ text, index, children, className, ...props }, ref) => {
+  HTMLSpanElement,
+  { text: string; index: number; className?: string; style?: React.CSSProperties }
+>(({ text, index, className, style }, ref) => {
   const { activeSlide, changeSlide } = useHoverSliderContext()
-  const { characters } = splitText(text)
   const isActive = activeSlide === index
-  const handleMouse = () => changeSlide(index)
-  return (
-    <span
-      className={cn(
-        "relative inline-block origin-bottom overflow-hidden",
-        className
-      )}
-      {...props}
-      ref={ref}
-      onMouseEnter={handleMouse}
-    >
-      {characters.map((char, charIndex) => (
-        <span
-          key={`${char}-${charIndex}`}
-          className="relative inline-block overflow-hidden"
-        >
-          <MotionConfig
-            transition={{
-              delay: charIndex * 0.025,
-              duration: 0.3,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            {/* Outgoing: visible at rest, slides up on hover */}
-            <motion.span
-              className="inline-block"
-              animate={isActive ? { y: "-100%" } : { y: "0%" }}
-            >
-              {char}
-              {char === " " && charIndex < characters.length - 1 && (
-                <>&nbsp;</>
-              )}
-            </motion.span>
 
-            {/* Incoming: starts below (clipped), slides in on hover */}
-            <motion.span
-              className="absolute left-0 top-full inline-block"
-              animate={isActive ? { y: "-100%" } : { y: "0%" }}
-            >
-              {char}
-            </motion.span>
-          </MotionConfig>
-        </span>
-      ))}
-    </span>
+  return (
+    <motion.span
+      ref={ref}
+      className={cn("inline-block", className)}
+      style={style}
+      animate={{
+        y: isActive ? -4 : 0,
+        opacity: isActive ? 1 : 0.45,
+      }}
+      transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+      onMouseEnter={() => changeSlide(index)}
+    >
+      {text}
+    </motion.span>
   )
 })
 TextStaggerHover.displayName = "TextStaggerHover"
