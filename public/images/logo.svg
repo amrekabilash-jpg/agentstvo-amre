@@ -1,6 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Wave body -->
-  <path d="M4 36 C4 36 8 36 12 28 C16 20 18 24 22 20 C26 16 28 10 34 8 C38 6 42 8 44 12" stroke="#5B5FEF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Peak dot -->
-  <circle cx="44" cy="12" r="4" fill="#E84393"/>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="white"/>
+
+  <!-- Main wave / signal -->
+  <path d="M60 340
+           Q180 320 260 240
+           L360 140
+           L360 240
+           Q280 300 180 320
+           Z"
+        fill="#5B5FEF"/>
+
+  <!-- Data bars (negative cut style) -->
+  <rect x="300" y="300" width="8" height="40" fill="#5B5FEF"/>
+  <rect x="320" y="280" width="8" height="60" fill="#5B5FEF"/>
+  <rect x="340" y="260" width="8" height="80" fill="#5B5FEF"/>
+
 </svg>
