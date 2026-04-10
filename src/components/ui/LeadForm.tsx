@@ -29,7 +29,7 @@ export function LeadForm({
   const [honeypot, setHoneypot] = useState("");
   const submitTimestamps = useRef<number[]>([]);
 
-  function handleSubmit(e: FormEvent): void {
+  async function handleSubmit(e: FormEvent): Promise<void> {
     e.preventDefault();
     setError("");
 
@@ -53,9 +53,26 @@ export function LeadForm({
       return;
     }
 
-    // TODO: send to backend (Supabase / Resend)
-    console.log("Lead captured:", { name: cleanName, email: cleanEmail, phone: cleanPhone, source });
-    setSubmitted(true);
+    try {
+      const body = new URLSearchParams({
+        "form-name": "lead-form",
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        source,
+      }).toString();
+
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+
+      if (!res.ok) throw new Error("Network error");
+      setSubmitted(true);
+    } catch {
+      setError("Ошибка отправки. Напишите нам напрямую: hello@geoaeo.pro");
+    }
   }
 
   if (submitted) {

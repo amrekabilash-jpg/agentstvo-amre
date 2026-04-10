@@ -95,7 +95,7 @@ export default function ContactsPage(): React.ReactElement {
     setFormError("");
   };
 
-  function handleSubmit(e: FormEvent): void {
+  async function handleSubmit(e: FormEvent): Promise<void> {
     e.preventDefault();
     setFormError("");
 
@@ -143,8 +143,26 @@ export default function ContactsPage(): React.ReactElement {
       return;
     }
 
-    // All checks passed
-    setSubmitted(true);
+    // All checks passed — submit to Netlify Forms
+    try {
+      const body = new URLSearchParams({
+        "form-name": "contact-form",
+        name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
+      }).toString();
+
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+
+      if (!res.ok) throw new Error("Network error");
+      setSubmitted(true);
+    } catch {
+      setFormError("Ошибка отправки. Напишите напрямую: hello@geoaeo.pro");
+    }
   }
 
   return (

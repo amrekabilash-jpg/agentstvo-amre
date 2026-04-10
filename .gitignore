@@ -5,3 +5,6 @@ tsconfig.tsbuildinfo
 screenshots
 .claude
 .vercel
+
+# Local Netlify folder
+.netlify
