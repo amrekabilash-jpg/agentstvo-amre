@@ -41,24 +41,7 @@ export function Footer(): React.ReactElement {
             </p>
 
             <p className="text-slate-600 text-sm font-medium mb-1">Казахстан, г. Алматы</p>
-            <a
-              href="tel:+77017282236"
-              className="block text-sm text-slate-500 hover:text-[#5B5FEF] transition-colors duration-200 mb-3"
-            >
-              +7 701 728 22 36
-            </a>
-
-            {/* Email */}
-            <a
-              href="mailto:hello@agentsvo.com"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#5B5FEF] hover:text-[#4a4edc] transition-colors duration-200"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              hello@agentsvo.com
-            </a>
+            <p className="text-sm text-slate-400 mb-3">Скоро</p>
           </div>
 
           {/* Navigation */}

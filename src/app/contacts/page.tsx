@@ -25,8 +25,8 @@ const channelIcons = [
   </svg>,
 ];
 
-const channelHrefs = ["mailto:hello@agentsvo.com", "tel:+77017282236", null];
-const channelValues = ["hello@agentsvo.com", "+7 701 728 22 36", null];
+const channelHrefs = [null, null, null];
+const channelValues = ["Скоро", "Скоро", null];
 const channelColors = ["pink", "indigo", "emerald"] as const;
 
 const colorMap = {
@@ -161,7 +161,7 @@ export default function ContactsPage(): React.ReactElement {
       if (!res.ok) throw new Error("Network error");
       setSubmitted(true);
     } catch {
-      setFormError("Ошибка отправки. Напишите напрямую: hello@geoaeo.pro");
+      setFormError("Ошибка отправки. Попробуйте позже или свяжитесь через Telegram.");
     }
   }
 
@@ -506,9 +506,7 @@ export default function ContactsPage(): React.ReactElement {
           <p className="text-sm text-slate-500">
             <span className="font-semibold text-slate-700 dark:text-slate-300">Казахстан, г. Алматы</span>
             <span className="mx-3 text-slate-300">|</span>
-            <a href="tel:+77017282236" className="hover:text-[#5B5FEF] transition-colors">+7 701 728 22 36</a>
-            <span className="mx-3 text-slate-300">|</span>
-            <a href="mailto:hello@agentsvo.com" className="hover:text-[#5B5FEF] transition-colors">hello@agentsvo.com</a>
+            <span className="text-slate-400">Скоро</span>
           </p>
         </div>
       </section>
