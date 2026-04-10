@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://agentsvo.com";
+const BASE_URL = "https://geoaeo.pro";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

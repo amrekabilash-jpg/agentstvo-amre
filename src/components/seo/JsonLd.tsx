@@ -18,8 +18,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Агентсво",
-  url: "https://agentsvo.com",
-  logo: "https://agentsvo.com/images/logo.png",
+  url: "https://geoaeo.pro",
+  logo: "https://geoaeo.pro/images/logo.png",
   description:
     "Цифровое агентство нового поколения. SEO-оптимизация, креативные услуги и автоматизация бизнеса с помощью AI.",
   email: "hello@agentsvo.com",
@@ -47,8 +47,8 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Агентсво — Цифровое агентство",
-  image: "https://agentsvo.com/images/logo.png",
-  url: "https://agentsvo.com",
+  image: "https://geoaeo.pro/images/logo.png",
+  url: "https://geoaeo.pro",
   telephone: "+77017282236",
   email: "hello@agentsvo.com",
   address: {
@@ -92,11 +92,11 @@ export const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Агентсво",
-  url: "https://agentsvo.com",
+  url: "https://geoaeo.pro",
   inLanguage: "ru",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://agentsvo.com/?q={search_term_string}",
+    target: "https://geoaeo.pro/?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -140,7 +140,7 @@ export const servicesSchema = {
   provider: {
     "@type": "Organization",
     name: "Агентсво",
-    url: "https://agentsvo.com",
+    url: "https://geoaeo.pro",
   },
   serviceType: "Digital Marketing Agency",
   areaServed: {

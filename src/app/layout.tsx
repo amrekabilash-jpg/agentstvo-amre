@@ -23,7 +23,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const BASE_URL = "https://agentsvo.com";
+const BASE_URL = "https://geoaeo.pro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
