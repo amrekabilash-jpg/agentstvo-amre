@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -19,7 +18,7 @@ export function Header(): React.ReactElement {
 
         {/* LOGO - Left */}
         <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
-          <Image src="/images/logo.svg" alt="Агентство" width={52} height={52} priority />
+          <img src="/images/logo.svg" alt="Агентство" width={52} height={52} className="dark:invert" />
           <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
         </Link>
 
