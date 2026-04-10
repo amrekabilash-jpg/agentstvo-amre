@@ -152,7 +152,7 @@ export default function ContactsPage(): React.ReactElement {
         message: cleanMessage,
       }).toString();
 
-      const res = await fetch("/", {
+      const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,

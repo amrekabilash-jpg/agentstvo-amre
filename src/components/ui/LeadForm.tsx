@@ -62,7 +62,7 @@ export function LeadForm({
         source,
       }).toString();
 
-      const res = await fetch("/", {
+      const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
