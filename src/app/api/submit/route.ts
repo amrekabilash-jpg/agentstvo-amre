@@ -3,6 +3,31 @@ import nodemailer from "nodemailer";
 
 const RECIPIENT = "amrekabilash@gmail.com";
 
+const FORM_IDS: Record<string, string> = {
+  "contact-form": "69d90ad6ac37f50008d2ee59",
+  "lead-form": "69d90ad6ac37f50008d2ee58",
+};
+
+async function saveToNetlifyForms(
+  formName: string,
+  data: Record<string, string>
+): Promise<void> {
+  const token = process.env.NETLIFY_TOKEN;
+  const formId = FORM_IDS[formName];
+  if (!token || !formId) return;
+
+  const body = new URLSearchParams({ "form-name": formName, ...data }).toString();
+
+  await fetch(`https://api.netlify.com/api/v1/forms/${formId}/submissions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: `Bearer ${token}`,
+    },
+    body,
+  });
+}
+
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const body = await req.text();
@@ -26,6 +51,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       return NextResponse.json({ error: "Mail not configured" }, { status: 500 });
     }
 
+    const formData: Record<string, string> = { name, email, phone, message, source };
+
+    // Send email + save to Netlify Forms in parallel
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: { user: gmailUser, pass: gmailPass },
@@ -52,13 +80,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       </div>
     `;
 
-    await transporter.sendMail({
-      from: `"Агентство — geoaeo.pro" <${gmailUser}>`,
-      to: RECIPIENT,
-      replyTo: email || undefined,
-      subject,
-      html,
-    });
+    await Promise.all([
+      transporter.sendMail({
+        from: `"Агентство — geoaeo.pro" <${gmailUser}>`,
+        to: RECIPIENT,
+        replyTo: email || undefined,
+        subject,
+        html,
+      }),
+      saveToNetlifyForms(formName, formData),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (err) {
