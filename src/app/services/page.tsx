@@ -19,9 +19,9 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const SLIDES_META = [
   { id: "slide-seo", sectionId: "seo", imageUrl: "/images/Programming-cuate.svg" },
-  { id: "slide-design", sectionId: "design", imageUrl: "/images/UI-UX-team-cuate.svg" },
   { id: "slide-automation", sectionId: "automation", imageUrl: "/images/Android-cuate.svg" },
   { id: "slide-video", sectionId: "creative", imageUrl: "/images/Online-world-cuate.svg" },
+  { id: "slide-design", sectionId: "design", imageUrl: "/images/UI-UX-team-cuate.svg" },
   { id: "slide-branding", sectionId: "branding", imageUrl: "/images/Company-cuate.svg" },
 ];
 
