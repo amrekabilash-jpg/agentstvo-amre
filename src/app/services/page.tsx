@@ -88,10 +88,10 @@ export default function ServicesPage(): React.ReactElement {
     setTimeout(() => {
       const el = document.getElementById(sectionId);
       if (!el) return;
-      const headerOffset = 100;
+      const headerOffset = 90;
       const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
       window.scrollTo({ top, behavior: "smooth" });
-    }, 100);
+    }, 350);
   };
 
   return (
