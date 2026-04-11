@@ -11,8 +11,9 @@ export function NavFooter(): React.ReactElement {
   return (
     <div className="bg-gray-50 dark:bg-[#0A0A15] border-t border-gray-200 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center gap-8">
-        <Link href="/" className="text-sm font-bold text-gray-900 hover:text-indigo-600 transition-colors">
-          <span className="text-indigo-600 dark:text-indigo-400">А</span>гентство
+        <Link href="/" className="flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white hover:text-indigo-600 transition-colors">
+          <img src="/images/logo.svg" alt="Агентство" width={28} height={28} className="dark:invert" />
+          Агентство
         </Link>
         {navLinks.map((link) => (
           <Link
