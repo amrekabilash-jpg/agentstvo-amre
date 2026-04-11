@@ -21,7 +21,7 @@ export function Header(): React.ReactElement {
           <img src="/images/logo.svg" alt="Агентство" width={52} height={52} className="dark:invert" />
           <div className="flex flex-col leading-tight">
             <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
-            <span className="text-[10px] font-medium text-slate-400 dark:text-slate-500 tracking-wide">Digital Agency — Almaty, Kazakhstan</span>
+            <span className="hidden sm:block text-[10px] font-medium text-slate-400 dark:text-slate-500 tracking-wide">Digital Agency — Almaty, Kazakhstan</span>
           </div>
         </Link>
 
