@@ -241,11 +241,11 @@ export default function ServicesPage(): React.ReactElement {
                               className={`flex items-start gap-3 border-b border-slate-100 dark:border-white/10 last:border-b-0 ${desc ? "py-3" : "py-2.5"}`}
                             >
                               <div
-                                className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${i % 2 === 0 ? colors.checkBg : "bg-pink-100"}`}
+                                className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-emerald-100"
                               >
                                 <Check
                                   size={12}
-                                  className={i % 2 === 0 ? colors.checkIcon : "text-pink-600"}
+                                  className="text-emerald-600"
                                 />
                               </div>
                               <div>
