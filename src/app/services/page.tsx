@@ -27,9 +27,9 @@ const SLIDES_META = [
 
 const SERVICES_META = [
   { id: "seo", color: "indigo" as const, image: "/images/Programming-cuate.svg", imageAlt: "Программирование", bg: "bg-white", reverse: false },
-  { id: "design", color: "pink" as const, image: "/images/UI-UX-team-cuate.svg", imageAlt: "UI/UX Дизайн", bg: "bg-lavender", reverse: true },
-  { id: "creative", color: "orange" as const, image: "/images/Online-world-cuate.svg", imageAlt: "Креативные услуги", bg: "bg-white", reverse: false },
   { id: "automation", color: "emerald" as const, image: "/images/Android-cuate.svg", imageAlt: "AI-автоматизация", bg: "bg-lavender", reverse: true },
+  { id: "creative", color: "orange" as const, image: "/images/Online-world-cuate.svg", imageAlt: "Креативные услуги", bg: "bg-white", reverse: false },
+  { id: "design", color: "pink" as const, image: "/images/UI-UX-team-cuate.svg", imageAlt: "UI/UX Дизайн", bg: "bg-lavender", reverse: true },
   { id: "branding", color: "amber" as const, image: "/images/Company-cuate.svg", imageAlt: "Бренд-айдентика", bg: "bg-white", reverse: false },
 ];
 
