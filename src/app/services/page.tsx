@@ -87,7 +87,10 @@ export default function ServicesPage(): React.ReactElement {
     setOpenSection((prev) => (prev === sectionId ? null : sectionId));
     setTimeout(() => {
       const el = document.getElementById(sectionId);
-      el?.scrollIntoView({ behavior: "smooth" });
+      if (!el) return;
+      const headerOffset = 100;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: "smooth" });
     }, 100);
   };
 
