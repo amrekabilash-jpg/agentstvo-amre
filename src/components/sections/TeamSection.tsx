@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useT } from "@/lib/lang-context";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -169,40 +170,13 @@ const AvatarTimur = () => (
   </svg>
 );
 
-const TEAM = [
-  {
-    Avatar: AvatarDamir,
-    name: "Амре",
-    role: "CEO & Стратег",
-    dot: "bg-[#5B5FEF]",
-  },
-  {
-    Avatar: AvatarArman,
-    name: "Арман К.",
-    role: "Lead Developer",
-    dot: "bg-[#E84393]",
-  },
-  {
-    Avatar: AvatarNurlan,
-    name: "Артур",
-    role: "AI Engineer",
-    dot: "bg-emerald-500",
-  },
-  {
-    Avatar: AvatarAigerim,
-    name: "Регина",
-    role: "UI/UX Designer",
-    dot: "bg-amber-500",
-  },
-  {
-    Avatar: AvatarTimur,
-    name: "Тимур Р.",
-    role: "SEO & GEO Lead",
-    dot: "bg-violet-500",
-  },
-];
+const AVATARS = [AvatarDamir, AvatarArman, AvatarNurlan, AvatarAigerim, AvatarTimur];
+const DOTS = ["bg-[#5B5FEF]", "bg-[#E84393]", "bg-emerald-500", "bg-amber-500", "bg-violet-500"];
 
 export function TeamSection(): React.ReactElement {
+  const { t } = useT();
+  const team = t.team.members as { name: string; role: string }[];
+
   return (
     <section className="py-14 lg:py-20 bg-lavender relative overflow-hidden">
       <div className="blob blob-md absolute -right-20 top-1/2 -translate-y-1/2 opacity-60" />
@@ -215,36 +189,39 @@ export function TeamSection(): React.ReactElement {
           transition={{ duration: 0.5, ease }}
           className="text-center mb-10"
         >
-          <span className="text-label text-[#E84393] block mb-3">Люди</span>
-          <h2 className="display-section">Наша команда</h2>
+          <span className="text-label text-[#E84393] block mb-3">{t.team.label}</span>
+          <h2 className="display-section">{t.team.heading}</h2>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-          {TEAM.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.4, ease }}
-              whileHover={{ y: -4 }}
-              className="flex flex-col items-center gap-3 p-3 w-[150px]"
-            >
-              {/* Avatar circle */}
-              <div className="w-20 h-20 rounded-full overflow-hidden shadow-md">
-                <member.Avatar />
-              </div>
-
-              {/* Name + role */}
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <span className={`w-2 h-2 rounded-full ${member.dot} shrink-0`} />
-                  <p className="text-sm font-bold text-slate-800 dark:text-white">{member.name}</p>
+          {team.map((member, i) => {
+            const Avatar = AVATARS[i];
+            return (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4, ease }}
+                whileHover={{ y: -4 }}
+                className="flex flex-col items-center gap-3 p-3 w-[150px]"
+              >
+                {/* Avatar circle */}
+                <div className="w-20 h-20 rounded-full overflow-hidden shadow-md">
+                  <Avatar />
                 </div>
-                <p className="text-xs text-slate-500 dark:text-slate-300 leading-snug">{member.role}</p>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* Name + role */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                    <span className={`w-2 h-2 rounded-full ${DOTS[i]} shrink-0`} />
+                    <p className="text-sm font-bold text-slate-800 dark:text-white">{member.name}</p>
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-300 leading-snug">{member.role}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "разработка бренда",
   ],
   alternates: {
-    canonical: "https://agentsvo.com/services",
+    canonical: "https://geoaeo.pro/services",
   },
   openGraph: {
     title: "Услуги — SEO, Креатив, AI | Агентство",
     description: "Комплексные digital-решения для роста бизнеса. SEO, креатив и AI-автоматизация.",
-    url: "https://agentsvo.com/services",
+    url: "https://geoaeo.pro/services",
     type: "website",
   },
 };
@@ -32,8 +32,8 @@ export default function ServicesLayout({ children }: { children: React.ReactNode
       <JsonLd data={servicesSchema} />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Главная", url: "https://agentsvo.com" },
-          { name: "Услуги", url: "https://agentsvo.com/services" },
+          { name: "Главная", url: "https://geoaeo.pro" },
+          { name: "Услуги", url: "https://geoaeo.pro/services" },
         ])}
       />
       {children}

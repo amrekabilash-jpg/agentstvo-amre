@@ -19,7 +19,7 @@ export const organizationSchema = {
   "@type": "Organization",
   name: "Агентство",
   url: "https://geoaeo.pro",
-  logo: "https://geoaeo.pro/images/logo.png",
+  logo: "https://geoaeo.pro/images/logo.svg",
   description:
     "Цифровое агентство нового поколения. SEO-оптимизация, креативные услуги и автоматизация бизнеса с помощью AI.",
   email: "hello@agentsvo.com",
@@ -47,7 +47,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Агентство — Цифровое агентство",
-  image: "https://geoaeo.pro/images/logo.png",
+  image: "https://geoaeo.pro/images/logo.svg",
   url: "https://geoaeo.pro",
   telephone: "+77017282236",
   email: "hello@agentsvo.com",

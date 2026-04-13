@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     images: [
       {
-        url: `${BASE_URL}/images/og-image.png`,
+        url: `${BASE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: "Агентство — Цифровое агентство нового поколения",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     title: "Агентство — Цифровое агентство в Алматы",
     description:
       "SEO, GEO, креатив и AI-автоматизация для вашего бизнеса. Первая консультация бесплатно.",
-    images: [`${BASE_URL}/images/og-image.png`],
+    images: [`${BASE_URL}/opengraph-image`],
   },
   robots: {
     index: true,
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "kc609MUQEzW58aZSkVajT0jo_ZkejcBzcHccngU",
+    google: "2pfAB5nj5WdZkHWUfmlClBFVXteLTAFGl5k-IdWV_ic",
   },
   category: "technology",
 };
