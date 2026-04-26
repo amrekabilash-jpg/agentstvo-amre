@@ -124,11 +124,12 @@ export default function ContactsPage(): React.ReactElement {
         }),
       });
 
-      const data = await res.json() as { success: boolean };
-      if (!data.success) throw new Error("Web3Forms error");
+      const data = await res.json() as { success: boolean; message?: string };
+      if (!data.success) throw new Error(data.message || "Web3Forms rejected");
       setSubmitted(true);
-    } catch {
-      setFormError("Ошибка отправки. Попробуйте позже или свяжитесь через Telegram.");
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "unknown";
+      setFormError(`Ошибка: ${msg}. Напишите нам: amrekabilash@gmail.com`);
     }
   }
 
