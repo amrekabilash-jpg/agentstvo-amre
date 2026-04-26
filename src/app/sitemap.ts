@@ -1,9 +1,17 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://geoaeo.pro";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+
+  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.updated || post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   return [
     {
@@ -48,5 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...blogPosts,
   ];
 }

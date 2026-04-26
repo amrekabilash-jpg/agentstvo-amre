@@ -57,6 +57,7 @@ export function Header(): React.ReactElement {
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8">
           <Link href="/services" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors text-sm">{t.nav.services}</Link>
           <Link href="/cases" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors text-sm">{t.nav.cases}</Link>
+          <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors text-sm">Блог</Link>
           <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors text-sm">{t.nav.about}</Link>
           <Link href="/contacts" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors text-sm">{t.nav.contacts}</Link>
         </nav>
@@ -86,6 +87,7 @@ export function Header(): React.ReactElement {
         >
           <Link href="/services" className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium" onClick={() => setMobileOpen(false)}>{t.nav.services}</Link>
           <Link href="/cases" className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium" onClick={() => setMobileOpen(false)}>{t.nav.cases}</Link>
+          <Link href="/blog" className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium" onClick={() => setMobileOpen(false)}>Блог</Link>
           <Link href="/about" className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium" onClick={() => setMobileOpen(false)}>{t.nav.about}</Link>
           <Link href="/contacts" className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium" onClick={() => setMobileOpen(false)}>{t.nav.contacts}</Link>
         </div>
