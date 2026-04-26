@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AnimatedIllustration } from "@/components/ui/AnimatedIllustration";
+import { ParallaxWrapper } from "@/components/ui/parallax-wrapper";
 import { useT } from "@/lib/lang-context";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -39,9 +40,9 @@ export function WhyUs(): React.ReactElement {
             className="relative"
           >
             <div className="blob blob-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-            <div className="relative">
+            <ParallaxWrapper className="relative">
               <AnimatedIllustration src="/images/Pair-programming-cuate.svg" alt="Парное программирование" className="w-full h-auto max-w-sm mx-auto [&_svg]:w-full [&_svg]:h-auto" />
-            </div>
+            </ParallaxWrapper>
           </motion.div>
         </div>
       </div>

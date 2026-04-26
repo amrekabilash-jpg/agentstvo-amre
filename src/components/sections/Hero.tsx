@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { EASE } from "@/lib/constants";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { AnimatedIllustration } from "@/components/ui/AnimatedIllustration";
+import { ParallaxWrapper } from "@/components/ui/parallax-wrapper";
 import { useT } from "@/lib/lang-context";
 
 const CYCLE_MS = 2400;
@@ -84,13 +85,13 @@ export function Hero(): React.ReactElement {
             className="relative"
           >
             <div className="blob blob-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
-            <div className="relative">
+            <ParallaxWrapper className="relative">
               <AnimatedIllustration
                 src="/images/Team-cuate.svg"
                 alt="Командная работа"
                 className="w-full h-auto max-w-sm mx-auto [&_svg]:w-full [&_svg]:h-auto"
               />
-            </div>
+            </ParallaxWrapper>
           </motion.div>
         </div>
       </div>
