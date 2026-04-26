@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useCallback, type FormEvent } from "react";
+import { useState, useRef, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Send, Check, Paperclip, X, ShieldCheck } from "lucide-react";
+import { ArrowRight, Send, Check, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { AnimatedIllustration } from "@/components/ui/AnimatedIllustration";
 import { MagneticButton } from "@/components/ui/magnetic-button";
@@ -25,8 +25,8 @@ const channelIcons = [
   </svg>,
 ];
 
-const channelHrefs = [null, null, null];
-const channelValues = ["Скоро", "Скоро", null];
+const channelHrefs = ["mailto:amrekabilash@gmail.com", null, null];
+const channelValues = ["amrekabilash@gmail.com", "Скоро", null];
 const channelColors = ["pink", "indigo", "emerald"] as const;
 
 const colorMap = {
@@ -41,7 +41,6 @@ export default function ContactsPage(): React.ReactElement {
   const { t } = useT();
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [files, setFiles] = useState<File[]>([]);
   const [formError, setFormError] = useState("");
 
   // Honeypot — hidden field, bots fill it, humans don't
@@ -52,48 +51,16 @@ export default function ContactsPage(): React.ReactElement {
   const MAX_SUBMITS = 3;
   const RATE_WINDOW_MS = 60_000; // 1 minute
 
-  // Sanitize input — strip HTML tags and dangerous characters
-  const sanitize = useCallback((input: string): string => {
-    return input
-      .replace(/<[^>]*>/g, "")           // strip HTML tags
-      .replace(/[<>"'`]/g, "")           // remove dangerous chars
-      .replace(/javascript:/gi, "")      // block JS protocol
-      .replace(/on\w+\s*=/gi, "")        // block inline event handlers
+  const sanitize = (input: string): string =>
+    input
+      .replace(/<[^>]*>/g, "")
+      .replace(/[<>"'`]/g, "")
+      .replace(/javascript:/gi, "")
+      .replace(/on\w+\s*=/gi, "")
       .trim();
-  }, []);
 
-  // Validate email format
-  const isValidEmail = (email: string): boolean => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  // Max file size 10MB per file
-  const MAX_FILE_SIZE = 10 * 1024 * 1024;
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files);
-      const oversized = newFiles.find((f) => f.size > MAX_FILE_SIZE);
-      if (oversized) {
-        setFormError(`Файл "${oversized.name}" превышает 10 МБ`);
-        e.target.value = "";
-        return;
-      }
-      if (files.length + newFiles.length > 5) {
-        setFormError("Максимум 5 файлов");
-        e.target.value = "";
-        return;
-      }
-      setFormError("");
-      setFiles((prev) => [...prev, ...newFiles]);
-    }
-    e.target.value = "";
-  };
-
-  const removeFile = (index: number): void => {
-    setFiles((prev) => prev.filter((_, i) => i !== index));
-    setFormError("");
-  };
+  const isValidEmail = (email: string): boolean =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   async function handleSubmit(e: FormEvent): Promise<void> {
     e.preventDefault();
@@ -143,22 +110,22 @@ export default function ContactsPage(): React.ReactElement {
       return;
     }
 
-    // All checks passed — submit to Netlify Forms
     try {
-      const body = new URLSearchParams({
-        "form-name": "contact-form",
-        name: cleanName,
-        email: cleanEmail,
-        message: cleanMessage,
-      }).toString();
-
-      const res = await fetch("/api/submit", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "4b47bcf9-417b-4e1e-9b3d-232164e19c10",
+          subject: `📩 Новое сообщение от ${cleanName} — geoaeo.pro`,
+          name: cleanName,
+          email: cleanEmail,
+          message: cleanMessage,
+          botcheck: "",
+        }),
       });
 
-      if (!res.ok) throw new Error("Network error");
+      const data = await res.json() as { success: boolean };
+      if (!data.success) throw new Error("Web3Forms error");
       setSubmitted(true);
     } catch {
       setFormError("Ошибка отправки. Попробуйте позже или свяжитесь через Telegram.");
@@ -285,7 +252,6 @@ export default function ContactsPage(): React.ReactElement {
                     onClick={() => {
                       setSubmitted(false);
                       setFormState({ name: "", email: "", message: "" });
-                      setFiles([]);
                     }}
                     className="text-sm font-semibold text-[#5B5FEF] hover:underline"
                   >
@@ -352,46 +318,6 @@ export default function ContactsPage(): React.ReactElement {
                       className="w-full rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#1A1A2E] dark:text-white px-4 py-3.5 text-sm outline-none hover:border-[#818CF8] hover:shadow-[0_0_0_3px_rgba(91,95,239,0.08)] focus:border-[#5B5FEF] focus:ring-2 focus:ring-[#5B5FEF]/20 focus:shadow-[0_0_12px_rgba(91,95,239,0.12)] transition-all duration-200 resize-none placeholder:text-slate-400 dark:placeholder:text-slate-500"
                       placeholder={t.contacts.messagePlaceholder}
                     />
-                  </div>
-
-                  {/* File attachment */}
-                  <div>
-                    <label className="inline-flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-[#5B5FEF] transition-colors duration-200">
-                      <Paperclip size={16} />
-                      {t.contacts.attach}
-                      <input
-                        type="file"
-                        multiple
-                        accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.png,.jpg,.jpeg,.zip,.rar"
-                        onChange={handleFileChange}
-                        className="hidden"
-                      />
-                    </label>
-                    <p className="text-xs text-slate-400 mt-1">{t.contacts.attachHint}</p>
-
-                    {files.length > 0 && (
-                      <div className="mt-3 space-y-2">
-                        {files.map((file, i) => (
-                          <div
-                            key={`${file.name}-${i}`}
-                            className="flex items-center gap-2 rounded-lg border border-slate-200 dark:border-white/15 bg-white dark:bg-[#1A1A2E] px-3 py-2 text-sm"
-                          >
-                            <Paperclip size={14} className="text-[#5B5FEF] shrink-0" />
-                            <span className="text-slate-700 dark:text-slate-300 truncate flex-1">{file.name}</span>
-                            <span className="text-xs text-slate-400 shrink-0">
-                              {(file.size / 1024).toFixed(0)} KB
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => removeFile(i)}
-                              className="text-slate-400 hover:text-red-500 transition-colors shrink-0"
-                            >
-                              <X size={14} />
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
                   </div>
 
                   <MagneticButton strength={0.4}>
