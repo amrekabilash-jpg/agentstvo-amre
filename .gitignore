@@ -8,3 +8,7 @@ screenshots
 
 # Local Netlify folder
 .netlify
+
+# Env с секретами (никогда не пушить)
+.env.local
+.env*.local
