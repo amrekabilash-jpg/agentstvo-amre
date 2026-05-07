@@ -5,7 +5,7 @@ excerpt: "Пошаговое руководство по локальному SE
 date: "2026-05-07"
 updated: "2026-05-07"
 author:
-  name: "Амре Хавлааш"
+  name: "Амре Кабылаш"
   role: "Основатель Агентства"
 category: "GEO & SEO"
 tags: ["локальное SEO", "Google My Business", "Алматы", "2GIS"]
