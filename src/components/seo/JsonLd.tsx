@@ -17,23 +17,36 @@ export function JsonLd({ data }: JsonLdProps): React.ReactElement {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://geoaeo.pro/#organization",
   name: "Агентство",
+  alternateName: "Agentsvo",
   url: "https://geoaeo.pro",
-  logo: "https://geoaeo.pro/images/logo.svg",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://geoaeo.pro/images/logo.svg",
+    width: 52,
+    height: 52,
+  },
   description:
-    "Цифровое агентство нового поколения. SEO-оптимизация, креативные услуги и автоматизация бизнеса с помощью AI.",
-  email: "hello@agentsvo.com",
+    "Цифровое агентство нового поколения в Алматы, Казахстан. SEO-оптимизация, GEO, креативные услуги и автоматизация бизнеса с помощью AI.",
+  foundingDate: "2024",
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Алматы",
+      addressCountry: "KZ",
+    },
+  },
+  email: "hello@geoaeo.pro",
+  sameAs: ["https://geoaeo.pro"],
   telephone: "+77017282236",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Алматы",
+    addressRegion: "Алматы",
     addressCountry: "KZ",
   },
-  sameAs: [
-    "https://linkedin.com",
-    "https://github.com",
-    "https://twitter.com",
-  ],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+77017282236",
@@ -46,16 +59,18 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://geoaeo.pro/#local-business",
   name: "Агентство — Цифровое агентство",
   image: "https://geoaeo.pro/images/logo.svg",
   url: "https://geoaeo.pro",
   telephone: "+77017282236",
-  email: "hello@agentsvo.com",
+  email: "hello@geoaeo.pro",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Алматы",
     addressRegion: "Алматы",
     addressCountry: "KZ",
+    addressRegionCode: "ALA",
   },
   geo: {
     "@type": "GeoCoordinates",

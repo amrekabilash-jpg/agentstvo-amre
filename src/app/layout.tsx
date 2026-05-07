@@ -59,6 +59,8 @@ export const metadata: Metadata = {
     languages: {
       "ru-KZ": BASE_URL,
       "ru-RU": BASE_URL,
+      "kk-KZ": BASE_URL,
+      "x-default": BASE_URL,
     },
   },
   openGraph: {
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "Агентство",
     type: "website",
-    locale: "ru_RU",
+    locale: "ru_KZ",
     images: [
       {
         url: `${BASE_URL}/opengraph-image`,
@@ -110,9 +112,6 @@ export default function RootLayout({
   return (
     <html lang="ru" className={montserrat.variable} suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="ru-KZ" href={BASE_URL} />
-        <link rel="alternate" hrefLang="ru-RU" href={BASE_URL} />
-        <link rel="alternate" hrefLang="x-default" href={BASE_URL} />
         <JsonLd data={organizationSchema} />
         <JsonLd data={localBusinessSchema} />
         <JsonLd data={webSiteSchema} />
