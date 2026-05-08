@@ -27,7 +27,7 @@ export function Footer(): React.ReactElement {
           {/* Brand + Description */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src="/images/logo.svg" alt="Агентство" width={52} height={52} className="dark:invert" />
+              <img src="/images/logo.svg" alt="Агентство" width={52} height={52} loading="lazy" className="dark:invert" />
               <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
             </div>
             <p className="text-slate-500 text-[15px] leading-relaxed max-w-xs mb-4">

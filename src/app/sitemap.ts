@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { getAllServiceSlugs } from "@/lib/services-data";
 
 const BASE_URL = "https://geoaeo.pro";
 
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.updated || post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const servicePages: MetadataRoute.Sitemap = getAllServiceSlugs().map((slug) => ({
+    url: `${BASE_URL}/services/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
   }));
 
   return [
@@ -62,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...servicePages,
     ...blogPosts,
   ];
 }

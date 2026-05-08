@@ -112,3 +112,21 @@ export function getPostBySlug(slug: string): BlogPost | null {
 export function getAllSlugs(): string[] {
   return getAllPosts().map((p) => p.slug);
 }
+
+export function getRelatedPosts(currentSlug: string, count = 3): BlogPostMeta[] {
+  const all = getAllPosts();
+  const current = all.find((p) => p.slug === currentSlug);
+  if (!current) return all.filter((p) => p.slug !== currentSlug).slice(0, count);
+
+  // Score by shared tags + same category
+  const scored = all
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => {
+      const sharedTags = p.tags.filter((t) => current.tags.includes(t)).length;
+      const sameCategory = p.category === current.category ? 2 : 0;
+      return { post: p, score: sharedTags + sameCategory };
+    })
+    .sort((a, b) => b.score - a.score || new Date(b.post.date).getTime() - new Date(a.post.date).getTime());
+
+  return scored.slice(0, count).map((s) => s.post);
+}

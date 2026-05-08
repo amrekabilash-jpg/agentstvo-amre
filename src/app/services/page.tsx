@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { CTASection } from "@/components/sections/CTASection";
 import {
   HoverSlider,
@@ -16,6 +17,15 @@ import { useT } from "@/lib/lang-context";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 /* ── Static meta (images, colors, layout) — language-independent ── */
+
+/* Map service id → individual page slug */
+const SERVICE_SLUGS: Record<string, string> = {
+  seo: "seo-prodvizhenie-almaty",
+  automation: "ai-avtomatizaciya",
+  creative: "kreativ-videoproduction",
+  design: "ui-ux-dizayn",
+  branding: "brending",
+};
 
 const SLIDES_META = [
   { id: "slide-seo", sectionId: "seo", imageUrl: "/images/Programming-cuate.svg" },
@@ -256,6 +266,23 @@ export default function ServicesPage(): React.ReactElement {
                           );
                         })}
                       </div>
+
+                      {/* Link to individual service page */}
+                      {SERVICE_SLUGS[service.id] && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.5, duration: 0.3 }}
+                          className="mt-6"
+                        >
+                          <Link
+                            href={`/services/${SERVICE_SLUGS[service.id]}`}
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-[#5B5FEF] hover:underline underline-offset-2"
+                          >
+                            Подробнее об услуге <ArrowRight size={14} />
+                          </Link>
+                        </motion.div>
+                      )}
                     </motion.div>
 
                     {/* Illustration */}

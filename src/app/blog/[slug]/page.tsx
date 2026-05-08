@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
@@ -84,6 +84,26 @@ function articleSchema(post: Awaited<ReturnType<typeof getPostBySlug>> & object)
   };
 }
 
+function howToSchema(post: Awaited<ReturnType<typeof getPostBySlug>> & object) {
+  // Extract numbered H2/H3 headings that look like steps
+  const stepMatches = post.content.match(/<h[23][^>]*>((?:Шаг\s*\d|Step\s*\d|\d+[\.\)])[^<]*)<\/h[23]>/gi);
+  if (!stepMatches || stepMatches.length < 2) return null;
+
+  const steps = stepMatches.map((m, i) => {
+    const name = m.replace(/<[^>]+>/g, "").trim();
+    return { "@type": "HowToStep", position: i + 1, name };
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: post.title,
+    description: post.excerpt,
+    inLanguage: "ru",
+    step: steps,
+  };
+}
+
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("ru-RU", {
     day: "numeric",
@@ -92,10 +112,26 @@ function formatDate(dateStr: string): string {
   });
 }
 
+/* Category → service page mapping for contextual links */
+const CATEGORY_SERVICE: Record<string, { href: string; label: string }> = {
+  "GEO & SEO": { href: "/services/seo-prodvizhenie-almaty", label: "SEO продвижение" },
+  "GEO & AEO": { href: "/services/seo-prodvizhenie-almaty", label: "SEO / GEO / AEO" },
+  "AI автоматизация": { href: "/services/ai-avtomatizaciya", label: "AI-автоматизация" },
+  "UI/UX Дизайн": { href: "/services/ui-ux-dizayn", label: "UI/UX дизайн" },
+  "Брендинг": { href: "/services/brending", label: "Бренд-айдентика" },
+  "Разработка": { href: "/services/razrabotka-saytov-almaty", label: "Разработка сайтов" },
+  "SMM": { href: "/services/kreativ-videoproduction", label: "Видеопродакшн и SMM" },
+  "Маркетинг": { href: "/services/seo-prodvizhenie-almaty", label: "SEO продвижение" },
+};
+
 export default async function BlogPostPage({ params }: Params): Promise<React.ReactElement> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const related = getRelatedPosts(slug, 3);
+  const serviceLink = CATEGORY_SERVICE[post.category];
+  const howTo = howToSchema(post);
 
   const breadcrumb = breadcrumbSchema([
     { name: "Главная", url: BASE_URL },
@@ -107,6 +143,7 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
     <>
       <JsonLd data={articleSchema(post)} />
       <JsonLd data={breadcrumb} />
+      {howTo && <JsonLd data={howTo} />}
 
       <main>
         {/* Hero */}
@@ -196,8 +233,23 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
               </Link>
             </div>
 
+            {/* Service link — contextual */}
+            {serviceLink && (
+              <div className="mt-8 flex items-center gap-3 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                <span className="text-sm text-[var(--foreground-secondary)]">
+                  Нужна помощь с {serviceLink.label.toLowerCase()}?
+                </span>
+                <Link
+                  href={serviceLink.href}
+                  className="text-sm font-semibold text-[var(--accent-blue)] hover:underline underline-offset-2 whitespace-nowrap"
+                >
+                  Узнать подробнее →
+                </Link>
+              </div>
+            )}
+
             {/* Back link */}
-            <div className="mt-10">
+            <div className="mt-8">
               <Link
                 href="/blog"
                 className="text-sm font-semibold text-[var(--accent-blue)] hover:underline underline-offset-2 flex items-center gap-1"
@@ -207,6 +259,36 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
             </div>
           </div>
         </section>
+
+        {/* Related posts */}
+        {related.length > 0 && (
+          <section className="py-12 bg-lavender">
+            <div className="container-atlantis max-w-4xl">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--foreground-muted)] mb-6">
+                Читайте также
+              </p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {related.map((rel) => (
+                  <Link
+                    key={rel.slug}
+                    href={`/blog/${rel.slug}`}
+                    className="group p-5 rounded-2xl bg-white border border-[var(--border)] hover:border-[var(--accent-blue)] hover:shadow-sm transition-all duration-200 flex flex-col"
+                  >
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-50 text-[#5B5FEF] self-start mb-3">
+                      {rel.category}
+                    </span>
+                    <h3 className="text-sm font-semibold text-[var(--foreground)] group-hover:text-[var(--accent-blue)] transition-colors leading-snug line-clamp-3">
+                      {rel.title}
+                    </h3>
+                    <p className="text-xs text-[var(--foreground-muted)] mt-2">
+                      {rel.readingTime} мин чтения
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

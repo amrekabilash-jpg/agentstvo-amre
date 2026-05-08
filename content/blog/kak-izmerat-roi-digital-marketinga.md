@@ -2,8 +2,8 @@
 title: "Как измерить ROI digital маркетинга: 8 метрик которые реально важны"
 slug: "kak-izmerat-roi-digital-marketinga"
 excerpt: "CAC, LTV, ROAS, конверсия, CPL — объясняем каждую метрику на примерах казахстанского бизнеса. Как настроить Google Analytics 4 и создать дашборд для отслеживания."
-date: "2026-05-07"
-updated: "2026-05-07"
+date: "2026-04-13"
+updated: "2026-04-13"
 author:
   name: "Амре Кабылаш"
   role: "Основатель Агентства"

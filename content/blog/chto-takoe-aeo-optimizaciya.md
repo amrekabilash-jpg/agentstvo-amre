@@ -2,8 +2,8 @@
 title: "AEO: что такое оптимизация под голосовой поиск и AI-ответы"
 slug: "chto-takoe-aeo-optimizaciya"
 excerpt: "AEO (Answer Engine Optimization) — оптимизация под голосовые помощники и AI-ответы. Разбираем чем отличается от SEO, как настроить сайт и получить трафик из Siri, Alexa и Google Assistant."
-date: "2026-05-07"
-updated: "2026-05-07"
+date: "2026-03-23"
+updated: "2026-03-23"
 author:
   name: "Амре Кабылаш"
   role: "Основатель Агентства"

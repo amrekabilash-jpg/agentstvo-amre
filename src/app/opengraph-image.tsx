@@ -10,71 +10,144 @@ export default function Image(): ImageResponse {
     (
       <div
         style={{
-          background: "#ffffff",
+          background: "#0F0A1A",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "64px",
+          padding: "64px 72px",
           fontFamily: "sans-serif",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Top accent bar */}
+        {/* Background glow top-right */}
         <div
           style={{
-            width: "80px",
-            height: "6px",
-            background: "#A855F7",
-            borderRadius: "3px",
+            position: "absolute",
+            top: "-120px",
+            right: "-120px",
+            width: "500px",
+            height: "500px",
+            background: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)",
+            borderRadius: "50%",
           }}
         />
 
-        {/* Main content */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div
-            style={{
-              fontSize: "72px",
-              fontWeight: 700,
-              color: "#111827",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Агентство
-          </div>
-          <div
-            style={{
-              fontSize: "28px",
-              color: "#6B7280",
-              fontWeight: 400,
-              lineHeight: 1.4,
-            }}
-          >
-            Цифровое агентство в Алматы
-          </div>
+        {/* Background glow bottom-left */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-80px",
+            left: "-80px",
+            width: "350px",
+            height: "350px",
+            background: "radial-gradient(circle, rgba(236,72,153,0.15) 0%, transparent 70%)",
+            borderRadius: "50%",
+          }}
+        />
+
+        {/* Top row: logo + domain */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Logo pill */}
           <div
             style={{
               display: "flex",
+              alignItems: "center",
               gap: "12px",
-              marginTop: "8px",
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.12)",
+              padding: "10px 22px",
+              borderRadius: "100px",
             }}
           >
-            {["SEO / GEO", "Дизайн", "AI-автоматизация"].map((tag) => (
-              <div
-                key={tag}
-                style={{
-                  background: "#F3F4F6",
-                  color: "#374151",
-                  fontSize: "18px",
-                  fontWeight: 600,
-                  padding: "8px 20px",
-                  borderRadius: "8px",
-                }}
-              >
-                {tag}
-              </div>
-            ))}
+            <div
+              style={{
+                width: "10px",
+                height: "10px",
+                background: "#A855F7",
+                borderRadius: "50%",
+              }}
+            />
+            <span style={{ color: "#ffffff", fontSize: "18px", fontWeight: 600 }}>
+              Агентство
+            </span>
+          </div>
+
+          {/* Domain */}
+          <span
+            style={{
+              color: "rgba(255,255,255,0.35)",
+              fontSize: "16px",
+              fontWeight: 400,
+              letterSpacing: "0.04em",
+            }}
+          >
+            geoaeo.pro
+          </span>
+        </div>
+
+        {/* Main headline */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "14px",
+              marginBottom: "4px",
+            }}
+          >
+            <div
+              style={{
+                width: "40px",
+                height: "3px",
+                background: "linear-gradient(90deg, #A855F7, #EC4899)",
+                borderRadius: "2px",
+              }}
+            />
+            <span
+              style={{
+                color: "#A855F7",
+                fontSize: "14px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+              }}
+            >
+              Цифровое агентство · Алматы, Казахстан
+            </span>
+          </div>
+
+          <div
+            style={{
+              fontSize: "80px",
+              fontWeight: 800,
+              color: "#ffffff",
+              lineHeight: 1.0,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            SEO. Дизайн.
+          </div>
+          <div
+            style={{
+              fontSize: "80px",
+              fontWeight: 800,
+              lineHeight: 1.0,
+              letterSpacing: "-0.03em",
+              background: "linear-gradient(90deg, #A855F7 0%, #EC4899 100%)",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            AI-автоматизация.
           </div>
         </div>
 
@@ -83,21 +156,42 @@ export default function Image(): ImageResponse {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "flex-end",
           }}
         >
-          <div style={{ fontSize: "20px", color: "#9CA3AF" }}>geoaeo.pro</div>
+          {/* Tagline */}
           <div
             style={{
-              background: "#A855F7",
-              color: "#ffffff",
-              fontSize: "20px",
-              fontWeight: 600,
-              padding: "12px 28px",
-              borderRadius: "10px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
             }}
           >
-            Первая консультация бесплатно
+            <span
+              style={{ color: "rgba(255,255,255,0.5)", fontSize: "18px" }}
+            >
+              Возвращаем вам 6 часов каждый день.
+            </span>
+            <span
+              style={{ color: "rgba(255,255,255,0.3)", fontSize: "15px" }}
+            >
+              Первая консультация — бесплатно
+            </span>
+          </div>
+
+          {/* CTA button */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #A855F7, #EC4899)",
+              color: "#ffffff",
+              fontSize: "18px",
+              fontWeight: 700,
+              padding: "16px 36px",
+              borderRadius: "12px",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Обсудить проект →
           </div>
         </div>
       </div>
