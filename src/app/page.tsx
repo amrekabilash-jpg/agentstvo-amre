@@ -6,6 +6,7 @@ import { Stats } from "@/components/sections/Stats";
 import { Cases } from "@/components/sections/Cases";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { RecentPosts } from "@/components/sections/RecentPosts";
+import { HomeFaq } from "@/components/sections/HomeFaq";
 import { CTA } from "@/components/sections/CTA";
 import { FloatingContact } from "@/components/ui/FloatingContact";
 
@@ -20,6 +21,7 @@ export default function Home(): React.ReactElement {
       <Cases />
       <WhyUs />
       <RecentPosts />
+      <HomeFaq />
       <CTA />
       <FloatingContact />
     </>

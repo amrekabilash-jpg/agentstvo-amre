@@ -14,10 +14,10 @@ interface StatItem {
 }
 
 const statsValues = [
-  { value: 120, color: "text-[#5B5FEF]" },
+  { value: 10, color: "text-[#5B5FEF]" },
   { value: 6, color: "text-[#E84393]" },
-  { value: 98, color: "text-[#5B5FEF]" },
-  { value: 3, color: "text-[#E84393]" },
+  { value: 90, color: "text-[#5B5FEF]" },
+  { value: 2, color: "text-[#E84393]" },
 ];
 
 function AnimatedCounter({

@@ -14,6 +14,7 @@ import {
   organizationSchema,
   localBusinessSchema,
   webSiteSchema,
+  faqSchema,
 } from "@/components/seo/JsonLd";
 
 const montserrat = Montserrat({
@@ -115,6 +116,7 @@ export default function RootLayout({
         <JsonLd data={organizationSchema} />
         <JsonLd data={localBusinessSchema} />
         <JsonLd data={webSiteSchema} />
+        <JsonLd data={faqSchema} />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider>
