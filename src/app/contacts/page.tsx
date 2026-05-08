@@ -25,8 +25,8 @@ const channelIcons = [
   </svg>,
 ];
 
-const channelHrefs = ["mailto:amrekabilash@gmail.com", null, null];
-const channelValues = ["amrekabilash@gmail.com", "Скоро", null];
+const channelHrefs = ["mailto:hello@geoaeo.pro", null, null];
+const channelValues = ["hello@geoaeo.pro", "Скоро", null];
 const channelColors = ["pink", "indigo", "emerald"] as const;
 
 const colorMap = {
@@ -129,7 +129,7 @@ export default function ContactsPage(): React.ReactElement {
       setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "unknown";
-      setFormError(`Ошибка: ${msg}. Напишите нам: amrekabilash@gmail.com`);
+      setFormError(`Ошибка: ${msg}. Напишите нам: hello@geoaeo.pro`);
     }
   }
 

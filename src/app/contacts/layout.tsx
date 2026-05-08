@@ -4,7 +4,7 @@ import { JsonLd, faqSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Контакты — Связаться с агентством в Алматы",
   description:
-    "Свяжитесь с цифровым агентством Агентство. Алматы, Казахстан. Телефон: +7 701 728 22 36, email: hello@agentsvo.com. WhatsApp, форма обратной связи. Первая консультация бесплатно.",
+    "Свяжитесь с цифровым агентством Агентство. Алматы, Казахстан. Телефон: +7 701 728 22 36, email: hello@geoaeo.pro. WhatsApp, форма обратной связи. Первая консультация бесплатно.",
   keywords: [
     "контакты Агентство",
     "digital агентство Алматы контакты",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Контакты | Агентство — Цифровое агентство",
-    description: "Свяжитесь с нами: +7 701 728 22 36, hello@agentsvo.com. Первая консультация бесплатно.",
+    description: "Свяжитесь с нами: +7 701 728 22 36, hello@geoaeo.pro. Первая консультация бесплатно.",
     url: "https://geoaeo.pro/contacts",
     type: "website",
   },

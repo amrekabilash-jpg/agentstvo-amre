@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Условия использования",
   description: "Условия использования сайта и услуг цифрового агентства Агентство.",
-  alternates: { canonical: "https://agentsvo.com/terms" },
+  alternates: { canonical: "https://geoaeo.pro/terms" },
 };
 
 export default function TermsPage(): React.ReactElement {
@@ -17,7 +17,7 @@ export default function TermsPage(): React.ReactElement {
           <div className="space-y-8 text-body leading-relaxed">
             <section>
               <h2 className="text-h3 mb-3">1. Общие положения</h2>
-              <p>Настоящие Условия регулируют использование сайта agentsvo.com и услуг, предоставляемых ТОО «Агентство» (далее — «Компания»). Используя сайт, вы соглашаетесь с данными условиями.</p>
+              <p>Настоящие Условия регулируют использование сайта geoaeo.pro и услуг, предоставляемых ТОО «Агентство» (далее — «Компания»). Используя сайт, вы соглашаетесь с данными условиями.</p>
             </section>
 
             <section>
@@ -53,7 +53,7 @@ export default function TermsPage(): React.ReactElement {
 
             <section>
               <h2 className="text-h3 mb-3">7. Контакты</h2>
-              <p>Email: <a href="mailto:hello@agentsvo.com" className="text-[var(--accent-blue)] hover:underline">hello@agentsvo.com</a></p>
+              <p>Email: <a href="mailto:hello@geoaeo.pro" className="text-[var(--accent-blue)] hover:underline">hello@geoaeo.pro</a></p>
               <p>Телефон: <a href="tel:+77017282236" className="text-[var(--accent-blue)] hover:underline">+7 701 728 22 36</a></p>
               <p>Адрес: Казахстан, г. Алматы</p>
             </section>

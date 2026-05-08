@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
   description: "Политика конфиденциальности цифрового агентства Агентство. Обработка персональных данных.",
-  alternates: { canonical: "https://agentsvo.com/privacy" },
+  alternates: { canonical: "https://geoaeo.pro/privacy" },
 };
 
 export default function PrivacyPage(): React.ReactElement {
@@ -17,7 +17,7 @@ export default function PrivacyPage(): React.ReactElement {
           <div className="space-y-8 text-body leading-relaxed">
             <section>
               <h2 className="text-h3 mb-3">1. Общие положения</h2>
-              <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта agentsvo.com (далее — «Сайт»), принадлежащего ТОО «Агентство» (далее — «Компания»).</p>
+              <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта geoaeo.pro (далее — «Сайт»), принадлежащего ТОО «Агентство» (далее — «Компания»).</p>
             </section>
 
             <section>
@@ -60,13 +60,13 @@ export default function PrivacyPage(): React.ReactElement {
 
             <section>
               <h2 className="text-h3 mb-3">7. Права пользователя</h2>
-              <p>Вы вправе запросить информацию о ваших персональных данных, их изменение или удаление, направив запрос на <a href="mailto:hello@agentsvo.com" className="text-[var(--accent-blue)] hover:underline">hello@agentsvo.com</a>.</p>
+              <p>Вы вправе запросить информацию о ваших персональных данных, их изменение или удаление, направив запрос на <a href="mailto:hello@geoaeo.pro" className="text-[var(--accent-blue)] hover:underline">hello@geoaeo.pro</a>.</p>
             </section>
 
             <section>
               <h2 className="text-h3 mb-3">8. Контакты</h2>
               <p>По вопросам обработки персональных данных:</p>
-              <p className="mt-2">Email: <a href="mailto:hello@agentsvo.com" className="text-[var(--accent-blue)] hover:underline">hello@agentsvo.com</a></p>
+              <p className="mt-2">Email: <a href="mailto:hello@geoaeo.pro" className="text-[var(--accent-blue)] hover:underline">hello@geoaeo.pro</a></p>
               <p>Телефон: <a href="tel:+77017282236" className="text-[var(--accent-blue)] hover:underline">+7 701 728 22 36</a></p>
               <p>Адрес: Казахстан, г. Алматы</p>
             </section>

@@ -54,21 +54,22 @@ export function LeadForm({
     }
 
     try {
-      const body = new URLSearchParams({
-        "form-name": "lead-form",
-        name: cleanName,
-        email: cleanEmail,
-        phone: cleanPhone,
-        source,
-      }).toString();
-
-      const res = await fetch("/api/submit", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "4b47bcf9-417b-4e1e-9b3d-232164e19c10",
+          subject: `🚀 Новая заявка от ${cleanName} — geoaeo.pro`,
+          name: cleanName,
+          email: cleanEmail,
+          phone: cleanPhone,
+          source,
+          botcheck: "",
+        }),
       });
 
-      if (!res.ok) throw new Error("Network error");
+      const data = await res.json() as { success: boolean };
+      if (!data.success) throw new Error("Web3Forms error");
       setSubmitted(true);
     } catch {
       setError("Ошибка отправки. Напишите нам напрямую: hello@geoaeo.pro");
