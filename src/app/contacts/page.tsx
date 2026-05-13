@@ -111,21 +111,21 @@ export default function ContactsPage(): React.ReactElement {
     }
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "4b47bcf9-417b-4e1e-9b3d-232164e19c10",
-          subject: `📩 Новое сообщение от ${cleanName} — geoaeo.pro`,
-          name: cleanName,
-          email: cleanEmail,
-          message: cleanMessage,
-          botcheck: "",
-        }),
+      const params = new URLSearchParams({
+        "form-name": "contact-form",
+        name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
       });
 
-      const data = await res.json() as { success: boolean; message?: string };
-      if (!data.success) throw new Error(data.message || "Web3Forms rejected");
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
+
+      const data = await res.json() as { success?: boolean; error?: string };
+      if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
       setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "unknown";

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 
-const RECIPIENT = "amrekabilash@gmail.com";
+const RECIPIENT = "hello@geoaeo.pro";
 
 const FORM_IDS: Record<string, string> = {
   "contact-form": "69d90ad6ac37f50008d2ee59",
@@ -54,10 +55,18 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const formData: Record<string, string> = { name, email, phone, message, source };
 
     // Send email + save to Netlify Forms in parallel
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
+    const smtpOptions = {
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      requireTLS: true,
       auth: { user: gmailUser, pass: gmailPass },
-    });
+      family: 4,
+      connectionTimeout: 15000,
+      greetingTimeout: 15000,
+      socketTimeout: 30000,
+    } as SMTPTransport.Options;
+    const transporter = nodemailer.createTransport(smtpOptions);
 
     const subject =
       formName === "contact-form"
