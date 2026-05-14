@@ -258,6 +258,162 @@ export const servicesSchema = {
   },
 };
 
+
+/* ── HowTo Schema (AEO) for Blog Posts ── */
+
+/* HowTo: n8n Automation Setup (5 steps) */
+export function howToN8nAutomationSchema(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Как настроить n8n для автоматизации бизнес-процессов",
+    description: "Пошаговое руководство по внедрению n8n для автоматизации повторяющихся задач в вашем бизнесе.",
+    image: "https://geoaeo.pro/images/blog/n8n-setup.svg",
+    estimatedCost: {
+      "@type": "PriceSpecification",
+      currency: "KZT",
+      price: "0"
+    },
+    totalTime: "PT2H",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Настройка автоматизации обработки лидов",
+        text: "Создайте workflow в n8n который автоматически получает новые заявки из форм вашего сайта и отправляет их в CRM. Цель: сократить время обработки лида с 30 минут до 1 минуты."
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Генерация еженедельных отчётов",
+        text: "Настройте автоматическое формирование отчётов каждый понедельник. n8n сможет собрать данные из разных источников и отправить единый отчёт."
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Создание напоминаний и уведомлений",
+        text: "Настройте систему напоминаний для важных дат. Отправляйте уведомления в WhatsApp, Telegram или Email."
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Мониторинг и алерты системы",
+        text: "Создайте workflow который проверяет критические метрики и отправляет алерты при проблемах."
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Синхронизация данных между системами",
+        text: "Настройте двухстороннюю синхронизацию данных между вашей CRM, счётной системой и маркетинговой платформой."
+      }
+    ]
+  };
+}
+
+/* HowTo: Google AI Overview Optimization (7 steps) */
+export function howToGoogleAIOverviewSchema(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Как попасть в Google AI Overview: пошаговое руководство",
+    description: "7 шагов для оптимизации контента под Google AI Overview и появления в AI-сводках поиска.",
+    image: "https://geoaeo.pro/images/blog/google-ai-overview.svg",
+    estimatedCost: {
+      "@type": "PriceSpecification",
+      currency: "KZT",
+      price: "0"
+    },
+    totalTime: "PT4W",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Исследование вопросов целевой аудитории",
+        text: "Используйте AnswerThePublic, Google People Also Ask и Яндекс.Вордстат для сбора 30-50 конкретных вопросов вашей аудитории."
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Создание ответо-центричного контента",
+        text: "Структурируйте контент так, чтобы каждый раздел был вопросом + конкретный ответ в первых 2-3 предложениях."
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Добавление FAQPage Schema разметки",
+        text: "Внедрите FAQPage Schema с вашими основными вопросами и ответами."
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Использование HowTo Schema для инструкций",
+        text: "Пошаговые руководства с HowTo Schema попадают в AI Overview значительно чаще."
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Оптимизация структуры страницы",
+        text: "Используйте иерархию заголовков (H1 → H2 → H3), таблицы для сравнений, маркированные списки."
+      },
+      {
+        "@type": "HowToStep",
+        position: 6,
+        name: "Улучшение Core Web Vitals",
+        text: "Оптимизируйте скорость загрузки сайта до LCP < 2.5 сек, FID < 100 мс, CLS < 0.1."
+      },
+      {
+        "@type": "HowToStep",
+        position: 7,
+        name: "Наращивание E-E-A-T сигналов",
+        text: "Добавьте биографию автора с достижениями, опубликуйте кейсы с конкретными цифрами."
+      }
+    ]
+  };
+}
+
+/* HowTo: Local SEO for Almaty (4 steps) */
+export function howToLocalSEOSchema(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Как улучшить локальный SEO для бизнеса в Алматы",
+    description: "4-недельный план локальной SEO оптимизации для казахстанского бизнеса.",
+    image: "https://geoaeo.pro/images/blog/local-seo-almaty.svg",
+    estimatedCost: {
+      "@type": "PriceSpecification",
+      currency: "KZT",
+      price: "0"
+    },
+    totalTime: "P4W",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Исследование локальных ключевых слов",
+        text: "Найдите 20-30 локальных ключевых слов с добавлением 'Алматы', 'в Алматы', 'Алматы 2026'."
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Оптимизация Google My Business профиля",
+        text: "Заполните все поля в Google My Business: полное описание, фото, часы работы (все 7 дней)."
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Создание локальных цитаций в казахстанских директориях",
+        text: "Подайте информацию о вашей компании в 10+ казахстанских директориев: Yell.kz, 2GIS, Avvo.kz, Bir.agency."
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Мониторинг локальных рейтингов и отзывов",
+        text: "Еженедельно проверяйте позиции в Google Maps. Поощряйте клиентов оставлять отзывы."
+      }
+    ]
+  };
+}
+
 /* ── Breadcrumb helpers (AEO) ── */
 export function breadcrumbSchema(
   items: { name: string; url: string }[]
