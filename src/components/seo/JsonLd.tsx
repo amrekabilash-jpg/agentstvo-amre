@@ -38,6 +38,11 @@ export const organizationSchema = {
       addressCountry: "KZ",
     },
   },
+  founder: {
+    "@type": "Person",
+    "@id": "https://geoaeo.pro/#founder",
+    name: "Амре Кабылаш",
+  },
   email: "hello@geoaeo.pro",
   sameAs: ["https://geoaeo.pro"],
   telephone: "+77017282236",
@@ -77,12 +82,26 @@ export const localBusinessSchema = {
     latitude: 43.238949,
     longitude: 76.945465,
   },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "18:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
   priceRange: "$$",
   serviceArea: {
     "@type": "GeoCircle",
@@ -100,6 +119,48 @@ export const localBusinessSchema = {
     { "@type": "Country", name: "Узбекистан" },
     { "@type": "Country", name: "Кыргызстан" },
   ],
+};
+
+/* ── Founder Schema (Person) for E-E-A-T ── */
+export const founderSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://geoaeo.pro/#founder",
+  name: "Амре Кабылаш",
+  image: "https://geoaeo.pro/images/amre-profile.svg",
+  jobTitle: "Основатель и Стратег",
+  email: "hello@geoaeo.pro",
+  telephone: "+77017282236",
+  url: "https://geoaeo.pro/about",
+  sameAs: [
+    "https://geoaeo.pro/about"
+  ],
+  knowsAbout: [
+    "SEO Optimization",
+    "GEO (Generative Engine Optimization)",
+    "AEO (Answer Engine Optimization)",
+    "AI Automation",
+    "Digital Marketing",
+    "Schema.org",
+    "Content Strategy",
+    "Link Building",
+    "Technical SEO",
+  ],
+  workLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Алматы",
+      addressCountry: "KZ",
+    },
+  },
+  affiliation: {
+    "@type": "Organization",
+    name: "Агентство",
+    url: "https://geoaeo.pro",
+  },
+  description:
+    "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
 };
 
 /* ── WebSite (AEO — Search Actions) ── */

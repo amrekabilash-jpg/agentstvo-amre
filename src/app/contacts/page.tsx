@@ -221,6 +221,54 @@ export default function ContactsPage(): React.ReactElement {
       </section>
 
       {/* Form Section */}
+
+      {/* Founder Contact Section */}
+      <section className="py-12 px-4">
+        <div className="container-atlantis">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="/images/amre-profile.jpg"
+                alt="Амре Кабылаш"
+                className="w-full rounded-xl object-cover shadow-lg"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h3 className="text-2xl font-bold mb-4 text-slate-900">Свяжитесь с Амре</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%.
+              </p>
+              <div className="space-y-4">
+                <a 
+                  href="mailto:hello@geoaeo.pro" 
+                  className="flex items-center gap-3 text-[#5B5FEF] hover:text-indigo-700 font-semibold"
+                >
+                  <span>Email:</span>
+                  hello@geoaeo.pro
+                </a>
+                <a 
+                  href="tel:+77017282236" 
+                  className="flex items-center gap-3 text-[#5B5FEF] hover:text-indigo-700 font-semibold"
+                >
+                  <span>Телефон:</span>
+                  +7 (701) 728-22-36
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-10 lg:py-14 bg-slate-50/60 dark:bg-[#1A1A2E]/60">
         <div className="container-atlantis">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">

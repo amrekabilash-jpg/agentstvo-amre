@@ -219,6 +219,25 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
+
+            {/* Author Info Section */}
+            <div className="mt-12 pt-8 border-t border-[var(--border)]">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/amre-profile.jpg"
+                  alt="Амре Кабылаш"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-[var(--foreground)]">Амре Кабылаш</h4>
+                  <p className="text-sm text-[var(--foreground-secondary)] mb-2">Основатель, Эксперт в SEO/GEO/AEO</p>
+                  <p className="text-sm text-[var(--foreground-secondary)] leading-relaxed">
+                    Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* CTA */}
             <div className="mt-16 p-8 rounded-2xl bg-lavender border border-[var(--border)] text-center">
               <h2 className="text-h3 mb-3">

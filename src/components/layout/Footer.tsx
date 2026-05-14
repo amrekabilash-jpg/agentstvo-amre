@@ -80,6 +80,18 @@ export function Footer(): React.ReactElement {
         </div>
       </div>
 
+
+      {/* Founder info */}
+      <div className="border-t border-slate-200 dark:border-white/10">
+        <div className="container-atlantis py-8">
+          <p className="text-sm text-slate-600 font-medium mb-2">
+            Создано Амре Кабылашом — экспертом в SEO, GEO и AI.
+          </p>
+          <p className="text-sm text-slate-500">
+            hello@geoaeo.pro | +7 (701) 728-22-36
+          </p>
+        </div>
+      </div>
       {/* Bottom bar */}
       <div className="border-t border-slate-200 dark:border-white/10">
         <div className="container-atlantis py-5 flex flex-col sm:flex-row justify-between items-center gap-3">

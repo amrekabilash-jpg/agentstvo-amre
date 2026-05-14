@@ -13,6 +13,7 @@ import {
   JsonLd,
   organizationSchema,
   localBusinessSchema,
+  founderSchema,
   webSiteSchema,
   faqSchema,
 } from "@/components/seo/JsonLd";
@@ -115,6 +116,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={organizationSchema} />
         <JsonLd data={localBusinessSchema} />
+        <JsonLd data={founderSchema} />
         <JsonLd data={webSiteSchema} />
         <JsonLd data={faqSchema} />
       </head>

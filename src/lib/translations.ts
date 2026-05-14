@@ -87,7 +87,15 @@ const translations = {
       label: "Люди",
       heading: "Наша команда",
       members: [
-        { name: "Амре", role: "CEO & Стратег" },
+        {
+          name: "Амре",
+          role: "CEO & Стратег",
+          bio: "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
+          photo: "/images/amre-profile.jpg",
+          email: "hello@geoaeo.pro",
+          phone: "+77017282236",
+          expertise: ["SEO", "GEO", "AEO", "AI Automation", "Digital Strategy"],
+        },
         { name: "Арман К.", role: "Lead Developer" },
         { name: "Артур", role: "AI Engineer" },
         { name: "Регина", role: "UI/UX Designer" },
