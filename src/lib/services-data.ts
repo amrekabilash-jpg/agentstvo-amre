@@ -30,12 +30,95 @@ const BASE = "https://www.geoaeo.pro";
 
 export const servicesData: ServiceData[] = [
   {
+    slug: "geo-aeo-optimizaciya",
+    title: "GEO / AEO оптимизация",
+    headline: "GEO и AEO оптимизация — ваш бизнес в ответах ChatGPT и Google AI",
+    badge: "GEO/AEO",
+    color: "violet",
+    metaTitle: "GEO и AEO оптимизация — продвижение в ChatGPT, Perplexity, AI Overview | GeoAEO",
+    metaDescription:
+      "GEO/AEO-оптимизация в Алматы и по СНГ: выводим бизнес в ответы ChatGPT, Perplexity, Google AI Overview и Gemini. Аудит AI-видимости бесплатно. От 120 000 ₸/мес.",
+    keywords: [
+      "GEO оптимизация",
+      "AEO оптимизация",
+      "Generative Engine Optimization",
+      "Answer Engine Optimization",
+      "продвижение в ChatGPT",
+      "продвижение в Perplexity",
+      "попасть в Google AI Overview",
+      "AI-видимость бренда",
+    ],
+    description:
+      "Ваши клиенты уже спрашивают ChatGPT, Perplexity и Google, кого выбрать. GEO/AEO-оптимизация делает так, чтобы AI-системы называли и рекомендовали именно ваш бизнес — раньше конкурентов.",
+    features: [
+      {
+        title: "Аудит AI-видимости",
+        description:
+          "Проверяем, как ChatGPT, Perplexity, Gemini, Claude и Google AI Overview отвечают на вопросы вашей ниши: упоминают ли вас, что говорят о конкурентах и почему выбирают их.",
+      },
+      {
+        title: "AEO — контент, который цитируют",
+        description:
+          "Перестраиваем ключевые страницы под формат «вопрос — прямой ответ»: FAQ-блоки, структура, факты и цифры, которые AI-модели берут в свои ответы.",
+      },
+      {
+        title: "Schema.org и машиночитаемый слой",
+        description:
+          "Внедряем разметку Organization, Service, FAQPage, HowTo и llms.txt — чтобы поисковые роботы и AI-краулеры точно понимали, кто вы и что предлагаете.",
+      },
+      {
+        title: "Упоминания и цитируемость (Entity Building)",
+        description:
+          "Строим «цифровой след» бренда: карточки в справочниках, отраслевые публикации, консистентные данные компании — источники, на которые опираются AI-модели.",
+      },
+      {
+        title: "Локальное GEO-доминирование",
+        description:
+          "Настраиваем видимость в локальных AI-запросах «кто лучший в Алматы»: Google Business Profile, 2GIS, локальная разметка и отзывы.",
+      },
+      {
+        title: "Мониторинг AI-видимости",
+        description:
+          "Ежемесячно замеряем, как меняются ответы AI-систем по вашим ключевым вопросам, и адаптируем стратегию под обновления моделей.",
+      },
+    ],
+    process: [
+      { step: "01", title: "Аудит", description: "Замеряем текущую AI-видимость: 20+ вопросов вашей ниши в 5 AI-системах, анализ конкурентов" },
+      { step: "02", title: "Стратегия", description: "Карта контента и упоминаний: какие страницы, ответы и источники нужны, чтобы AI выбирал вас" },
+      { step: "03", title: "Внедрение", description: "Оптимизация страниц, разметка, FAQ, llms.txt, карточки компании и первые внешние упоминания" },
+      { step: "04", title: "Рост и мониторинг", description: "Ежемесячные замеры ответов AI, новый контент и адаптация под обновления моделей" },
+    ],
+    faqs: [
+      {
+        q: "Что такое GEO и AEO простыми словами?",
+        a: "GEO (Generative Engine Optimization) — оптимизация бизнеса под генеративные AI-поисковики: ChatGPT, Perplexity, Gemini. AEO (Answer Engine Optimization) — оптимизация контента под системы прямых ответов, включая Google AI Overview. Вместе они отвечают за то, чтобы AI называл ваш бренд, когда клиент спрашивает «кого выбрать».",
+      },
+      {
+        q: "Сколько стоит GEO/AEO-оптимизация?",
+        a: "GEO/AEO-продвижение начинается от 120 000 тенге в месяц. Комплекс SEO + GEO/AEO — от 150 000 тенге в месяц. Разовый аудит AI-видимости с планом работ — от 60 000 тенге. Первую консультацию и экспресс-проверку видимости в ChatGPT проводим бесплатно.",
+      },
+      {
+        q: "Когда появятся результаты?",
+        a: "Первые изменения в ответах AI-систем обычно видны через 4–8 недель после внедрения: модели переобходят сайты и обновляют источники быстрее классического SEO. Устойчивое присутствие в ответах по коммерческим вопросам ниши — 3–6 месяцев.",
+      },
+      {
+        q: "Чем GEO/AEO отличается от обычного SEO?",
+        a: "SEO борется за позиции в списке ссылок, GEO/AEO — за попадание в сам ответ. AI-системы выбирают источники по структуре контента, машиночитаемой разметке, упоминаниям бренда и консистентности данных, а не только по ссылочной массе. Лучший результат даёт связка SEO + GEO/AEO — мы делаем обе.",
+      },
+      {
+        q: "Можно ли измерить эффект?",
+        a: "Да. Мы фиксируем базовый замер: 20+ реальных вопросов вашей ниши в ChatGPT, Perplexity, Gemini и Google AI Overview — и ежемесячно показываем, в скольких ответах появился ваш бренд, с какой формулировкой и вместо каких конкурентов. Плюс отчёт Bing AI Performance и рост переходов из AI-систем в аналитике.",
+      },
+    ],
+    relatedSlugs: ["seo-prodvizhenie-almaty", "ai-avtomatizaciya", "razrabotka-saytov-almaty"],
+  },
+  {
     slug: "seo-prodvizhenie-almaty",
     title: "SEO / GEO / AEO",
     headline: "SEO продвижение и GEO-оптимизация в Алматы",
     badge: "SEO",
     color: "indigo",
-    metaTitle: "SEO продвижение сайтов Алматы — GEO и AEO оптимизация | Агентство",
+    metaTitle: "SEO продвижение сайтов Алматы — GEO и AEO оптимизация | GeoAEO",
     metaDescription:
       "SEO продвижение сайтов в Алматы и Казахстане. GEO-оптимизация под AI-поисковики (ChatGPT, Perplexity), AEO, техническое SEO, линкбилдинг. Первая консультация бесплатно.",
     keywords: [
@@ -108,7 +191,7 @@ export const servicesData: ServiceData[] = [
         a: "Гарантия конкретных позиций невозможна — алгоритмы Google постоянно меняются. Но мы гарантируем профессиональную работу, прозрачную отчётность и рост органического трафика.",
       },
     ],
-    relatedSlugs: ["ai-avtomatizaciya", "razrabotka-saytov-almaty", "ui-ux-dizayn"],
+    relatedSlugs: ["geo-aeo-optimizaciya", "ai-avtomatizaciya", "razrabotka-saytov-almaty"],
   },
   {
     slug: "ai-avtomatizaciya",
@@ -116,7 +199,7 @@ export const servicesData: ServiceData[] = [
     headline: "AI-автоматизация бизнеса в Казахстане",
     badge: "AI",
     color: "emerald",
-    metaTitle: "AI-автоматизация бизнеса в Алматы — чатботы, AI-агенты, n8n | Агентство",
+    metaTitle: "AI-автоматизация бизнеса в Алматы — чатботы, AI-агенты, n8n | GeoAEO",
     metaDescription:
       "Автоматизируем бизнес-процессы с помощью AI в Алматы и Казахстане. Чат-боты для Telegram и WhatsApp, AI-агенты, n8n интеграции, CRM-автоматизация. Освобождаем 6 часов в день.",
     keywords: [
@@ -189,7 +272,7 @@ export const servicesData: ServiceData[] = [
         a: "Да, мы интегрируем AI-системы с amoCRM, Bitrix24, RetailCRM, Kommo и другими CRM. Также работаем с любыми системами через API.",
       },
     ],
-    relatedSlugs: ["seo-prodvizhenie-almaty", "razrabotka-saytov-almaty", "ui-ux-dizayn"],
+    relatedSlugs: ["geo-aeo-optimizaciya", "seo-prodvizhenie-almaty", "razrabotka-saytov-almaty"],
   },
   {
     slug: "ui-ux-dizayn",
@@ -359,7 +442,7 @@ export const servicesData: ServiceData[] = [
     headline: "Разработка сайтов в Алматы и Казахстане",
     badge: "Разработка",
     color: "violet",
-    metaTitle: "Разработка сайтов Алматы — создание сайта под ключ | Агентство geoaeo.pro",
+    metaTitle: "Разработка сайтов Алматы — создание сайта под ключ | GeoAEO",
     metaDescription:
       "Разработка сайтов в Алматы под ключ: лендинги, корпоративные сайты, интернет-магазины. Быстро, качественно, с SEO с нуля. Создание сайта в Казахстане от 150 000 тенге.",
     keywords: [

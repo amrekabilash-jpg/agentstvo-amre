@@ -1,9 +1,9 @@
 ---
-title: "Что такое GEO-оптимизация и почему это важнее SEO в 2025 году"
+title: "Что такое GEO-оптимизация и почему это важнее SEO в 2026 году"
 slug: "chto-takoe-geo-optimizaciya"
 excerpt: "GEO (Generative Engine Optimization) — новый стандарт видимости бизнеса в эпоху AI-поиска. Разбираем чем GEO отличается от SEO и как начать внедрять уже сейчас."
 date: "2025-03-15"
-updated: "2025-04-10"
+updated: "2026-07-12"
 author:
   name: "Амре Кабылаш"
   role: "Основатель Агентства"
@@ -14,7 +14,7 @@ featuredImage:
   alt: "GEO-оптимизация — новый стандарт видимости в AI-поиске"
 draft: false
 seo:
-  title: "Что такое GEO-оптимизация: полное руководство 2025"
+  title: "Что такое GEO-оптимизация: полное руководство 2026"
   description: "GEO (Generative Engine Optimization) — оптимизация для AI-поиска ChatGPT, Perplexity, Google AI Overview. Узнайте как попасть в ответы AI-систем."
   canonical: "https://www.geoaeo.pro/blog/chto-takoe-geo-optimizaciya"
 ---

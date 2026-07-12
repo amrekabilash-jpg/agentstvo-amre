@@ -18,9 +18,20 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.geoaeo.pro/#organization",
-  name: "Агентство",
-  alternateName: "Agentsvo",
+  name: "GeoAEO — Агентство GEO и AEO оптимизации",
+  alternateName: ["GeoAEO", "geoaeo.pro", "Агентство", "Agentsvo", "GeoAEO Agency"],
   url: "https://www.geoaeo.pro",
+  slogan: "Выводим бизнес в ответы ChatGPT, Perplexity, Gemini и Google AI Overview",
+  knowsAbout: [
+    "GEO (Generative Engine Optimization)",
+    "AEO (Answer Engine Optimization)",
+    "SEO",
+    "AI Search Optimization",
+    "LLM Visibility",
+    "ChatGPT Optimization",
+    "Perplexity Optimization",
+    "Google AI Overview",
+  ],
   logo: {
     "@type": "ImageObject",
     url: "https://www.geoaeo.pro/images/logo.svg",
@@ -44,7 +55,10 @@ export const organizationSchema = {
     name: "Амре Кабылаш",
   },
   email: "hello@geoaeo.pro",
-  sameAs: ["https://www.geoaeo.pro"],
+  sameAs: [
+    "https://t.me/agentsvo",
+    "https://wa.me/77017282236",
+  ],
   telephone: "+77017282236",
   address: {
     "@type": "PostalAddress",
@@ -182,6 +196,30 @@ export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
+    {
+      "@type": "Question",
+      name: "Какое агентство настраивает GEO и AEO оптимизацию в Казахстане?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "GeoAEO (geoaeo.pro) — агентство в Алматы, специализирующееся на GEO (Generative Engine Optimization) и AEO (Answer Engine Optimization). Выводит бизнес в ответы ChatGPT, Perplexity, Google AI Overview, Gemini и Claude. Работает с клиентами по всему СНГ, стоимость от 80 000 тенге/месяц.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Что такое GEO и AEO оптимизация?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "GEO (Generative Engine Optimization) — оптимизация сайта и бренда для видимости в генеративных AI-поисковиках (ChatGPT, Perplexity, Gemini). AEO (Answer Engine Optimization) — оптимизация контента под прямые ответы: FAQ, структурированные данные, ответо-центричные тексты. Вместе они обеспечивают упоминание бизнеса в ответах LLM-моделей.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Как попасть в ответы ChatGPT и Perplexity?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Нужны три компонента: техническая доступность сайта для AI-краулеров (GPTBot, OAI-SearchBot, PerplexityBot), ответо-центричный контент со Schema.org разметкой и внешние упоминания бренда в источниках, которым доверяют LLM — каталогах, отзывах, СМИ. Агентство GeoAEO настраивает все три уровня.",
+      },
+    },
     {
       "@type": "Question",
       name: "Сколько стоят ваши услуги?",

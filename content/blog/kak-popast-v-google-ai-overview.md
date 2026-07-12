@@ -3,7 +3,7 @@ title: "Как попасть в Google AI Overview: руководство по
 slug: "kak-popast-v-google-ai-overview"
 excerpt: "Google AI Overview показывается в 84% информационных запросов. Разбираем как оптимизировать контент чтобы ваш бизнес попал в AI-сводки Google."
 date: "2025-04-05"
-updated: "2025-04-20"
+updated: "2026-07-12"
 author:
   name: "Амре Кабылаш"
   role: "Основатель Агентства"
@@ -14,7 +14,7 @@ featuredImage:
   alt: "Google AI Overview — как попасть в AI-сводки поиска"
 draft: false
 seo:
-  title: "Google AI Overview: как попасть в AI-сводки Google в 2025"
+  title: "Google AI Overview: как попасть в AI-сводки Google в 2026"
   description: "AEO (Answer Engine Optimization) — оптимизация под Google AI Overview, featured snippets и голосовой поиск. Пошаговое руководство с техническими деталями."
   canonical: "https://www.geoaeo.pro/blog/kak-popast-v-google-ai-overview"
 ---

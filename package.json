@@ -11,6 +11,7 @@
     "gen:dry": "dotenv -e .env.local -- npx tsx scripts/generate-post.ts --dry"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.10",
     "@radix-ui/react-slot": "^1.2.4",
     "@types/nodemailer": "^8.0.0",
     "class-variance-authority": "^0.7.1",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -30,15 +31,22 @@ const BASE_URL = "https://www.geoaeo.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Агентство — Цифровое агентство в Алматы | SEO, Креатив, AI",
-    template: "%s | Агентство — Цифровое агентство",
+    default: "GeoAEO — GEO и AEO оптимизация под ChatGPT, Perplexity, Gemini | Алматы",
+    template: "%s | GeoAEO — GEO и AEO агентство",
   },
   description:
-    "Цифровое агентство в Алматы. SEO-оптимизация, GEO, креативные услуги и AI-автоматизация для бизнеса. Возвращаем вам 6 часов каждый день. Первая консультация бесплатно.",
+    "GeoAEO — агентство GEO и AEO оптимизации в Алматы. Выводим бизнес в ответы ChatGPT, Perplexity, Google AI Overview и Gemini. Плюс SEO, креатив и AI-автоматизация. Первая консультация бесплатно.",
   keywords: [
+    "GEO оптимизация",
+    "AEO оптимизация",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "продвижение в ChatGPT",
+    "продвижение в Perplexity",
+    "попасть в ответы AI",
+    "GEO AEO агентство Казахстан",
     "цифровое агентство Алматы",
     "SEO оптимизация Казахстан",
-    "GEO оптимизация",
     "AI автоматизация бизнеса",
     "креативное агентство",
     "разработка сайтов Алматы",
@@ -60,11 +68,11 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "Агентство — Цифровое агентство в Алматы | SEO, Креатив, AI",
+    title: "GeoAEO — GEO и AEO оптимизация под ChatGPT, Perplexity, Gemini",
     description:
-      "SEO-оптимизация, GEO, креативные услуги и AI-автоматизация. Помогаем бизнесу расти быстрее и умнее.",
+      "Выводим бизнес в ответы AI-поисковиков: ChatGPT, Perplexity, Google AI Overview. Плюс SEO, креатив и AI-автоматизация.",
     url: BASE_URL,
-    siteName: "Агентство",
+    siteName: "GeoAEO",
     type: "website",
     locale: "ru_KZ",
     images: [
@@ -78,9 +86,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Агентство — Цифровое агентство в Алматы",
+    title: "GeoAEO — GEO и AEO оптимизация в Алматы",
     description:
-      "SEO, GEO, креатив и AI-автоматизация для вашего бизнеса. Первая консультация бесплатно.",
+      "Выводим бизнес в ответы ChatGPT, Perplexity и Google AI Overview. Первая консультация бесплатно.",
     images: [`${BASE_URL}/opengraph-image`],
   },
   robots: {
@@ -128,6 +136,9 @@ export default function RootLayout({
           </LangProvider>
         </ThemeProvider>
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID ? (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      ) : null}
     </html>
   );
 }
