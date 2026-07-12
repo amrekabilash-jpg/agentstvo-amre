@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
   description: "Политика конфиденциальности цифрового агентства Агентство. Обработка персональных данных.",
-  alternates: { canonical: "https://geoaeo.pro/privacy" },
+  alternates: { canonical: "https://www.geoaeo.pro/privacy" },
 };
 
 export default function PrivacyPage(): React.ReactElement {

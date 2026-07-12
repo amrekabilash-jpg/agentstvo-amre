@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { getAllServiceSlugs } from "@/lib/services-data";
 
-const BASE_URL = "https://geoaeo.pro";
+const BASE_URL = "https://www.geoaeo.pro";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

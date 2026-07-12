@@ -8,7 +8,7 @@ import {
   type ServiceData,
 } from "@/lib/services-data";
 
-const BASE = "https://geoaeo.pro";
+const BASE = "https://www.geoaeo.pro";
 
 interface Params {
   params: Promise<{ slug: string }>;

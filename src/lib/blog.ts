@@ -56,7 +56,7 @@ export function getAllPosts(): BlogPostMeta[] {
         seo: data.seo ?? {
           title: data.title ?? "",
           description: data.excerpt ?? "",
-          canonical: `https://geoaeo.pro/blog/${data.slug}`,
+          canonical: `https://www.geoaeo.pro/blog/${data.slug}`,
         },
         readingTime: calcReadingTime(content),
       } satisfies BlogPostMeta;
@@ -99,7 +99,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       seo: data.seo ?? {
         title: data.title ?? "",
         description: data.excerpt ?? "",
-        canonical: `https://geoaeo.pro/blog/${fileSlug}`,
+        canonical: `https://www.geoaeo.pro/blog/${fileSlug}`,
       },
       content: htmlContent,
       readingTime: calcReadingTime(content),

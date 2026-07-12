@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Что такое GEO-оптимизация: полное руководство 2025"
   description: "GEO (Generative Engine Optimization) — оптимизация для AI-поиска ChatGPT, Perplexity, Google AI Overview. Узнайте как попасть в ответы AI-систем."
-  canonical: "https://geoaeo.pro/blog/chto-takoe-geo-optimizaciya"
+  canonical: "https://www.geoaeo.pro/blog/chto-takoe-geo-optimizaciya"
 ---
 
 ## Почему классического SEO уже недостаточно

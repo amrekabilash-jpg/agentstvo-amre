@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "WhatsApp агентство",
   ],
   alternates: {
-    canonical: "https://geoaeo.pro/contacts",
+    canonical: "https://www.geoaeo.pro/contacts",
   },
   openGraph: {
     title: "Контакты | Агентство — Цифровое агентство",
     description: "Свяжитесь с нами: +7 701 728 22 36, hello@geoaeo.pro. Первая консультация бесплатно.",
-    url: "https://geoaeo.pro/contacts",
+    url: "https://www.geoaeo.pro/contacts",
     type: "website",
   },
 };
@@ -30,8 +30,8 @@ export default function ContactsLayout({ children }: { children: React.ReactNode
       <JsonLd data={faqSchema} />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Главная", url: "https://geoaeo.pro" },
-          { name: "Контакты", url: "https://geoaeo.pro/contacts" },
+          { name: "Главная", url: "https://www.geoaeo.pro" },
+          { name: "Контакты", url: "https://www.geoaeo.pro/contacts" },
         ])}
       />
       {children}

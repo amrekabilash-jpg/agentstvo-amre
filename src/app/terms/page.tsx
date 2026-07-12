@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Условия использования",
   description: "Условия использования сайта и услуг цифрового агентства Агентство.",
-  alternates: { canonical: "https://geoaeo.pro/terms" },
+  alternates: { canonical: "https://www.geoaeo.pro/terms" },
 };
 
 export default function TermsPage(): React.ReactElement {

@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Google AI Overview: как попасть в AI-сводки Google в 2025"
   description: "AEO (Answer Engine Optimization) — оптимизация под Google AI Overview, featured snippets и голосовой поиск. Пошаговое руководство с техническими деталями."
-  canonical: "https://geoaeo.pro/blog/kak-popast-v-google-ai-overview"
+  canonical: "https://www.geoaeo.pro/blog/kak-popast-v-google-ai-overview"
 ---
 
 ## Что такое Google AI Overview

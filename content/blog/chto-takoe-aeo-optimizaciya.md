@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "AEO оптимизация: что это и как настроить под голосовой поиск 2026"
   description: "AEO (Answer Engine Optimization) — оптимизация сайта под голосовые помощники и AI-ответы. Пошаговое руководство для бизнеса в Казахстане."
-  canonical: "https://geoaeo.pro/blog/chto-takoe-aeo-optimizaciya"
+  canonical: "https://www.geoaeo.pro/blog/chto-takoe-aeo-optimizaciya"
 ---
 
 По данным Google, более 27% мобильных запросов — голосовые. В Казахстане эта цифра растёт быстрее чем в среднем по СНГ: молодая аудитория активно использует голосовых помощников для поиска ресторанов, услуг и товаров.

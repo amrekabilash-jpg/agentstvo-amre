@@ -38,7 +38,7 @@ export function ServiceSchema({
     provider: {
       "@type": "LocalBusiness",
       name: "Агентство",
-      url: "https://geoaeo.pro",
+      url: "https://www.geoaeo.pro",
       telephone: "+7 (727) 310-93-99",
       email: "hello@geoaeo.pro",
       address: {

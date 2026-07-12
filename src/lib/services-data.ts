@@ -26,7 +26,7 @@ export interface ServiceData {
   relatedSlugs: string[]; // другие услуги
 }
 
-const BASE = "https://geoaeo.pro";
+const BASE = "https://www.geoaeo.pro";
 
 export const servicesData: ServiceData[] = [
   {

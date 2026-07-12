@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
-const BASE_URL = "https://geoaeo.pro";
+const BASE_URL = "https://www.geoaeo.pro";
 
 export const metadata: Metadata = {
   title: "Блог — SEO, GEO, AI-автоматизация для бизнеса",

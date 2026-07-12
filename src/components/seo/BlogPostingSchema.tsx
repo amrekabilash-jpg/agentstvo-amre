@@ -16,7 +16,7 @@ export function BlogPostingSchema({
   datePublished,
   dateModified,
   authorName = "Агентство",
-  authorUrl = "https://geoaeo.pro",
+  authorUrl = "https://www.geoaeo.pro",
   articleBody,
 }: BlogPostingSchemaProps) {
   const schema = {

@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "AI-автоматизация бизнеса в 2025: инструменты и кейсы"
   description: "Как малому бизнесу внедрить AI-автоматизацию без больших бюджетов. n8n, ChatGPT API, Make.com — реальные примеры и расчёт окупаемости."
-  canonical: "https://geoaeo.pro/blog/ai-avtomatizaciya-dlya-biznesa"
+  canonical: "https://www.geoaeo.pro/blog/ai-avtomatizaciya-dlya-biznesa"
 ---
 
 ## 6 часов — это реально

@@ -46,7 +46,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://geoaeo.pro/sitemap.xml",
-    host: "https://geoaeo.pro",
+    sitemap: "https://www.geoaeo.pro/sitemap.xml",
+    host: "https://www.geoaeo.pro",
   };
 }

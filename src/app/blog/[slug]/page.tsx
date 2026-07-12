@@ -5,7 +5,7 @@ import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
-const BASE_URL = "https://geoaeo.pro";
+const BASE_URL = "https://www.geoaeo.pro";
 
 interface Params {
   params: Promise<{ slug: string }>;

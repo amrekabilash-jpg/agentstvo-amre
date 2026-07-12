@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "AI чатбот для бизнеса: как автоматизировать продажи в 2026"
   description: "Как внедрить AI-чатбот для бизнеса в Казахстане. Стоимость, инструменты, ROI расчёт. Реальный кейс автоматизации продаж с помощью чатбота."
-  canonical: "https://geoaeo.pro/blog/ai-chatbot-dlya-biznesa-zamena-menedzherov"
+  canonical: "https://www.geoaeo.pro/blog/ai-chatbot-dlya-biznesa-zamena-menedzherov"
 ---
 
 Средний менеджер по продажам в Алматы стоит 250 000–400 000 тенге в месяц. Работает 8 часов, 5 дней в неделю. Отвечает на одни и те же 20 вопросов по 30 раз в день.

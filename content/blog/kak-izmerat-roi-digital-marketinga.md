@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Как измерить ROI digital маркетинга: 8 ключевых метрик"
   description: "Полное руководство по измерению ROI digital маркетинга. CAC, LTV, ROAS, CPL — как считать и отслеживать метрики эффективности в казахстанском бизнесе."
-  canonical: "https://geoaeo.pro/blog/kak-izmerat-roi-digital-marketinga"
+  canonical: "https://www.geoaeo.pro/blog/kak-izmerat-roi-digital-marketinga"
 ---
 
 "Мы тратим на маркетинг 500 000 тенге в месяц, но не знаем работает ли это" — так говорит каждый второй предприниматель. Без правильных метрик маркетинговый бюджет — это чёрная дыра.

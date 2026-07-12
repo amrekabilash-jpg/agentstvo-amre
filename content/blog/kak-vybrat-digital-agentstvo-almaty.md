@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Как выбрать digital агентство в Алматы: 7 критериев 2026"
   description: "Практический гайд для предпринимателей: на что смотреть при выборе digital агентства в Алматы, какие вопросы задавать, красные флаги и чек-лист."
-  canonical: "https://geoaeo.pro/blog/kak-vybrat-digital-agentstvo-almaty"
+  canonical: "https://www.geoaeo.pro/blog/kak-vybrat-digital-agentstvo-almaty"
 ---
 
 Рынок digital-агентств в Алматы вырос в 3 раза за последние 2 года. Только в 2024 году в Казахстане открылось более 200 новых агентств. Проблема — большинство из них берут деньги и пропадают после первого месяца.

@@ -25,7 +25,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const BASE_URL = "https://geoaeo.pro";
+const BASE_URL = "https://www.geoaeo.pro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -58,12 +58,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
-    languages: {
-      "ru-KZ": BASE_URL,
-      "ru-RU": BASE_URL,
-      "kk-KZ": BASE_URL,
-      "x-default": BASE_URL,
-    },
   },
   openGraph: {
     title: "Агентство — Цифровое агентство в Алматы | SEO, Креатив, AI",

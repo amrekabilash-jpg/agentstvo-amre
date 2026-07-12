@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Разработка сайта в Алматы 2026: конструктор, фриланс или агентство"
   description: "Как выбрать способ создания сайта в Казахстане. Сравнение Tilda, фрилансера и агентства по стоимости, срокам и качеству. Рекомендации по типу бизнеса."
-  canonical: "https://geoaeo.pro/blog/razrabotka-sayta-2025-konstruktor-frilans-agentstvo"
+  canonical: "https://www.geoaeo.pro/blog/razrabotka-sayta-2025-konstruktor-frilans-agentstvo"
 ---
 
 "Сколько стоит сделать сайт?" — вопрос на который нет одного ответа. Сайт за 50 000 тг на Tilda и сайт за 2 000 000 тг от агентства решают разные задачи. Вопрос не в цене, а в том что вам реально нужно.

@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Локальное SEO для бизнеса в Алматы: руководство 2026"
   description: "Как продвинуть бизнес в локальном поиске Алматы. Google My Business, 2GIS, отзывы, ключевые слова. Пошаговое руководство по локальному SEO."
-  canonical: "https://geoaeo.pro/blog/lokalnoe-seo-dlya-biznesa-almaty-2025"
+  canonical: "https://www.geoaeo.pro/blog/lokalnoe-seo-dlya-biznesa-almaty-2025"
 ---
 
 Когда житель Алматы ищет "стоматолог рядом" или "кофейня в Бостандыке" — Google показывает не просто сайты, а карту с тремя ближайшими компаниями. Это **локальный пак**. Попасть в него — задача локального SEO.

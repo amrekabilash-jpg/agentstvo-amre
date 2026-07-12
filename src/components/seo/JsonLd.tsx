@@ -17,13 +17,13 @@ export function JsonLd({ data }: JsonLdProps): React.ReactElement {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://geoaeo.pro/#organization",
+  "@id": "https://www.geoaeo.pro/#organization",
   name: "Агентство",
   alternateName: "Agentsvo",
-  url: "https://geoaeo.pro",
+  url: "https://www.geoaeo.pro",
   logo: {
     "@type": "ImageObject",
-    url: "https://geoaeo.pro/images/logo.svg",
+    url: "https://www.geoaeo.pro/images/logo.svg",
     width: 52,
     height: 52,
   },
@@ -40,11 +40,11 @@ export const organizationSchema = {
   },
   founder: {
     "@type": "Person",
-    "@id": "https://geoaeo.pro/#founder",
+    "@id": "https://www.geoaeo.pro/#founder",
     name: "Амре Кабылаш",
   },
   email: "hello@geoaeo.pro",
-  sameAs: ["https://geoaeo.pro"],
+  sameAs: ["https://www.geoaeo.pro"],
   telephone: "+77017282236",
   address: {
     "@type": "PostalAddress",
@@ -64,10 +64,10 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://geoaeo.pro/#local-business",
+  "@id": "https://www.geoaeo.pro/#local-business",
   name: "Агентство — Цифровое агентство",
-  image: "https://geoaeo.pro/images/logo.svg",
-  url: "https://geoaeo.pro",
+  image: "https://www.geoaeo.pro/images/logo.svg",
+  url: "https://www.geoaeo.pro",
   telephone: "+77017282236",
   email: "hello@geoaeo.pro",
   address: {
@@ -125,15 +125,15 @@ export const localBusinessSchema = {
 export const founderSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://geoaeo.pro/#founder",
+  "@id": "https://www.geoaeo.pro/#founder",
   name: "Амре Кабылаш",
-  image: "https://geoaeo.pro/images/amre-profile.svg",
+  image: "https://www.geoaeo.pro/images/amre-profile.svg",
   jobTitle: "Основатель и Стратег",
   email: "hello@geoaeo.pro",
   telephone: "+77017282236",
-  url: "https://geoaeo.pro/about",
+  url: "https://www.geoaeo.pro/about",
   sameAs: [
-    "https://geoaeo.pro/about"
+    "https://www.geoaeo.pro/about"
   ],
   knowsAbout: [
     "SEO Optimization",
@@ -157,7 +157,7 @@ export const founderSchema = {
   affiliation: {
     "@type": "Organization",
     name: "Агентство",
-    url: "https://geoaeo.pro",
+    url: "https://www.geoaeo.pro",
   },
   description:
     "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
@@ -168,11 +168,11 @@ export const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Агентство",
-  url: "https://geoaeo.pro",
+  url: "https://www.geoaeo.pro",
   inLanguage: "ru",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://geoaeo.pro/?q={search_term_string}",
+    target: "https://www.geoaeo.pro/?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -216,7 +216,7 @@ export const servicesSchema = {
   provider: {
     "@type": "Organization",
     name: "Агентство",
-    url: "https://geoaeo.pro",
+    url: "https://www.geoaeo.pro",
   },
   serviceType: "Digital Marketing Agency",
   areaServed: {
@@ -268,7 +268,7 @@ export function howToN8nAutomationSchema(): Record<string, unknown> {
     "@type": "HowTo",
     name: "Как настроить n8n для автоматизации бизнес-процессов",
     description: "Пошаговое руководство по внедрению n8n для автоматизации повторяющихся задач в вашем бизнесе.",
-    image: "https://geoaeo.pro/images/blog/n8n-setup.svg",
+    image: "https://www.geoaeo.pro/images/blog/n8n-setup.svg",
     estimatedCost: {
       "@type": "PriceSpecification",
       currency: "KZT",
@@ -317,7 +317,7 @@ export function howToGoogleAIOverviewSchema(): Record<string, unknown> {
     "@type": "HowTo",
     name: "Как попасть в Google AI Overview: пошаговое руководство",
     description: "7 шагов для оптимизации контента под Google AI Overview и появления в AI-сводках поиска.",
-    image: "https://geoaeo.pro/images/blog/google-ai-overview.svg",
+    image: "https://www.geoaeo.pro/images/blog/google-ai-overview.svg",
     estimatedCost: {
       "@type": "PriceSpecification",
       currency: "KZT",
@@ -378,7 +378,7 @@ export function howToLocalSEOSchema(): Record<string, unknown> {
     "@type": "HowTo",
     name: "Как улучшить локальный SEO для бизнеса в Алматы",
     description: "4-недельный план локальной SEO оптимизации для казахстанского бизнеса.",
-    image: "https://geoaeo.pro/images/blog/local-seo-almaty.svg",
+    image: "https://www.geoaeo.pro/images/blog/local-seo-almaty.svg",
     estimatedCost: {
       "@type": "PriceSpecification",
       currency: "KZT",

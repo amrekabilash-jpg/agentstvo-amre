@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "SEO или контекстная реклама: что выбрать бизнесу в Казахстане 2026"
   description: "Сравнение SEO и Google Ads для казахстанского бизнеса. Стоимость, сроки, ROI. Когда выбирать SEO, когда рекламу, и как совмещать оба канала."
-  canonical: "https://geoaeo.pro/blog/seo-vs-kontekstnaya-reklama-kazakhstand-2025"
+  canonical: "https://www.geoaeo.pro/blog/seo-vs-kontekstnaya-reklama-kazakhstand-2025"
 ---
 
 "Что лучше — SEO или реклама?" — самый частый вопрос от предпринимателей которые хотят привлекать клиентов из интернета. Честный ответ: зависит от ситуации. Но есть чёткие критерии когда что выбирать.

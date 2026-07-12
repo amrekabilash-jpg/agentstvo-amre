@@ -16,7 +16,7 @@ draft: false
 seo:
   title: "Продвижение в Instagram и TikTok в Казахстане: стратегия 2026"
   description: "Как продвигать бизнес в Instagram и TikTok в Казахстане. Алгоритмы, форматы контента, работа с блогерами, бюджеты. Стратегия для казахстанского рынка."
-  canonical: "https://geoaeo.pro/blog/prodvizhenie-instagram-tiktok-kazakhstan"
+  canonical: "https://www.geoaeo.pro/blog/prodvizhenie-instagram-tiktok-kazakhstan"
 ---
 
 Казахстанский рынок социальных сетей отличается от российского и западного. Здесь свои лидеры мнений, свои форматы и своя аудитория. Стратегия скопированная с западных гайдов здесь работает вполовину хуже.

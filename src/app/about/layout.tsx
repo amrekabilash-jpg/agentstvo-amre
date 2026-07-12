@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "маркетинг дизайн код",
   ],
   alternates: {
-    canonical: "https://geoaeo.pro/about",
+    canonical: "https://www.geoaeo.pro/about",
   },
   openGraph: {
     title: "О нас — Команда Агентство",
     description: "Команда инженеров и стратегов. Маркетинг, дизайн и код в единой системе.",
-    url: "https://geoaeo.pro/about",
+    url: "https://www.geoaeo.pro/about",
     type: "website",
   },
 };
@@ -29,8 +29,8 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Главная", url: "https://geoaeo.pro" },
-          { name: "О нас", url: "https://geoaeo.pro/about" },
+          { name: "Главная", url: "https://www.geoaeo.pro" },
+          { name: "О нас", url: "https://www.geoaeo.pro/about" },
         ])}
       />
       {children}

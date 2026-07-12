@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "Renkie.ai",
   ],
   alternates: {
-    canonical: "https://geoaeo.pro/cases",
+    canonical: "https://www.geoaeo.pro/cases",
   },
   openGraph: {
     title: "Кейсы и портфолио | Агентство",
     description: "Реальные результаты наших клиентов. SEO, креатив, AI-автоматизация.",
-    url: "https://geoaeo.pro/cases",
+    url: "https://www.geoaeo.pro/cases",
     type: "website",
   },
 };
@@ -32,8 +32,8 @@ export default function CasesLayout({ children }: { children: React.ReactNode })
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Главная", url: "https://geoaeo.pro" },
-          { name: "Кейсы", url: "https://geoaeo.pro/cases" },
+          { name: "Главная", url: "https://www.geoaeo.pro" },
+          { name: "Кейсы", url: "https://www.geoaeo.pro/cases" },
         ])}
       />
       {children}
