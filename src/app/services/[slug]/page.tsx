@@ -132,6 +132,33 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
           </div>
         </section>
 
+        {/* Технологический партнёр (white label) */}
+        {service.techPartner && (
+          <section className="section-atlantis bg-lavender">
+            <div className="container-atlantis max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--foreground-muted)] mb-4">
+                Технологический партнёр
+              </p>
+              <h2 className="display-section mb-6">
+                White label партнёрство с {service.techPartner.name}
+              </h2>
+              <div className="rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8">
+                <p className="text-body text-[var(--foreground-secondary)] leading-relaxed mb-4">
+                  {service.techPartner.description}
+                </p>
+                <a
+                  href={service.techPartner.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-sm font-semibold text-[var(--accent-blue)] hover:underline"
+                >
+                  {service.techPartner.name} →
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* FAQ — главная SEO-ценность */}
         <section className="section-atlantis bg-white">
           <div className="container-atlantis max-w-2xl">

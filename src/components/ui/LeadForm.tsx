@@ -3,6 +3,7 @@
 import { useState, useRef, type FormEvent } from "react";
 import { Send, CheckCircle, ShieldCheck } from "lucide-react";
 import { sanitize, isValidEmail, isValidPhone } from "@/lib/validation";
+import { trackLeadSubmit } from "@/lib/analytics";
 import { RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS } from "@/lib/constants";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
@@ -70,6 +71,7 @@ export function LeadForm({
 
       const data = await res.json() as { success?: boolean };
       if (!res.ok || !data.success) throw new Error(`HTTP ${res.status}`);
+      trackLeadSubmit(source);
       setSubmitted(true);
     } catch {
       setError("Ошибка отправки. Напишите нам напрямую: hello@geoaeo.pro");

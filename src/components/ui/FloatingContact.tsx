@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MessageCircle, X, Send, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -52,6 +53,7 @@ export function FloatingContact(): React.ReactElement {
                 href="https://wa.me/77017282236?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("floating-widget")}
                 className="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 hover:border-green-400 hover:bg-green-50 transition-all duration-200 group"
               >
                 <div className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center shrink-0 group-hover:bg-green-200 transition-colors">

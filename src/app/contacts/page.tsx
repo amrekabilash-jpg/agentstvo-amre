@@ -8,6 +8,7 @@ import { AnimatedIllustration } from "@/components/ui/AnimatedIllustration";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import ShaderBackground from "@/components/ui/shader-background";
 import { useT } from "@/lib/lang-context";
+import { trackLeadSubmit, trackWhatsAppClick } from "@/lib/analytics";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -126,6 +127,7 @@ export default function ContactsPage(): React.ReactElement {
 
       const data = await res.json() as { success?: boolean; error?: string };
       if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+      trackLeadSubmit("contacts-page");
       setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "unknown";
@@ -463,6 +465,7 @@ export default function ContactsPage(): React.ReactElement {
                 <MagneticButton strength={0.4}>
                   <Link
                     href="https://wa.me/77017282236"
+                    onClick={() => trackWhatsAppClick("contacts-page")}
                     className="inline-flex items-center gap-2 border-2 border-white/40 text-white px-8 py-4 rounded-xl font-semibold hover:border-white hover:bg-white/10 transition-colors duration-300"
                   >
                     WhatsApp

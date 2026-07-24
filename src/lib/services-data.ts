@@ -10,6 +10,12 @@ export interface ServiceFeature {
   description: string;
 }
 
+export interface TechPartner {
+  name: string;
+  url: string;
+  description: string;
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
@@ -24,6 +30,7 @@ export interface ServiceData {
   process: { step: string; title: string; description: string }[];
   faqs: ServiceFaq[];
   relatedSlugs: string[]; // другие услуги
+  techPartner?: TechPartner;
 }
 
 const BASE = "https://www.geoaeo.pro";
@@ -111,6 +118,12 @@ export const servicesData: ServiceData[] = [
       },
     ],
     relatedSlugs: ["seo-prodvizhenie-almaty", "ai-avtomatizaciya", "razrabotka-saytov-almaty"],
+    techPartner: {
+      name: "Rankie AI",
+      url: "https://www.rankie.ai",
+      description:
+        "GeoAEO работает по white label партнёрству с Rankie AI — enterprise-платформой для мониторинга видимости бренда в ChatGPT, Gemini и Perplexity. Технологию и данные предоставляет Rankie AI, а стратегию, внедрение и коммуникацию с клиентом — GeoAEO под собственным брендом. Клиент получает enterprise-уровень мониторинга AI-видимости без прямого контракта с зарубежной платформой: один подрядчик, один договор, отчётность на русском языке.",
+    },
   },
   {
     slug: "seo-prodvizhenie-almaty",
