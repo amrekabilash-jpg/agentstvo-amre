@@ -16,6 +16,7 @@ export function Footer(): React.ReactElement {
     { label: t.nav.cases, href: "/cases" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.contacts, href: "/contacts" },
+    { label: "Словарь терминов", href: "/glossary" },
   ];
 
   return (
