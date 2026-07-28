@@ -38,11 +38,11 @@ export function Header(): React.ReactElement {
         <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
           <img
             src="/images/logo.svg"
-            alt="Агентство"
+            alt="GeoAEO"
             className={`dark:invert transition-all duration-300 ${scrolled ? "w-9 h-9" : "w-[52px] h-[52px]"}`}
           />
           <div className="flex flex-col leading-tight">
-            <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
+            <span className="text-[17px] font-bold text-slate-900 dark:text-white">GeoAEO</span>
             <span
               className={`hidden sm:block text-[10px] font-medium text-slate-400 dark:text-slate-500 tracking-wide transition-all duration-300 overflow-hidden ${
                 scrolled ? "max-h-0 opacity-0" : "max-h-6 opacity-100"

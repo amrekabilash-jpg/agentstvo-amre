@@ -28,15 +28,14 @@ export function Footer(): React.ReactElement {
           {/* Brand + Description */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src="/images/logo.svg" alt="Агентство" width={52} height={52} loading="lazy" className="dark:invert" />
-              <span className="text-[17px] font-bold text-slate-900 dark:text-white">Агентство</span>
+              <img src="/images/logo.svg" alt="GeoAEO" width={52} height={52} loading="lazy" className="dark:invert" />
+              <span className="text-[17px] font-bold text-slate-900 dark:text-white">GeoAEO</span>
             </div>
             <p className="text-slate-500 text-[15px] leading-relaxed max-w-xs mb-4">
               {t.footer.description}
             </p>
 
-            <p className="text-slate-600 text-sm font-medium mb-1">Казахстан, г. Алматы</p>
-            <p className="text-sm text-slate-400 mb-3">Скоро</p>
+            <p className="text-slate-600 text-sm font-medium mb-3">Казахстан, г. Алматы</p>
           </div>
 
           {/* Navigation */}
@@ -97,7 +96,7 @@ export function Footer(): React.ReactElement {
       <div className="border-t border-slate-200 dark:border-white/10">
         <div className="container-atlantis py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} Агентство. {t.footer.rights}
+            &copy; {new Date().getFullYear()} GeoAEO. {t.footer.rights}
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="text-xs text-slate-400 hover:text-slate-600 transition-colors duration-200">

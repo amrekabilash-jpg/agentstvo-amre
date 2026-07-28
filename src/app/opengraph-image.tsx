@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Агентство — Цифровое агентство в Алматы";
+export const alt = "GeoAEO — GEO и AEO агентство в Алматы";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -77,7 +77,7 @@ export default function Image(): ImageResponse {
               }}
             />
             <span style={{ color: "#ffffff", fontSize: "18px", fontWeight: 600 }}>
-              Агентство
+              GeoAEO
             </span>
           </div>
 
