@@ -53,12 +53,12 @@ const translations = {
     },
     stats: {
       label: "В цифрах",
-      heading: "Результаты говорят сами за себя",
+      heading: "На что мы ориентируемся в работе",
       items: [
         { suffix: "+", label: "Успешных проектов" },
         { suffix: " ч", label: "Экономим вам каждый день" },
-        { suffix: "%", label: "Клиентов довольны результатом" },
-        { suffix: "x", label: "Средний рост конверсии" },
+        { suffix: "%", label: "Целевой уровень удержания клиентов" },
+        { suffix: "x", label: "Ориентир по росту конверсии" },
       ],
     },
     quoteBlocks: [
@@ -168,23 +168,14 @@ const translations = {
     casesPage: {
       label: "Наши кейсы",
       heading: "Наши клиенты работают над проектами, которые имеют значение!",
-      subheading: "Каждый проект — это конкретные числа и измеримые результаты.",
-      trusted: "Нам доверяют",
-      best: "Лучшие в индустрии",
-      resultsLabel: "Результаты",
-      resultsHeading: "До и после нашей работы",
-      resultsHint: "Перетащите разделитель, чтобы увидеть разницу",
-      cases: [
-        { title: "Редизайн сайта Rentai", result: "Конверсия выросла на 140%" },
-        { title: "SEO-оптимизация Asil Partners", result: "Трафик x3 за 4 месяца" },
-      ],
+      subheading: "Реальные проекты, которые работают прямо сейчас.",
       ctaHeading: "Хотите такие же результаты?",
       ctaSubtext: "Расскажите о вашем проекте — мы предложим стратегию роста с конкретными KPI.",
       ctaButton: "Обсудить проект",
     },
     aboutPage: {
       label: "О нас",
-      heading: "Почему работать с Агентство?",
+      heading: "Почему работать с GeoAEO?",
       subheading: "С нами работать приятно. Вот почему.",
       cultureLabel: "Наша культура",
       cultureHeading: "Мы — команда, которая заботится",
@@ -349,12 +340,12 @@ const translations = {
     },
     stats: {
       label: "Сандарда",
-      heading: "Нәтижелер өздігінен сөйлейді",
+      heading: "Жұмыста нені басшылыққа аламыз",
       items: [
         { suffix: "+", label: "Сәтті жобалар" },
         { suffix: " сағ", label: "Күн сайын үнемдейміз" },
-        { suffix: "%", label: "Клиенттер нәтижеге риза" },
-        { suffix: "x", label: "Конверсияның орташа өсімі" },
+        { suffix: "%", label: "Клиенттерді ұстап қалу мақсаты" },
+        { suffix: "x", label: "Конверсия өсімінің межесі" },
       ],
     },
     quoteBlocks: [
@@ -539,23 +530,14 @@ const translations = {
     casesPage: {
       label: "Біздің кейстер",
       heading: "Біздің клиенттер маңызды жобалармен жұмыс жасайды!",
-      subheading: "Әр жоба — нақты сандар мен өлшенетін нәтижелер.",
-      trusted: "Бізге сенеді",
-      best: "Индустриядағы үздіктер",
-      resultsLabel: "Нәтижелер",
-      resultsHeading: "Жұмысымыздан бұрын және кейін",
-      resultsHint: "Айырмашылықты көру үшін бөлгішті сүйреңіз",
-      cases: [
-        { title: "Rentai сайтын қайта дизайндау", result: "Конверсия 140%-ға өсті" },
-        { title: "Asil Partners SEO-оңтайландыру", result: "Трафик 4 айда x3 өсті" },
-      ],
+      subheading: "Қазір нақты жұмыс істеп тұрған жобалар.",
       ctaHeading: "Осындай нәтижелерді қалайсыз ба?",
       ctaSubtext: "Жобаңыз туралы айтыңыз — нақты KPI-мен өсу стратегиясын ұсынамыз.",
       ctaButton: "Жобаны талқылау",
     },
     aboutPage: {
       label: "Біз туралы",
-      heading: "Агентствомен неліктен жұмыс жасау керек?",
+      heading: "GeoAEO-мен неліктен жұмыс жасау керек?",
       subheading: "Бізбен жұмыс жасау ұнамды. Міне, неліктен.",
       cultureLabel: "Біздің мәдениет",
       cultureHeading: "Біз — қамқорлықпен жұмыс жасайтын команда",
@@ -616,9 +598,6 @@ export type Translations = {
   };
   casesPage: {
     label: string; heading: string; subheading: string;
-    trusted: string; best: string;
-    resultsLabel: string; resultsHeading: string; resultsHint: string;
-    cases: readonly { title: string; result: string }[];
     ctaHeading: string; ctaSubtext: string; ctaButton: string;
   };
   aboutPage: {
