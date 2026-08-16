@@ -121,33 +121,33 @@ export default function Image(): ImageResponse {
                 textTransform: "uppercase",
               }}
             >
-              Цифровое агентство · Алматы, Казахстан
+              GEO & AEO-агентство · Алматы, Казахстан
             </span>
           </div>
 
           <div
             style={{
-              fontSize: "80px",
+              fontSize: "68px",
               fontWeight: 800,
               color: "#ffffff",
-              lineHeight: 1.0,
+              lineHeight: 1.05,
               letterSpacing: "-0.03em",
             }}
           >
-            SEO. Дизайн.
+            Продвигаем бизнес
           </div>
           <div
             style={{
-              fontSize: "80px",
+              fontSize: "68px",
               fontWeight: 800,
-              lineHeight: 1.0,
+              lineHeight: 1.05,
               letterSpacing: "-0.03em",
               background: "linear-gradient(90deg, #A855F7 0%, #EC4899 100%)",
               backgroundClip: "text",
               color: "transparent",
             }}
           >
-            AI-автоматизация.
+            в ChatGPT и Google
           </div>
         </div>
 

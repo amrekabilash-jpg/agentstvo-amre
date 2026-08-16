@@ -57,6 +57,9 @@ export function Hero(): React.ReactElement {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
           >
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#5B5FEF]/20 bg-[#5B5FEF]/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#5B5FEF] mb-5">
+              {t.hero.eyebrow}
+            </span>
             <h1 className="display-hero mb-4">
               {t.hero.heading}
               <MorphingWord />

@@ -10,9 +10,10 @@ const translations = {
       menu: "Меню",
     },
     hero: {
+      eyebrow: "GEO & AEO-агентство — продвижение в ChatGPT, Google и Perplexity",
       words: ["GEO & AEO", "Дизайн", "AI", "Креатив", "Бренд", "UGC", "Web-сайты", "Mobile App", "AI Agent", "API & БД", "Дашборды", "Автоматизацию"],
       heading: "Помогаем бизнесу расти через",
-      body: "GEO, креатив и AI-автоматизация, которые реально работают. Мы становимся частью вашей команды и берём ответственность за результат.",
+      body: "Выводим бизнес в ответы ChatGPT, Google AI Overview и Perplexity с помощью GEO- и AEO-оптимизации. Плюс SEO, дизайн и AI-автоматизация — одной командой.",
       cta: "Бесплатная консультация",
       casesBtn: "Смотреть кейсы",
     },
@@ -297,9 +298,10 @@ const translations = {
       menu: "Мәзір",
     },
     hero: {
+      eyebrow: "GEO & AEO-агенттігі — ChatGPT, Google және Perplexity-де жылжыту",
       words: ["GEO & AEO", "Дизайн", "AI", "Креатив", "Бренд", "UGC", "Web-сайттар", "Mobile App", "AI Agent", "API & ДБ", "Дашборд", "Автоматтандыру"],
       heading: "Бизнесіңіздің өсуіне көмектесеміз",
-      body: "GEO, креатив және AI-автоматтандыру — нақты нәтиже береді. Біз сіздің командаңыздың бір бөлігіне айналып, нәтиже үшін жауапкершілік аламыз.",
+      body: "Бизнесіңізді ChatGPT, Google AI Overview және Perplexity жауаптарына GEO және AEO оптимизациясы арқылы шығарамыз. Қоса SEO, дизайн және AI-автоматтандыру — бір команда.",
       cta: "Тегін кеңес алу",
       casesBtn: "Кейстерді қарау",
     },
@@ -568,7 +570,7 @@ const translations = {
 
 export type Translations = {
   nav: { services: string; cases: string; about: string; contacts: string; menu: string };
-  hero: { words: readonly string[]; heading: string; body: string; cta: string; casesBtn: string };
+  hero: { eyebrow: string; words: readonly string[]; heading: string; body: string; cta: string; casesBtn: string };
   clients: { trusted: string; best: string };
   services: { label: string; heading: string; more: string; items: readonly { title: string; description: string }[] };
   stats: { label: string; heading: string; items: readonly { suffix: string; label: string }[] };
