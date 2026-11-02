@@ -91,8 +91,8 @@ const translations = {
         {
           name: "Амре",
           role: "CEO & Стратег",
-          bio: "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
-          photo: "/images/amre-profile.jpg",
+          bio: "Основатель GeoAEO, отвечает за стратегию GEO/AEO, SEO и AI-автоматизации.",
+          photo: "/images/amre-profile.svg",
           email: "hello@geoaeo.pro",
           phone: "+77017282236",
           expertise: ["SEO", "GEO", "AEO", "AI Automation", "Digital Strategy"],

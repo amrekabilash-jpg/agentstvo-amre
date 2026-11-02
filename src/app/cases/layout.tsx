@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Кейсы и портфолио — Результаты работ агентства",
+  title: "Кейсы и портфолио: сайты, SEO и автоматизация",
   description:
-    "Реальные кейсы digital-агентства GeoAEO. SEO-продвижение, креативные проекты и AI-автоматизация для бизнеса в Казахстане.",
+    "Проекты GeoAEO: корпоративные сайты, каталог, SaaS-платформа и личный бренд с SEO/GEO/AEO. Задачи, решения и использованные технологии.",
   keywords: [
     "кейсы digital агентства",
     "портфолио SEO",

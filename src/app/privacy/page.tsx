@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
-  description: "Политика конфиденциальности цифрового агентства Агентство. Обработка персональных данных.",
+  description: "Политика конфиденциальности сайта geoaeo.pro: какие персональные данные собирает агентство GeoAEO, зачем, как защищает и как связаться с нами.",
   alternates: { canonical: "https://www.geoaeo.pro/privacy" },
 };
 

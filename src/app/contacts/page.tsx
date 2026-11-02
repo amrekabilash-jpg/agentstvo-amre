@@ -235,7 +235,7 @@ export default function ContactsPage(): React.ReactElement {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/images/amre-profile.jpg"
+                src="/images/amre-profile.svg"
                 alt="Амре Кабылаш"
                 className="w-full rounded-xl object-cover shadow-lg"
               />
@@ -248,7 +248,7 @@ export default function ContactsPage(): React.ReactElement {
             >
               <h3 className="text-2xl font-bold mb-4 text-slate-900">Свяжитесь с Амре</h3>
               <p className="text-slate-700 mb-6 leading-relaxed">
-                Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%.
+                Основатель GeoAEO, отвечает за стратегию GEO/AEO, SEO и AI-автоматизации.
               </p>
               <div className="space-y-4">
                 <a 

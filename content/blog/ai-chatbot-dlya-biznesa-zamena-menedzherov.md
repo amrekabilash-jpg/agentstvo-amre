@@ -6,7 +6,7 @@ date: "2026-05-07"
 updated: "2026-05-14"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "AI автоматизация"
 tags: ["чатбот", "AI", "продажи", "автоматизация"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "AI чатбот для бизнеса — замена менеджеров по продажам"
 draft: false
 seo:
-  title: "AI чатбот для бизнеса: как автоматизировать продажи в 2026"
+  title: "AI-чатбот для бизнеса: автоматизация продаж"
   description: "Как внедрить AI-чатбот для бизнеса в Казахстане. Стоимость, инструменты, ROI расчёт. Реальный кейс автоматизации продаж с помощью чатбота."
   canonical: "https://www.geoaeo.pro/blog/ai-chatbot-dlya-biznesa-zamena-menedzherov"
 ---

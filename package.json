@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "gen": "dotenv -e .env.local -- npx tsx scripts/generate-post.ts",
-    "gen:dry": "dotenv -e .env.local -- npx tsx scripts/generate-post.ts --dry"
+    "gen:dry": "dotenv -e .env.local -- npx tsx scripts/generate-post.ts --dry",
+    "seo:audit": "node scripts/seo-audit.mjs http://localhost:3000",
+    "seo:audit:ci": "node scripts/seo-audit.mjs http://localhost:3000 --strict",
+    "perf:lab": "node scripts/perf-lab.cjs http://localhost:3000"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.10",

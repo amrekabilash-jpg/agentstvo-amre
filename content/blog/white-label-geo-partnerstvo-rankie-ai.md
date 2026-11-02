@@ -13,8 +13,8 @@ featuredImage:
   alt: "White label партнёрство GeoAEO и Rankie AI"
 draft: false
 seo:
-  title: "White label GEO-партнёрство GeoAEO и Rankie AI: что это даёт бизнесу"
-  description: "Что такое white label в GEO/AEO-продвижении и почему GeoAEO использует enterprise-платформу Rankie AI для мониторинга AI-видимости клиентов в ChatGPT, Gemini и Perplexity."
+  title: "White label GEO-партнёрство с Rankie AI"
+  description: "Что такое white label в GEO/AEO и зачем GeoAEO использует платформу Rankie AI для мониторинга AI-видимости клиентов в ChatGPT, Gemini и Perplexity."
   canonical: "https://www.geoaeo.pro/blog/white-label-geo-partnerstvo-rankie-ai"
 ---
 

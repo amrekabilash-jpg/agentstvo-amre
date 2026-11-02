@@ -6,7 +6,7 @@ date: "2026-03-09"
 updated: "2026-03-09"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "Дизайн"
 tags: ["UI/UX", "дизайн сайта", "конверсия", "юзабилити"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "10 ошибок UI/UX дизайна казахстанских сайтов"
 draft: false
 seo:
-  title: "10 ошибок UI/UX дизайна которые убивают конверсию сайта"
+  title: "10 ошибок UI/UX-дизайна, которые снижают конверсию"
   description: "Разбор 10 типичных ошибок в дизайне казахстанских сайтов: от медленной загрузки до плохого мобильного дизайна. Как исправить каждую ошибку."
   canonical: "https://www.geoaeo.pro/blog/oshibki-uiux-dizayn-kazakhstanskih-saytov"
 ---

@@ -6,7 +6,7 @@ date: "2026-01-27"
 updated: "2026-01-27"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "GEO & SEO"
 tags: ["локальное SEO", "Google My Business", "Алматы", "2GIS"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "Локальное SEO для бизнеса в Алматы"
 draft: false
 seo:
-  title: "Локальное SEO для бизнеса в Алматы: руководство 2026"
+  title: "Локальное SEO в Алматы: руководство для бизнеса"
   description: "Как продвинуть бизнес в локальном поиске Алматы. Google My Business, 2GIS, отзывы, ключевые слова. Пошаговое руководство по локальному SEO."
   canonical: "https://www.geoaeo.pro/blog/lokalnoe-seo-dlya-biznesa-almaty-2025"
 ---

@@ -6,7 +6,7 @@ date: "2026-04-02"
 updated: "2026-05-14"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "GEO & SEO"
 tags: ["digital агентство", "Алматы", "выбор агентства", "маркетинг"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "Как выбрать digital агентство в Алматы"
 draft: false
 seo:
-  title: "Как выбрать digital агентство в Алматы: 7 критериев 2026"
+  title: "Как выбрать digital-агентство в Алматы: 7 критериев"
   description: "Практический гайд для предпринимателей: на что смотреть при выборе digital агентства в Алматы, какие вопросы задавать, красные флаги и чек-лист."
   canonical: "https://www.geoaeo.pro/blog/kak-vybrat-digital-agentstvo-almaty"
 ---

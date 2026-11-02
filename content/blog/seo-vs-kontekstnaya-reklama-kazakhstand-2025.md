@@ -6,7 +6,7 @@ date: "2026-01-14"
 updated: "2026-05-14"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "GEO & SEO"
 tags: ["SEO", "контекстная реклама", "Google Ads", "сравнение"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "SEO vs контекстная реклама для бизнеса в Казахстане"
 draft: false
 seo:
-  title: "SEO или контекстная реклама: что выбрать бизнесу в Казахстане 2026"
+  title: "SEO или контекстная реклама: что выбрать бизнесу"
   description: "Сравнение SEO и Google Ads для казахстанского бизнеса. Стоимость, сроки, ROI. Когда выбирать SEO, когда рекламу, и как совмещать оба канала."
   canonical: "https://www.geoaeo.pro/blog/seo-vs-kontekstnaya-reklama-kazakhstand-2025"
 ---

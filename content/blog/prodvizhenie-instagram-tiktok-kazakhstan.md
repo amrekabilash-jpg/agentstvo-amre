@@ -6,7 +6,7 @@ date: "2026-05-05"
 updated: "2026-05-05"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "GEO & SEO"
 tags: ["Instagram", "TikTok", "SMM", "Казахстан", "продвижение"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "Продвижение в Instagram и TikTok в Казахстане"
 draft: false
 seo:
-  title: "Продвижение в Instagram и TikTok в Казахстане: стратегия 2026"
+  title: "Продвижение в Instagram и TikTok в Казахстане"
   description: "Как продвигать бизнес в Instagram и TikTok в Казахстане. Алгоритмы, форматы контента, работа с блогерами, бюджеты. Стратегия для казахстанского рынка."
   canonical: "https://www.geoaeo.pro/blog/prodvizhenie-instagram-tiktok-kazakhstan"
 ---

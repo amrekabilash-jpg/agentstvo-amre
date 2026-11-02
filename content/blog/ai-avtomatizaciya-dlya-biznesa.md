@@ -6,7 +6,7 @@ date: "2025-02-20"
 updated: "2026-07-12"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "AI автоматизация"
 tags: ["AI", "автоматизация", "n8n", "ChatGPT", "бизнес"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "AI-автоматизация бизнес-процессов"
 draft: false
 seo:
-  title: "AI-автоматизация бизнеса в 2026: инструменты и кейсы"
+  title: "AI-автоматизация бизнеса: инструменты и примеры"
   description: "Как малому бизнесу внедрить AI-автоматизацию без больших бюджетов. n8n, ChatGPT API, Make.com — реальные примеры и расчёт окупаемости."
   canonical: "https://www.geoaeo.pro/blog/ai-avtomatizaciya-dlya-biznesa"
 ---

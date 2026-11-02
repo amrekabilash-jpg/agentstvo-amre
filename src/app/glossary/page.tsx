@@ -6,7 +6,7 @@ import { glossaryTerms } from "@/lib/glossary-data";
 const BASE_URL = "https://www.geoaeo.pro";
 
 export const metadata: Metadata = {
-  title: "Словарь терминов GEO, AEO и SEO",
+  title: "Словарь GEO, AEO и SEO: термины AI-поиска",
   description:
     "Простыми словами: что такое GEO, AEO, LLM, RAG, Schema.org, white label и другие термины AI-поиска и SEO-продвижения. Словарь от GeoAEO.",
   alternates: { canonical: `${BASE_URL}/glossary` },

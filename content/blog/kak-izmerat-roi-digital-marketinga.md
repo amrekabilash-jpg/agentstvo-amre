@@ -6,7 +6,7 @@ date: "2026-04-13"
 updated: "2026-04-13"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "GEO & SEO"
 tags: ["ROI", "метрики", "аналитика", "digital маркетинг"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "Как измерить ROI digital маркетинга"
 draft: false
 seo:
-  title: "Как измерить ROI digital маркетинга: 8 ключевых метрик"
+  title: "Как измерить ROI маркетинга: 8 ключевых метрик"
   description: "Полное руководство по измерению ROI digital маркетинга. CAC, LTV, ROAS, CPL — как считать и отслеживать метрики эффективности в казахстанском бизнесе."
   canonical: "https://www.geoaeo.pro/blog/kak-izmerat-roi-digital-marketinga"
 ---

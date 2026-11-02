@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+/* Lab performance check (Playwright, mobile emulation). Usage: node scripts/perf-lab.cjs http://localhost:3000
+ * Lab numbers on localhost are for diagnostics only — they are not field Core Web Vitals. */
 const { chromium, devices } = require('playwright');
 (async () => {
   const base = process.argv[2] || 'http://localhost:3100';

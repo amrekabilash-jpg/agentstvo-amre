@@ -31,9 +31,13 @@ export interface ServiceData {
   faqs: ServiceFaq[];
   relatedSlugs: string[]; // другие услуги
   techPartner?: TechPartner;
+  /** Короткий ответ (answer-first), показывается сразу после H1 */
+  summary?: string[];
+  /** Авторская позиция агентства — оформляется как blockquote с атрибуцией */
+  expertNote?: string;
+  /** Первоисточники для технических утверждений на странице */
+  sources?: { title: string; url: string }[];
 }
-
-const BASE = "https://www.geoaeo.pro";
 
 export const servicesData: ServiceData[] = [
   {
@@ -42,9 +46,9 @@ export const servicesData: ServiceData[] = [
     headline: "GEO и AEO оптимизация — ваш бизнес в ответах ChatGPT и Google AI",
     badge: "GEO/AEO",
     color: "violet",
-    metaTitle: "GEO и AEO оптимизация — продвижение в ChatGPT, Perplexity, AI Overview | GeoAEO",
+    metaTitle: "GEO и AEO оптимизация для ChatGPT и AI Overview",
     metaDescription:
-      "GEO/AEO-оптимизация в Алматы и по СНГ: выводим бизнес в ответы ChatGPT, Perplexity, Google AI Overview и Gemini. Аудит AI-видимости бесплатно. От 120 000 ₸/мес.",
+      "GEO/AEO-оптимизация в Алматы и СНГ: аудит AI-видимости, контент, Schema.org и упоминания, чтобы ChatGPT, Perplexity и Gemini понимали ваш бизнес.",
     keywords: [
       "GEO оптимизация",
       "AEO оптимизация",
@@ -56,7 +60,22 @@ export const servicesData: ServiceData[] = [
       "AI-видимость бренда",
     ],
     description:
-      "Ваши клиенты уже спрашивают ChatGPT, Perplexity и Google, кого выбрать. GEO/AEO-оптимизация делает так, чтобы AI-системы называли и рекомендовали именно ваш бизнес — раньше конкурентов.",
+      "Ваши клиенты уже спрашивают ChatGPT, Perplexity и Google, кого выбрать. GEO/AEO-оптимизация делает информацию о вашем бизнесе понятной и доступной для AI-систем и повышает шансы, что они назовут вас в ответе.",
+    summary: [
+      "GEO (Generative Engine Optimization) и AEO (Answer Engine Optimization) — работа над сайтом и внешними упоминаниями компании, чтобы AI-системы вроде ChatGPT, Perplexity, Gemini и Google AI Overview могли найти, понять и корректно процитировать информацию о вашем бизнесе.",
+      "На практике это техническая доступность сайта для поисковых и AI-краулеров, страницы с прямыми ответами на вопросы клиентов, корректная разметка Schema.org и согласованные данные о компании во внешних источниках.",
+      "Результат измеряется регулярными замерами ответов AI-систем на один и тот же набор вопросов вашей ниши. Гарантировать упоминание в ответах конкретной модели невозможно — ответы меняются от запуска к запуску.",
+    ],
+    expertNote:
+      "GEO-оптимизация помогает сделать информацию о компании более доступной для систем AI-поиска, однако само наличие оптимизированного сайта не гарантирует упоминания бренда в ответах моделей. Поэтому мы начинаем с замера и работаем с тем, что можно проверить.",
+    sources: [
+      { title: "Google Search Central — AI features and your website", url: "https://developers.google.com/search/docs/appearance/ai-features" },
+      { title: "Google Search Central — Introduction to structured data", url: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+      { title: "Schema.org — Getting started", url: "https://schema.org/docs/gs.html" },
+      { title: "OpenAI — Overview of OpenAI crawlers (OAI-SearchBot, ChatGPT-User, GPTBot)", url: "https://platform.openai.com/docs/bots" },
+      { title: "Anthropic — ClaudeBot, Claude-SearchBot и Claude-User", url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" },
+      { title: "Perplexity — PerplexityBot и Perplexity-User", url: "https://docs.perplexity.ai/guides/bots" },
+    ],
     features: [
       {
         title: "Аудит AI-видимости",
@@ -98,7 +117,7 @@ export const servicesData: ServiceData[] = [
     faqs: [
       {
         q: "Что такое GEO и AEO простыми словами?",
-        a: "GEO (Generative Engine Optimization) — оптимизация бизнеса под генеративные AI-поисковики: ChatGPT, Perplexity, Gemini. AEO (Answer Engine Optimization) — оптимизация контента под системы прямых ответов, включая Google AI Overview. Вместе они отвечают за то, чтобы AI называл ваш бренд, когда клиент спрашивает «кого выбрать».",
+        a: "GEO (Generative Engine Optimization) — оптимизация бизнеса под генеративные AI-поисковики: ChatGPT, Perplexity, Gemini. AEO (Answer Engine Optimization) — оптимизация контента под системы прямых ответов, включая Google AI Overview. Вместе они повышают вероятность, что AI назовёт ваш бренд, когда клиент спрашивает «кого выбрать», — но не гарантируют этого.",
       },
       {
         q: "Сколько стоит GEO/AEO-оптимизация?",
@@ -131,9 +150,9 @@ export const servicesData: ServiceData[] = [
     headline: "SEO продвижение и GEO-оптимизация в Алматы",
     badge: "SEO",
     color: "indigo",
-    metaTitle: "SEO продвижение сайтов Алматы — GEO и AEO оптимизация | GeoAEO",
+    metaTitle: "SEO-продвижение сайтов в Алматы с GEO и AEO",
     metaDescription:
-      "SEO продвижение сайтов в Алматы и Казахстане. GEO-оптимизация под AI-поисковики (ChatGPT, Perplexity), AEO, техническое SEO, линкбилдинг. Первая консультация бесплатно.",
+      "SEO-продвижение сайтов в Алматы и Казахстане: технический аудит, семантика, контент и ссылки плюс GEO/AEO под AI-поиск. Первая консультация бесплатно.",
     keywords: [
       "SEO продвижение Алматы",
       "продвижение сайта Казахстан",
@@ -212,9 +231,9 @@ export const servicesData: ServiceData[] = [
     headline: "AI-автоматизация бизнеса в Казахстане",
     badge: "AI",
     color: "emerald",
-    metaTitle: "AI-автоматизация бизнеса в Алматы — чатботы, AI-агенты, n8n | GeoAEO",
+    metaTitle: "AI-автоматизация бизнеса в Алматы: боты и n8n",
     metaDescription:
-      "Автоматизируем бизнес-процессы с помощью AI в Алматы и Казахстане. Чат-боты для Telegram и WhatsApp, AI-агенты, n8n интеграции, CRM-автоматизация. Освобождаем 6 часов в день.",
+      "AI-автоматизация для бизнеса в Алматы и Казахстане: чат-боты для Telegram и WhatsApp, AI-агенты, интеграции n8n и CRM. Начинаем с разбора процессов.",
     keywords: [
       "AI автоматизация бизнеса Алматы",
       "чатбот для бизнеса Казахстан",
@@ -293,9 +312,9 @@ export const servicesData: ServiceData[] = [
     headline: "UI/UX дизайн сайтов и приложений в Алматы",
     badge: "Дизайн",
     color: "pink",
-    metaTitle: "UI/UX Дизайн сайтов и приложений Алматы — Агентство geoaeo.pro",
+    metaTitle: "UI/UX-дизайн сайтов и приложений в Алматы",
     metaDescription:
-      "Дизайн интерфейсов, который конвертирует. UI/UX дизайн сайтов, мобильных приложений и SaaS-продуктов в Алматы. Figma, прототипирование, дизайн-системы. Первая консультация бесплатно.",
+      "UI/UX-дизайн сайтов, мобильных приложений и SaaS в Алматы: исследования, прототипы и дизайн-системы в Figma. Первая консультация бесплатно.",
     keywords: [
       "UI UX дизайн Алматы",
       "дизайн сайта Казахстан",
@@ -374,9 +393,9 @@ export const servicesData: ServiceData[] = [
     headline: "Разработка бренд-айдентики и логотипа в Алматы",
     badge: "Брендинг",
     color: "amber",
-    metaTitle: "Разработка логотипа и бренд-айдентики Алматы — Агентство geoaeo.pro",
+    metaTitle: "Логотип и бренд-айдентика в Алматы",
     metaDescription:
-      "Создаём бренд-айдентику, которая запоминается. Логотип, фирменный стиль, брендбук для бизнеса в Алматы и Казахстане. Дизайн, который выделяет вас среди конкурентов.",
+      "Разработка логотипа, фирменного стиля и брендбука для бизнеса в Алматы и Казахстане: от позиционирования до гайдлайнов. Первая консультация бесплатно.",
     keywords: [
       "разработка логотипа Алматы",
       "бренд-айдентика Казахстан",
@@ -455,9 +474,9 @@ export const servicesData: ServiceData[] = [
     headline: "Разработка сайтов в Алматы и Казахстане",
     badge: "Разработка",
     color: "violet",
-    metaTitle: "Разработка сайтов Алматы — создание сайта под ключ | GeoAEO",
+    metaTitle: "Разработка сайтов в Алматы под ключ",
     metaDescription:
-      "Разработка сайтов в Алматы под ключ: лендинги, корпоративные сайты, интернет-магазины. Быстро, качественно, с SEO с нуля. Создание сайта в Казахстане от 150 000 тенге.",
+      "Разработка сайтов в Алматы под ключ: лендинги, корпоративные сайты и интернет-магазины на Next.js с SEO с первого дня. Стоимость — от 150 000 ₸.",
     keywords: [
       "разработка сайтов Алматы",
       "создание сайта Казахстан",
@@ -536,9 +555,9 @@ export const servicesData: ServiceData[] = [
     headline: "Видеопродакшн и SMM-контент в Алматы",
     badge: "Креатив",
     color: "orange",
-    metaTitle: "Видеопродакшн и SMM-контент Алматы — Агентство geoaeo.pro",
+    metaTitle: "Видеопродакшн и SMM-контент в Алматы",
     metaDescription:
-      "Создаём видеоконтент, моушн-графику и SMM-материалы для бизнеса в Алматы. Видеосъёмка, монтаж, 3D-анимация, контент для Instagram и TikTok. Визуальный контент, который продаёт.",
+      "Видеосъёмка, монтаж, моушн-графика и контент для Instagram и TikTok для бизнеса в Алматы. Готовим визуал под задачи продаж и бренда.",
     keywords: [
       "видеопродакшн Алматы",
       "SMM контент Казахстан",

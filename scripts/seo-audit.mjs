@@ -98,6 +98,7 @@ function auditPage(url, res) {
   const xRobots = res.headers.get("x-robots-tag") || "";
   const ogTitle = metaContent(html, "property", "og:title")[0] || "";
   const ogDesc = metaContent(html, "property", "og:description")[0] || "";
+  const ogImages = metaContent(html, "property", "og:image");
 
   // JSON-LD
   const ldBlocks = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
@@ -154,6 +155,9 @@ function auditPage(url, res) {
     const text = strip(html.replace(/<script[\s\S]*?<\/script>/gi, ""));
     const missing = qs.filter((q) => !text.includes(q));
     if (missing.length) add("P1", `FAQPage: ${missing.length}/${qs.length} вопросов не видны на странице`);
+    const answers = (x.node.mainEntity || []).map((q) => q.acceptedAnswer?.text || "");
+    const missingA = answers.filter((a) => a && !text.includes(a.slice(0, 60)));
+    if (missingA.length) add("P1", `FAQPage: ${missingA.length}/${answers.length} ответов нет в HTML страницы`);
   }
   for (const x of ld.filter((x) => x.type === "WebSite")) {
     if (x.node.potentialAction) add("P2", "WebSite.SearchAction объявлен, но поиска по сайту нет (проверьте вручную)");
@@ -190,6 +194,8 @@ function auditPage(url, res) {
     hasDates: hasTimeTag || hasDateWords,
     links,
     imgs,
+    ogImages,
+    ldImages: ld.flatMap((x) => [].concat(x.node.image || []).map((i) => (typeof i === "string" ? i : i.url)).filter(Boolean)),
     issues,
   };
 }
@@ -253,6 +259,12 @@ async function main() {
 
   // assets referenced (images) — check existence
   const assets = new Map();
+  for (const p of report.pages)
+    for (const u of [...(p.ogImages || []), ...(p.ldImages || [])]) {
+      if (!u.startsWith(PROD)) continue;
+      const rel = u.replace(PROD, "");
+      if (!(p.imgs ||= []).includes(rel)) p.imgs.push(rel);
+    }
   for (const p of report.pages) for (const i of p.imgs || []) {
     if (!assets.has(i)) assets.set(i, new Set());
     assets.get(i).add(p.url);

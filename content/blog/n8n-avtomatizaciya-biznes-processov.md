@@ -6,7 +6,7 @@ date: "2026-04-28"
 updated: "2026-05-14"
 author:
   name: "Амре Кабылаш"
-  role: "Основатель Агентства"
+  role: "Основатель GeoAEO"
 category: "AI автоматизация"
 tags: ["n8n", "автоматизация", "no-code", "бизнес-процессы", "workflow"]
 featuredImage:
@@ -14,7 +14,7 @@ featuredImage:
   alt: "n8n автоматизация бизнес-процессов без программиста"
 draft: false
 seo:
-  title: "n8n автоматизация бизнес-процессов: руководство для малого бизнеса"
+  title: "n8n: автоматизация бизнеса без программиста"
   description: "Как использовать n8n для автоматизации бизнеса без программиста. 5 готовых сценариев, сравнение с Zapier и Make, стоимость и настройка."
   canonical: "https://www.geoaeo.pro/blog/n8n-avtomatizaciya-biznes-processov"
 ---
