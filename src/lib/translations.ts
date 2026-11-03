@@ -204,6 +204,7 @@ const translations = {
     },
     servicesPage: {
       label: "Наши услуги",
+      pagesNavLabel: "Страницы услуг",
       heading: "Комплексные решения для роста вашего бизнеса",
       subheading: "Четыре ключевых направления, которые покрывают все потребности современного бизнеса.",
       directionsLabel: "/ наши направления",
@@ -448,6 +449,7 @@ const translations = {
     },
     servicesPage: {
       label: "Біздің қызметтер",
+      pagesNavLabel: "Қызмет беттері",
       heading: "Бизнесіңіздің өсуі үшін кешенді шешімдер",
       subheading: "Заманауи бизнестің барлық қажеттіліктерін қамтитын төрт негізгі бағыт.",
       directionsLabel: "/ біздің бағыттар",
@@ -590,7 +592,7 @@ export type Translations = {
     trustText: string; trustSub: string; messengerHeading: string; messengerBody: string;
   };
   servicesPage: {
-    label: string; heading: string; subheading: string; directionsLabel: string;
+    label: string; heading: string; subheading: string; directionsLabel: string; pagesNavLabel: string;
     ctaHeading: string; ctaSubtext: string; ctaButton: string;
     slides: readonly { title: string }[];
     services: readonly {

@@ -93,6 +93,16 @@ export function ServicesPageClient(): React.ReactElement {
     features: sp.services[i].features,
   }));
 
+  // Crawlable links to individual service pages. The detailed sections below render only after a click,
+  // so these plain links are the only route to the service pages in the server HTML.
+  const serviceLinks = [
+    ...SLIDES.map((slide) => ({
+      href: `/services/${SERVICE_SLUGS[slide.sectionId]}`,
+      label: slide.title,
+    })),
+    { href: "/services/geo-aeo-optimizaciya", label: "GEO / AEO оптимизация" },
+  ];
+
   const handleSlideClick = (sectionId: string) => {
     setOpenSection((prev) => (prev === sectionId ? null : sectionId));
     setTimeout(() => {
@@ -184,6 +194,22 @@ export function ServicesPageClient(): React.ReactElement {
           </div>
         </HoverSlider>
       </section>
+
+      {/* Crawlable links to service pages (visible, server-rendered) */}
+      <nav aria-label={sp.pagesNavLabel} className="container-atlantis py-10 bg-white">
+        <ul className="flex flex-wrap gap-3">
+          {serviceLinks.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold text-[#5B5FEF] hover:border-[#5B5FEF] transition-colors"
+              >
+                {item.label} <ArrowRight size={14} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/* Service sections — hidden by default, revealed on click */}
       <AnimatePresence>
