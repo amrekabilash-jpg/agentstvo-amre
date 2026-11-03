@@ -9,10 +9,13 @@ import { RecentPosts } from "@/components/sections/RecentPosts";
 import { HomeFaq } from "@/components/sections/HomeFaq";
 import { CTA } from "@/components/sections/CTA";
 import { FloatingContact } from "@/components/ui/FloatingContact";
+import { JsonLd, faqPageSchema, SITE_URL } from "@/components/seo/JsonLd";
+import { homeFaqs } from "@/lib/home-faq";
 
 export default function Home(): React.ReactElement {
   return (
     <>
+      <JsonLd data={faqPageSchema(homeFaqs, SITE_URL)} />
       <Hero />
       <QuoteBlocks />
       <Clients />

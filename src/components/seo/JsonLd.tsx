@@ -1,4 +1,15 @@
-/* JSON-LD Structured Data for SEO/GEO/AEO */
+/* JSON-LD structured data.
+ *
+ * Rules (see GEOAEO_AUDIT_BEFORE.md):
+ *  - One entity per real thing, linked by stable @id (no duplicated / conflicting Organization nodes).
+ *  - Only facts that are visible on the site or confirmed by the owner. No ratings, no unverifiable claims.
+ *  - FAQPage only on pages where the same questions are visible to users.
+ */
+
+export const SITE_URL = "https://www.geoaeo.pro";
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const FOUNDER_ID = `${SITE_URL}/#founder`;
 
 interface JsonLdProps {
   data: Record<string, unknown>;
@@ -8,451 +19,107 @@ export function JsonLd({ data }: JsonLdProps): React.ReactElement {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      // Escape "<" so content can never close the script tag.
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
     />
   );
 }
 
-/* ── Organization + LocalBusiness (GEO) ── */
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.geoaeo.pro/#organization",
-  name: "GeoAEO — Агентство GEO и AEO оптимизации",
-  alternateName: ["GeoAEO", "geoaeo.pro", "Агентство", "Agentsvo", "GeoAEO Agency"],
-  url: "https://www.geoaeo.pro",
-  slogan: "Выводим бизнес в ответы ChatGPT, Perplexity, Gemini и Google AI Overview",
-  knowsAbout: [
-    "GEO (Generative Engine Optimization)",
-    "AEO (Answer Engine Optimization)",
-    "SEO",
-    "AI Search Optimization",
-    "LLM Visibility",
-    "ChatGPT Optimization",
-    "Perplexity Optimization",
-    "Google AI Overview",
-  ],
+/* ── Site-wide graph: Organization + WebSite + founder ── */
+export const organizationNode = {
+  // ProfessionalService is a subtype of Organization/LocalBusiness: a single node, not two competing ones.
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": ORG_ID,
+  name: "GeoAEO",
+  alternateName: ["geoaeo.pro", "GeoAEO Agency"],
+  url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: "https://www.geoaeo.pro/images/logo.svg",
-    width: 52,
-    height: 52,
+    url: `${SITE_URL}/images/logo.svg`,
   },
+  image: `${SITE_URL}/opengraph-image`,
   description:
-    "Цифровое агентство нового поколения в Алматы, Казахстан. SEO-оптимизация, GEO, креативные услуги и автоматизация бизнеса с помощью AI.",
+    "Агентство GEO и AEO-оптимизации из Алматы: помогает бизнесу быть понятным для AI-поиска (ChatGPT, Perplexity, Google AI Overview, Gemini). Также SEO, разработка сайтов, дизайн и AI-автоматизация.",
+  slogan: "Делаем бизнес понятным для AI-поиска",
   foundingDate: "2024",
-  foundingLocation: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Алматы",
-      addressCountry: "KZ",
-    },
-  },
-  founder: {
-    "@type": "Person",
-    "@id": "https://www.geoaeo.pro/#founder",
-    name: "Амре Кабылаш",
-  },
+  founder: { "@id": FOUNDER_ID },
   email: "hello@geoaeo.pro",
-  sameAs: [
-    "https://t.me/agentsvo",
-    "https://wa.me/77017282236",
-  ],
   telephone: "+77017282236",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Алматы",
-    addressRegion: "Алматы",
     addressCountry: "KZ",
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+77017282236",
-    contactType: "customer service",
-    availableLanguage: ["Russian", "English", "Kazakh"],
-    areaServed: ["KZ", "RU", "BY", "UZ", "KG"],
-  },
-};
-
-export const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.geoaeo.pro/#local-business",
-  name: "Агентство — Цифровое агентство",
-  image: "https://www.geoaeo.pro/images/logo.svg",
-  url: "https://www.geoaeo.pro",
-  telephone: "+77017282236",
-  email: "hello@geoaeo.pro",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Алматы",
-    addressRegion: "Алматы",
-    addressCountry: "KZ",
-    addressRegionCode: "ALA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.238949,
-    longitude: 76.945465,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "09:00",
-      closes: "18:00",
-    },
-  ],
-  priceRange: "$$",
-  serviceArea: {
-    "@type": "GeoCircle",
-    geoMidpoint: {
-      "@type": "GeoCoordinates",
-      latitude: 43.238949,
-      longitude: 76.945465,
-    },
-    geoRadius: "5000km",
-  },
-  knowsLanguage: ["ru", "en", "kk"],
   areaServed: [
     { "@type": "Country", name: "Казахстан" },
     { "@type": "Country", name: "Россия" },
     { "@type": "Country", name: "Узбекистан" },
     { "@type": "Country", name: "Кыргызстан" },
   ],
-};
-
-/* ── Founder Schema (Person) for E-E-A-T ── */
-export const founderSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.geoaeo.pro/#founder",
-  name: "Амре Кабылаш",
-  image: "https://www.geoaeo.pro/images/amre-profile.svg",
-  jobTitle: "Основатель и Стратег",
-  email: "hello@geoaeo.pro",
-  telephone: "+77017282236",
-  url: "https://www.geoaeo.pro/about",
-  sameAs: [
-    "https://www.geoaeo.pro/about"
-  ],
+  knowsLanguage: ["ru", "kk", "en"],
   knowsAbout: [
-    "SEO Optimization",
-    "GEO (Generative Engine Optimization)",
-    "AEO (Answer Engine Optimization)",
-    "AI Automation",
-    "Digital Marketing",
+    "Generative Engine Optimization (GEO)",
+    "Answer Engine Optimization (AEO)",
+    "SEO",
     "Schema.org",
-    "Content Strategy",
-    "Link Building",
-    "Technical SEO",
+    "AI-автоматизация бизнес-процессов",
+    "Разработка сайтов",
   ],
-  workLocation: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Алматы",
-      addressCountry: "KZ",
-    },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+77017282236",
+    email: "hello@geoaeo.pro",
+    contactType: "customer service",
+    availableLanguage: ["Russian", "Kazakh", "English"],
   },
-  affiliation: {
-    "@type": "Organization",
-    name: "Агентство",
-    url: "https://www.geoaeo.pro",
-  },
-  description:
-    "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
+  // Official profiles only (chat deep links like wa.me are contact methods, not profiles).
+  sameAs: ["https://t.me/agentsvo"],
 };
 
-/* ── WebSite (AEO — Search Actions) ── */
-export const webSiteSchema = {
-  "@context": "https://schema.org",
+export const websiteNode = {
   "@type": "WebSite",
-  name: "Агентство",
-  url: "https://www.geoaeo.pro",
+  "@id": WEBSITE_ID,
+  name: "GeoAEO",
+  url: SITE_URL,
   inLanguage: "ru",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://www.geoaeo.pro/?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
+  publisher: { "@id": ORG_ID },
+  // No SearchAction: the site has no internal search.
 };
 
-/* ── FAQ Schema (AEO) for /contacts ── */
-export const faqSchema = {
+export const founderNode = {
+  "@type": "Person",
+  "@id": FOUNDER_ID,
+  name: "Амре Кабылаш",
+  jobTitle: "Основатель GeoAEO",
+  url: `${SITE_URL}/about`,
+  image: `${SITE_URL}/images/amre-profile.svg`,
+  worksFor: { "@id": ORG_ID },
+  knowsAbout: ["GEO", "AEO", "SEO", "AI-автоматизация"],
+};
+
+export const siteGraphSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Какое агентство настраивает GEO и AEO оптимизацию в Казахстане?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "GeoAEO (geoaeo.pro) — агентство в Алматы, специализирующееся на GEO (Generative Engine Optimization) и AEO (Answer Engine Optimization). Выводит бизнес в ответы ChatGPT, Perplexity, Google AI Overview, Gemini и Claude. Работает с клиентами по всему СНГ, стоимость от 80 000 тенге/месяц.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Что такое GEO и AEO оптимизация?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "GEO (Generative Engine Optimization) — оптимизация сайта и бренда для видимости в генеративных AI-поисковиках (ChatGPT, Perplexity, Gemini). AEO (Answer Engine Optimization) — оптимизация контента под прямые ответы: FAQ, структурированные данные, ответо-центричные тексты. Вместе они обеспечивают упоминание бизнеса в ответах LLM-моделей.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Как попасть в ответы ChatGPT и Perplexity?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Нужны три компонента: техническая доступность сайта для AI-краулеров (GPTBot, OAI-SearchBot, PerplexityBot), ответо-центричный контент со Schema.org разметкой и внешние упоминания бренда в источниках, которым доверяют LLM — каталогах, отзывах, СМИ. Агентство GeoAEO настраивает все три уровня.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Сколько стоят ваши услуги?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Стоимость зависит от объёма задач. Первая консультация бесплатно — обсудим бюджет и предложим оптимальный формат.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Как быстро вы начинаете работу?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Обычно запускаем проект в течение 3-5 рабочих дней после согласования деталей и подписания договора.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Работаете ли вы с компаниями из других стран?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Да! Мы работаем удалённо с клиентами из Казахстана, России, Узбекистана и других стран СНГ.",
-      },
-    },
-  ],
+  "@graph": [organizationNode, websiteNode, founderNode],
 };
 
-/* ── Services Schema (AEO) ── */
-export const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  provider: {
-    "@type": "Organization",
-    name: "Агентство",
-    url: "https://www.geoaeo.pro",
-  },
-  serviceType: "Digital Marketing Agency",
-  areaServed: {
-    "@type": "Country",
-    name: "Казахстан",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Услуги цифрового агентства",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "SEO-оптимизация и GEO",
-          description:
-            "Комплексное продвижение сайтов в поисковых системах. Техническое SEO, контент-стратегия, линкбилдинг, локальная оптимизация.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Креатив и дизайн",
-          description:
-            "Разработка бренд-айдентики, дизайн сайтов, создание контента и визуальных материалов.",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "AI-автоматизация",
-          description:
-            "Внедрение AI-решений для автоматизации бизнес-процессов, чат-боты, аналитика данных.",
-        },
-      },
-    ],
-  },
-};
-
-
-/* ── HowTo Schema (AEO) for Blog Posts ── */
-
-/* HowTo: n8n Automation Setup (5 steps) */
-export function howToN8nAutomationSchema(): Record<string, unknown> {
+/* ── FAQPage built from the questions actually rendered on a page ── */
+export function faqPageSchema(
+  items: readonly { q: string; a: string }[],
+  pageUrl: string
+): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "Как настроить n8n для автоматизации бизнес-процессов",
-    description: "Пошаговое руководство по внедрению n8n для автоматизации повторяющихся задач в вашем бизнесе.",
-    image: "https://www.geoaeo.pro/images/blog/n8n-setup.svg",
-    estimatedCost: {
-      "@type": "PriceSpecification",
-      currency: "KZT",
-      price: "0"
-    },
-    totalTime: "PT2H",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Настройка автоматизации обработки лидов",
-        text: "Создайте workflow в n8n который автоматически получает новые заявки из форм вашего сайта и отправляет их в CRM. Цель: сократить время обработки лида с 30 минут до 1 минуты."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Генерация еженедельных отчётов",
-        text: "Настройте автоматическое формирование отчётов каждый понедельник. n8n сможет собрать данные из разных источников и отправить единый отчёт."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Создание напоминаний и уведомлений",
-        text: "Настройте систему напоминаний для важных дат. Отправляйте уведомления в WhatsApp, Telegram или Email."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Мониторинг и алерты системы",
-        text: "Создайте workflow который проверяет критические метрики и отправляет алерты при проблемах."
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Синхронизация данных между системами",
-        text: "Настройте двухстороннюю синхронизацию данных между вашей CRM, счётной системой и маркетинговой платформой."
-      }
-    ]
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 }
 
-/* HowTo: Google AI Overview Optimization (7 steps) */
-export function howToGoogleAIOverviewSchema(): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "Как попасть в Google AI Overview: пошаговое руководство",
-    description: "7 шагов для оптимизации контента под Google AI Overview и появления в AI-сводках поиска.",
-    image: "https://www.geoaeo.pro/images/blog/google-ai-overview.svg",
-    estimatedCost: {
-      "@type": "PriceSpecification",
-      currency: "KZT",
-      price: "0"
-    },
-    totalTime: "PT4W",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Исследование вопросов целевой аудитории",
-        text: "Используйте AnswerThePublic, Google People Also Ask и Яндекс.Вордстат для сбора 30-50 конкретных вопросов вашей аудитории."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Создание ответо-центричного контента",
-        text: "Структурируйте контент так, чтобы каждый раздел был вопросом + конкретный ответ в первых 2-3 предложениях."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Добавление FAQPage Schema разметки",
-        text: "Внедрите FAQPage Schema с вашими основными вопросами и ответами."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Использование HowTo Schema для инструкций",
-        text: "Пошаговые руководства с HowTo Schema попадают в AI Overview значительно чаще."
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Оптимизация структуры страницы",
-        text: "Используйте иерархию заголовков (H1 → H2 → H3), таблицы для сравнений, маркированные списки."
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "Улучшение Core Web Vitals",
-        text: "Оптимизируйте скорость загрузки сайта до LCP < 2.5 сек, FID < 100 мс, CLS < 0.1."
-      },
-      {
-        "@type": "HowToStep",
-        position: 7,
-        name: "Наращивание E-E-A-T сигналов",
-        text: "Добавьте биографию автора с достижениями, опубликуйте кейсы с конкретными цифрами."
-      }
-    ]
-  };
-}
-
-/* HowTo: Local SEO for Almaty (4 steps) */
-export function howToLocalSEOSchema(): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "Как улучшить локальный SEO для бизнеса в Алматы",
-    description: "4-недельный план локальной SEO оптимизации для казахстанского бизнеса.",
-    image: "https://www.geoaeo.pro/images/blog/local-seo-almaty.svg",
-    estimatedCost: {
-      "@type": "PriceSpecification",
-      currency: "KZT",
-      price: "0"
-    },
-    totalTime: "P4W",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Исследование локальных ключевых слов",
-        text: "Найдите 20-30 локальных ключевых слов с добавлением 'Алматы', 'в Алматы', 'Алматы 2026'."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Оптимизация Google My Business профиля",
-        text: "Заполните все поля в Google My Business: полное описание, фото, часы работы (все 7 дней)."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Создание локальных цитаций в казахстанских директориях",
-        text: "Подайте информацию о вашей компании в 10+ казахстанских директориев: Yell.kz, 2GIS, Avvo.kz, Bir.agency."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Мониторинг локальных рейтингов и отзывов",
-        text: "Еженедельно проверяйте позиции в Google Maps. Поощряйте клиентов оставлять отзывы."
-      }
-    ]
-  };
-}
-
-/* ── Breadcrumb helpers (AEO) ── */
+/* ── Breadcrumbs ── */
 export function breadcrumbSchema(
   items: { name: string; url: string }[]
 ): Record<string, unknown> {

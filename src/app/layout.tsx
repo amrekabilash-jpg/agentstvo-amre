@@ -10,14 +10,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { LangProvider } from "@/lib/lang-context";
-import {
-  JsonLd,
-  organizationSchema,
-  localBusinessSchema,
-  founderSchema,
-  webSiteSchema,
-  faqSchema,
-} from "@/components/seo/JsonLd";
+import { JsonLd, siteGraphSchema } from "@/components/seo/JsonLd";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -31,11 +24,11 @@ const BASE_URL = "https://www.geoaeo.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "GeoAEO — GEO и AEO оптимизация под ChatGPT, Perplexity, Gemini | Алматы",
-    template: "%s | GeoAEO — GEO и AEO агентство",
+    default: "GEO/AEO-оптимизация для бизнеса в Алматы | GeoAEO",
+    template: "%s | GeoAEO",
   },
   description:
-    "GeoAEO — агентство GEO и AEO оптимизации в Алматы. Выводим бизнес в ответы ChatGPT, Perplexity, Google AI Overview и Gemini. Плюс SEO, креатив и AI-автоматизация. Первая консультация бесплатно.",
+    "GEO/AEO-агентство в Алматы: делаем сайт и бренд понятными для ChatGPT, Perplexity и Google AI Overview. SEO, контент, Schema.org и AI-автоматизация.",
   keywords: [
     "GEO оптимизация",
     "AEO оптимизация",
@@ -68,9 +61,9 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "GeoAEO — GEO и AEO оптимизация под ChatGPT, Perplexity, Gemini",
+    title: "GEO/AEO-оптимизация для бизнеса | GeoAEO",
     description:
-      "Выводим бизнес в ответы AI-поисковиков: ChatGPT, Perplexity, Google AI Overview. Плюс SEO, креатив и AI-автоматизация.",
+      "Помогаем бизнесу стать заметнее в ответах ChatGPT, Perplexity и Google AI Overview: GEO, AEO, SEO и AI-автоматизация.",
     url: BASE_URL,
     siteName: "GeoAEO",
     type: "website",
@@ -86,9 +79,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GeoAEO — GEO и AEO оптимизация в Алматы",
+    title: "GEO/AEO-оптимизация для бизнеса | GeoAEO",
     description:
-      "Выводим бизнес в ответы ChatGPT, Perplexity и Google AI Overview. Первая консультация бесплатно.",
+      "Помогаем бизнесу стать заметнее в ответах ChatGPT, Perplexity и Google AI Overview. Первая консультация бесплатно.",
     images: [`${BASE_URL}/opengraph-image`],
   },
   robots: {
@@ -116,11 +109,9 @@ export default function RootLayout({
   return (
     <html lang="ru" className={montserrat.variable} suppressHydrationWarning>
       <head>
-        <JsonLd data={organizationSchema} />
-        <JsonLd data={localBusinessSchema} />
-        <JsonLd data={founderSchema} />
-        <JsonLd data={webSiteSchema} />
-        <JsonLd data={faqSchema} />
+        {/* Site-wide entity graph: Organization (#organization), WebSite (#website), Person (#founder).
+            Page-specific schemas (FAQPage, BlogPosting, Service, BreadcrumbList) live on their pages. */}
+        <JsonLd data={siteGraphSchema} />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider>

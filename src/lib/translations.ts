@@ -91,8 +91,8 @@ const translations = {
         {
           name: "Амре",
           role: "CEO & Стратег",
-          bio: "Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%. Google Analytics Certified, HubSpot Certified, Schema.org Specialist.",
-          photo: "/images/amre-profile.jpg",
+          bio: "Основатель GeoAEO, отвечает за стратегию GEO/AEO, SEO и AI-автоматизации.",
+          photo: "/images/amre-profile.svg",
           email: "hello@geoaeo.pro",
           phone: "+77017282236",
           expertise: ["SEO", "GEO", "AEO", "AI Automation", "Digital Strategy"],
@@ -204,6 +204,7 @@ const translations = {
     },
     servicesPage: {
       label: "Наши услуги",
+      pagesNavLabel: "Страницы услуг",
       heading: "Комплексные решения для роста вашего бизнеса",
       subheading: "Четыре ключевых направления, которые покрывают все потребности современного бизнеса.",
       directionsLabel: "/ наши направления",
@@ -448,6 +449,7 @@ const translations = {
     },
     servicesPage: {
       label: "Біздің қызметтер",
+      pagesNavLabel: "Қызмет беттері",
       heading: "Бизнесіңіздің өсуі үшін кешенді шешімдер",
       subheading: "Заманауи бизнестің барлық қажеттіліктерін қамтитын төрт негізгі бағыт.",
       directionsLabel: "/ біздің бағыттар",
@@ -590,7 +592,7 @@ export type Translations = {
     trustText: string; trustSub: string; messengerHeading: string; messengerBody: string;
   };
   servicesPage: {
-    label: string; heading: string; subheading: string; directionsLabel: string;
+    label: string; heading: string; subheading: string; directionsLabel: string; pagesNavLabel: string;
     ctaHeading: string; ctaSubtext: string; ctaButton: string;
     slides: readonly { title: string }[];
     services: readonly {

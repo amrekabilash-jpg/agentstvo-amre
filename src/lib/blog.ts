@@ -17,11 +17,24 @@ export interface BlogPost {
   featuredImage: { src: string; alt: string };
   draft: boolean;
   seo: { title: string; description: string; canonical: string };
+  /** «Кратко»: 2–4 самодостаточных тезиса, показываются над текстом статьи */
+  summary: string[];
   content: string;
   readingTime: number;
 }
 
-export interface BlogPostMeta extends Omit<BlogPost, "content"> {}
+export type BlogPostMeta = Omit<BlogPost, "content">;
+
+const PUBLIC_DIR = path.join(process.cwd(), "public");
+
+/** Use the featured image only if the file actually exists in /public (avoids 404 og:image). */
+function resolveImage(img: { src?: string; alt?: string } | undefined): { src: string; alt: string } {
+  const src = img?.src ?? "";
+  if (src.startsWith("/") && fs.existsSync(path.join(PUBLIC_DIR, src))) {
+    return { src, alt: img?.alt ?? "" };
+  }
+  return { src: "", alt: img?.alt ?? "" };
+}
 
 function calcReadingTime(text: string): number {
   const words = text.trim().split(/\s+/).length;
@@ -48,10 +61,11 @@ export function getAllPosts(): BlogPostMeta[] {
         excerpt: data.excerpt ?? "",
         date: data.date ?? "",
         updated: data.updated ?? data.date ?? "",
-        author: data.author ?? { name: "Агентство", role: "" },
+        author: data.author ?? { name: "GeoAEO", role: "" },
         category: data.category ?? "",
         tags: data.tags ?? [],
-        featuredImage: data.featuredImage ?? { src: "", alt: "" },
+        featuredImage: resolveImage(data.featuredImage),
+        summary: Array.isArray(data.summary) ? data.summary : [],
         draft: false,
         seo: data.seo ?? {
           title: data.title ?? "",
@@ -91,10 +105,11 @@ export function getPostBySlug(slug: string): BlogPost | null {
       excerpt: data.excerpt ?? "",
       date: data.date ?? "",
       updated: data.updated ?? data.date ?? "",
-      author: data.author ?? { name: "Агентство", role: "" },
+      author: data.author ?? { name: "GeoAEO", role: "" },
       category: data.category ?? "",
       tags: data.tags ?? [],
-      featuredImage: data.featuredImage ?? { src: "", alt: "" },
+      featuredImage: resolveImage(data.featuredImage),
+      summary: Array.isArray(data.summary) ? data.summary : [],
       draft: false,
       seo: data.seo ?? {
         title: data.title ?? "",

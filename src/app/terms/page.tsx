@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Условия использования",
-  description: "Условия использования сайта и услуг цифрового агентства Агентство.",
+  description: "Условия использования сайта geoaeo.pro и услуг агентства GeoAEO: порядок оказания услуг, интеллектуальная собственность, ответственность и споры.",
   alternates: { canonical: "https://www.geoaeo.pro/terms" },
 };
 

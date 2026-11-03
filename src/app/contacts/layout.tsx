@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { JsonLd, faqSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLd, faqPageSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { translations } from "@/lib/translations";
 
 export const metadata: Metadata = {
-  title: "Контакты — Связаться с агентством в Алматы",
+  title: "Контакты GEO/AEO-агентства в Алматы",
   description:
-    "Свяжитесь с цифровым агентством Агентство. Алматы, Казахстан. Телефон: +7 701 728 22 36, email: hello@geoaeo.pro. WhatsApp, форма обратной связи. Первая консультация бесплатно.",
+    "Свяжитесь с GeoAEO: +7 701 728 22 36, hello@geoaeo.pro, WhatsApp и Telegram. Алматы, работаем онлайн по СНГ. Первая консультация бесплатно.",
   keywords: [
     "контакты Агентство",
     "digital агентство Алматы контакты",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "https://www.geoaeo.pro/contacts",
   },
   openGraph: {
-    title: "Контакты | Агентство — Цифровое агентство",
+    title: "Контакты GEO/AEO-агентства GeoAEO в Алматы",
     description: "Свяжитесь с нами: +7 701 728 22 36, hello@geoaeo.pro. Первая консультация бесплатно.",
     url: "https://www.geoaeo.pro/contacts",
     type: "website",
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
 export default function ContactsLayout({ children }: { children: React.ReactNode }): React.ReactElement {
   return (
     <>
-      <JsonLd data={faqSchema} />
+      {/* Same questions as the visible FAQ block (server-rendered in Russian). */}
+      <JsonLd data={faqPageSchema(translations.ru.contacts.faqItems, "https://www.geoaeo.pro/contacts")} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Главная", url: "https://www.geoaeo.pro" },

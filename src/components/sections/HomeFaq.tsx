@@ -1,31 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { homeFaqs as faqs } from "@/lib/home-faq";
 
-const faqs = [
-  {
-    q: "Сколько стоят ваши услуги?",
-    a: "Зависит от задачи. SEO продвижение — от 80 000 тенге/мес, разработка сайта — от 150 000 тенге, AI-автоматизация — от 150 000 тенге за проект. Первая консультация бесплатно — разберём вашу задачу и назовём точную цену.",
-  },
-  {
-    q: "Как быстро вы начинаете работу?",
-    a: "Запускаем проект в течение 3–5 рабочих дней после согласования деталей. На первой консультации уже даём конкретные рекомендации — без лишних слов.",
-  },
-  {
-    q: "Работаете только в Алматы или по всему Казахстану?",
-    a: "Работаем онлайн по всему Казахстану и СНГ: Алматы, Астана, Шымкент, Атырау, Россия, Узбекистан. Физическая встреча — только по желанию.",
-  },
-  {
-    q: "Что такое GEO и AEO — зачем это моему бизнесу?",
-    a: "GEO (Generative Engine Optimization) — оптимизация под ChatGPT, Perplexity, Google AI Overview. По разным оценкам индустрии, всё больше поисковых запросов получают AI-ответ вместо привычной выдачи ссылок — и без GEO вас в этом ответе нет. AEO — оптимизация под голосовой поиск и Featured Snippets. Мы делаем так, чтобы AI рекомендовал именно ваш бизнес.",
-  },
-  {
-    q: "Даёте ли гарантии результата?",
-    a: "Мы гарантируем качество работы и прозрачную отчётность. Наша цель — чтобы клиенты оставались с нами и после первого проекта, а не уходили после разовой задачи. Конкретные позиции в Google гарантировать невозможно — алгоритмы меняются, но рост трафика и видимости — реально.",
-  },
-];
 
 export function HomeFaq(): React.ReactElement {
   const [open, setOpen] = useState<number | null>(0);
@@ -68,22 +47,18 @@ export function HomeFaq(): React.ReactElement {
                 </span>
               </button>
 
-              <AnimatePresence initial={false}>
-                {open === i && (
-                  <motion.div
-                    key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="overflow-hidden"
-                  >
-                    <p className="px-5 pb-5 pt-1 text-sm text-[var(--foreground-secondary)] leading-relaxed border-t border-[var(--border)]">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Answer stays in the HTML (collapsed via height) so it matches the FAQPage JSON-LD for crawlers. */}
+              <motion.div
+                initial={false}
+                animate={open === i ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="overflow-hidden"
+                aria-hidden={open !== i}
+              >
+                <p className="px-5 pb-5 pt-1 text-sm text-[var(--foreground-secondary)] leading-relaxed border-t border-[var(--border)]">
+                  {faq.a}
+                </p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

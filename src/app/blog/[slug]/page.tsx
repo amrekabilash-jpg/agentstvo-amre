@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog";
-import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLd, breadcrumbSchema, ORG_ID, FOUNDER_ID, WEBSITE_ID } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 const BASE_URL = "https://www.geoaeo.pro";
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       tags: post.tags,
       images: post.featuredImage.src
         ? [{ url: `${BASE_URL}${post.featuredImage.src}`, alt: post.featuredImage.alt }]
-        : [],
+        : [{ url: `${BASE_URL}/opengraph-image`, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -46,33 +46,25 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
+const FOUNDER_NAME = "Амре Кабылаш";
+
 function articleSchema(post: Awaited<ReturnType<typeof getPostBySlug>> & object) {
+  const isFounder = post.author.name === FOUNDER_NAME;
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": `${post.seo.canonical}#article`,
     headline: post.title,
-    description: post.excerpt,
-    datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.updated).toISOString(),
-    author: {
-      "@type": "Person",
-      name: post.author.name,
-      jobTitle: post.author.role,
-      worksFor: {
-        "@type": "Organization",
-        name: "Агентство",
-        url: BASE_URL,
-      },
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Агентство",
-      url: BASE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: `${BASE_URL}/images/logo.svg`,
-      },
-    },
+    description: post.seo.description || post.excerpt,
+    ...(post.summary.length > 0 && { abstract: post.summary.join(" ") }),
+    // Dates come from front matter and match the dates shown on the page.
+    datePublished: post.date,
+    dateModified: post.updated,
+    author: isFounder
+      ? { "@type": "Person", "@id": FOUNDER_ID, name: post.author.name, url: `${BASE_URL}/about` }
+      : { "@type": "Organization", "@id": ORG_ID, name: "GeoAEO" },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": WEBSITE_ID },
     mainEntityOfPage: { "@type": "WebPage", "@id": post.seo.canonical },
     image: post.featuredImage.src
       ? `${BASE_URL}${post.featuredImage.src}`
@@ -145,7 +137,7 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
       <JsonLd data={breadcrumb} />
       {howTo && <JsonLd data={howTo} />}
 
-      <main>
+      <article>
         {/* Hero */}
         <section className="section-atlantis bg-lavender relative overflow-hidden">
           <div className="blob blob-md absolute -top-10 -right-10 opacity-40" aria-hidden="true" />
@@ -188,9 +180,12 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
                   {post.author.name}
                 </p>
                 <p className="text-xs text-[var(--foreground-muted)]">
-                  {post.author.role} · Опубликовано {formatDate(post.date)}
+                  {post.author.role} · Опубликовано{" "}
+                  <time dateTime={post.date}>{formatDate(post.date)}</time>
                   {post.updated !== post.date && (
-                    <span> · Обновлено {formatDate(post.updated)}</span>
+                    <span>
+                      {" "}· Обновлено <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                    </span>
                   )}
                 </p>
               </div>
@@ -201,7 +196,23 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
         {/* Article content */}
         <section className="py-16 lg:py-24">
           <div className="container-atlantis max-w-4xl">
-            <article
+            {post.summary.length > 0 && (
+              <aside
+                aria-labelledby="summary-heading"
+                className="mb-10 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 lg:p-8"
+              >
+                <h2 id="summary-heading" className="text-lg font-bold mb-3 text-[var(--foreground)]">
+                  Кратко
+                </h2>
+                <ul className="list-disc pl-5 space-y-2 text-[var(--foreground-secondary)] leading-relaxed">
+                  {post.summary.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </aside>
+            )}
+
+            <div
               className="prose prose-lg max-w-none
                 prose-headings:font-bold prose-headings:text-[var(--foreground)] prose-headings:tracking-tight
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
@@ -220,19 +231,27 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
             />
 
 
+
             {/* Author Info Section */}
             <div className="mt-12 pt-8 border-t border-[var(--border)]">
               <div className="flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/amre-profile.jpg"
+                  src="/images/amre-profile.svg"
                   alt="Амре Кабылаш"
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-[var(--foreground)]">Амре Кабылаш</h4>
-                  <p className="text-sm text-[var(--foreground-secondary)] mb-2">Основатель, Эксперт в SEO/GEO/AEO</p>
+                  <p className="font-semibold text-[var(--foreground)]">
+                    <Link href="/about" className="hover:underline underline-offset-2">
+                      Амре Кабылаш
+                    </Link>
+                  </p>
+                  <p className="text-sm text-[var(--foreground-secondary)] mb-2">Основатель GeoAEO</p>
                   <p className="text-sm text-[var(--foreground-secondary)] leading-relaxed">
-                    Основатель агентства, эксперт в SEO, GEO и AI-автоматизации. 6+ лет опыта, помог 50+ компаниям увеличить органический трафик на 150-500%.
+                    Отвечает за стратегию GEO/AEO и SEO в агентстве GeoAEO (Алматы)..
                   </p>
                 </div>
               </div>
@@ -308,7 +327,7 @@ export default async function BlogPostPage({ params }: Params): Promise<React.Re
             </div>
           </section>
         )}
-      </main>
+      </article>
     </>
   );
 }

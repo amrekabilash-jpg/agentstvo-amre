@@ -6,14 +6,14 @@ import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 const BASE_URL = "https://www.geoaeo.pro";
 
 export const metadata: Metadata = {
-  title: "Блог — SEO, GEO, AI-автоматизация для бизнеса",
+  title: "Блог о GEO, AEO, SEO и AI-автоматизации",
   description:
-    "Экспертные статьи о SEO, GEO-оптимизации, AI-автоматизации и цифровом маркетинге для бизнеса в Казахстане. Практические руководства от команды Агентства.",
+    "Практические статьи GeoAEO о GEO и AEO-оптимизации, SEO и AI-автоматизации для бизнеса в Казахстане: инструкции, чек-листы и разборы.",
   alternates: {
     canonical: `${BASE_URL}/blog`,
   },
   openGraph: {
-    title: "Блог Агентства — SEO, GEO & AI для бизнеса",
+    title: "Блог GeoAEO — GEO, AEO, SEO и AI для бизнеса",
     description:
       "Практические статьи о GEO, SEO и AI-автоматизации. Реальные кейсы и руководства от цифрового агентства в Алматы.",
     url: `${BASE_URL}/blog`,
@@ -52,7 +52,7 @@ export default function BlogPage(): React.ReactElement {
     <>
       <JsonLd data={breadcrumb} />
 
-      <main>
+      <div>
         {/* Hero */}
         <section className="section-atlantis bg-lavender relative overflow-hidden">
           <div className="blob blob-lg absolute -top-20 -right-20" aria-hidden="true" />
@@ -140,7 +140,7 @@ export default function BlogPage(): React.ReactElement {
             )}
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { JsonLd, servicesSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Услуги SEO, Креатив и AI-автоматизация в Алматы",
+  title: "Услуги: GEO/AEO, SEO, сайты и AI-автоматизация",
   description:
-    "SEO-оптимизация и GEO продвижение, креативный дизайн, AI-автоматизация бизнес-процессов. Комплексные digital-решения для роста вашего бизнеса в Казахстане.",
+    "Услуги GeoAEO в Алматы: GEO/AEO-оптимизация, SEO, разработка сайтов, UI/UX, брендинг, видео и AI-автоматизация. Состав работ и этапы по каждой.",
   keywords: [
     "SEO оптимизация Алматы",
     "GEO продвижение",
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "https://www.geoaeo.pro/services",
   },
   openGraph: {
-    title: "Услуги — SEO, Креатив, AI | Агентство",
+    title: "Услуги GeoAEO: GEO/AEO, SEO, сайты и AI",
     description: "Комплексные digital-решения для роста бизнеса. SEO, креатив и AI-автоматизация.",
     url: "https://www.geoaeo.pro/services",
     type: "website",
@@ -27,16 +26,6 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }): React.ReactElement {
-  return (
-    <>
-      <JsonLd data={servicesSchema} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Главная", url: "https://www.geoaeo.pro" },
-          { name: "Услуги", url: "https://www.geoaeo.pro/services" },
-        ])}
-      />
-      {children}
-    </>
-  );
+  // JSON-LD lives in page.tsx so it is not duplicated on /services/[slug].
+  return <>{children}</>;
 }

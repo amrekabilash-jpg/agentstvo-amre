@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLd, breadcrumbSchema, faqPageSchema, ORG_ID } from "@/components/seo/JsonLd";
 import {
   getServiceBySlug,
   getAllServiceSlugs,
@@ -22,8 +22,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
+  // services/layout.tsx sets its own title, which resets the root "%s | GeoAEO" template for this segment,
+  // so the brand is appended explicitly.
   return {
-    title: service.metaTitle,
+    title: { absolute: `${service.metaTitle} | GeoAEO` },
     description: service.metaDescription,
     keywords: service.keywords,
     alternates: { canonical: `${BASE}/services/${slug}` },
@@ -36,41 +38,23 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-function faqSchema(service: ServiceData) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: service.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: { "@type": "Answer", text: faq.a },
-    })),
-  };
-}
-
 function serviceSchema(service: ServiceData) {
+  const url = `${BASE}/services/${service.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.headline,
-    description: service.description,
-    url: `${BASE}/services/${service.slug}`,
-    provider: {
-      "@type": "LocalBusiness",
-      name: "Агентство",
-      url: BASE,
-      telephone: "+77017282236",
-      email: "hello@geoaeo.pro",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Алматы",
-        addressCountry: "KZ",
-      },
-    },
+    "@id": `${url}#service`,
+    name: service.title,
+    alternateName: service.headline,
+    description: service.summary?.[0] ?? service.description,
+    url,
+    serviceType: service.title,
+    provider: { "@id": ORG_ID },
     areaServed: [
       { "@type": "City", name: "Алматы" },
       { "@type": "Country", name: "Казахстан" },
     ],
+    ...(service.sources && { citation: service.sources.map((src) => src.url) }),
   };
 }
 
@@ -93,7 +77,7 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
   return (
     <>
       <JsonLd data={serviceSchema(service)} />
-      <JsonLd data={faqSchema(service)} />
+      <JsonLd data={faqPageSchema(service.faqs, `${BASE}/services/${slug}`)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Главная", url: BASE },
@@ -102,7 +86,7 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
         ])}
       />
 
-      <main>
+      <div>
         {/* Hero — коммерческий H1 + CTA */}
         <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 bg-lavender relative overflow-hidden">
           <div className="blob blob-md absolute -top-10 -right-10 opacity-40" aria-hidden="true" />
@@ -131,6 +115,34 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
             </Link>
           </div>
         </section>
+
+        {/* Короткий ответ (answer-first) + авторская позиция + источники */}
+        {service.summary && (
+          <section className="py-12 lg:py-16 bg-white" aria-labelledby="summary-heading">
+            <div className="container-atlantis max-w-3xl">
+              <h2 id="summary-heading" className="text-h3 font-bold mb-5">
+                Коротко: что такое {service.title}
+              </h2>
+              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 lg:p-8 space-y-4">
+                {service.summary.map((para, i) => (
+                  <p key={i} className="text-body text-[var(--foreground-secondary)] leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
+              {service.expertNote && (
+                <figure className="mt-8 border-l-4 border-[var(--accent-blue)] pl-5">
+                  <blockquote className="text-body italic text-[var(--foreground-secondary)] leading-relaxed">
+                    {service.expertNote}
+                  </blockquote>
+                  <figcaption className="mt-2 text-sm text-[var(--foreground-muted)]">
+                    — позиция команды GeoAEO
+                  </figcaption>
+                </figure>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Технологический партнёр (white label) */}
         {service.techPartner && (
@@ -189,6 +201,30 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
           </div>
         </section>
 
+        {service.sources && (
+          <section className="py-12 bg-white border-t border-[var(--border)]" aria-labelledby="sources-heading">
+            <div className="container-atlantis max-w-2xl">
+              <h2 id="sources-heading" className="text-h3 font-bold mb-4">
+                Источники
+              </h2>
+              <ul className="space-y-2 text-sm">
+                {service.sources.map((src) => (
+                  <li key={src.url}>
+                    <a
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--accent-blue)] hover:underline underline-offset-2"
+                    >
+                      {src.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* CTA */}
         <section className="py-16 bg-lavender">
           <div className="container-atlantis max-w-xl text-center">
@@ -209,7 +245,7 @@ export default async function ServicePage({ params }: Params): Promise<React.Rea
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

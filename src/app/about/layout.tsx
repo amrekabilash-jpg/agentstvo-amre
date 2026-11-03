@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "О нас — Команда, миссия и ценности агентства",
+  title: "О нас: команда и подход к GEO/AEO",
   description:
-    "Цифровое агентство Агентство в Алматы. Команда инженеров и стратегов, объединившая маркетинг, дизайн и код. Возвращаем вам 6 часов каждый день.",
+    "GeoAEO — агентство GEO/AEO-оптимизации из Алматы. Кто мы, как работаем и почему соединяем маркетинг, дизайн, код и AI-автоматизацию в одной команде.",
   keywords: [
     "о нас Агентство",
     "команда digital агентства",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "https://www.geoaeo.pro/about",
   },
   openGraph: {
-    title: "О нас — Команда Агентство",
+    title: "О нас: команда и подход к GEO/AEO",
     description: "Команда инженеров и стратегов. Маркетинг, дизайн и код в единой системе.",
     url: "https://www.geoaeo.pro/about",
     type: "website",
